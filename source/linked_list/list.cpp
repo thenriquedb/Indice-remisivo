@@ -5,6 +5,7 @@
 #include "list.h"
 #include<string>
 #include<iostream>
+#include "../external/fort.hpp"
 
 using namespace std;
 
@@ -26,14 +27,15 @@ void list::push(string content) {
  * Imprime os elementos da lista
  */
 void list::display() {
+    int cont = 1;
     if (this->head == nullptr)
         cout << "Lista vazia" << endl;
     else {
-        Node* temp = this->head;
+        Node *temp = this->head;
         while (temp != nullptr) {
-            cout << "\t" << temp->word << endl;
+            cout << "\t" << cont << "º: " << temp->word << endl;
             temp = temp->next;
+            cont++;
         }
     }
 }
-

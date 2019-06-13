@@ -9,7 +9,7 @@
 #include <cstdio>
 
 #include "indice_list.h"
-#include "list.h"
+#include "linked_list/list.h"
 #include "helps.h"
 
 using namespace std;
@@ -18,12 +18,9 @@ using namespace std;
  * Armazena as palavras chaves em uma lista
  */
 void list_index::setKeyWords() {
-    keyWords.push("and");
-    keyWords.push("by");
-    keyWords.push("to");
-    
     string word;
     int i = 1;
+
     while (word != "s") {
         cout << i << "º Palavre chave: ";
         cin >> word;
@@ -31,8 +28,11 @@ void list_index::setKeyWords() {
         if (word != "s")
             keyWords.push(word);
         else {
-            cout << "Palavras chaves digitadas: " << endl;
+
+            cout << "\n\n\n\n\nFoi digitado um total de " << i << " palavras chaves." << endl;
             keyWords.display();
+            system("pause");
+            system("clear");
         }
         i++;
     }

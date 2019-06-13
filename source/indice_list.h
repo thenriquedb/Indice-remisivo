@@ -8,7 +8,7 @@
 #include<string>
 #include<iostream>
 
-#include "list.h"
+#include "linked_list/list.h"
 
 using namespace std;
 
@@ -39,13 +39,15 @@ private:
 public:
     list_index() {
         head = nullptr;
+        lenght = 0;
     }
+    void setKeyWords();
 
     bool push(string word, unsigned int line);
 
     void searchWords(ifstream &file);
 
     void displayWords();
-}
+};
 
 #endif //INDICE_REMISIVO_INDICE_LIST_H

@@ -96,13 +96,19 @@
 		<Unit filename="/home/thiago/CLionProjects/Indice_Remisivo/source/indice_list.h">
 			<Option target="Indice_Remisivo"/>
 		</Unit>
-		<Unit filename="/home/thiago/CLionProjects/Indice_Remisivo/source/list.cpp">
+		<Unit filename="/home/thiago/CLionProjects/Indice_Remisivo/source/linked_list/list.cpp">
 			<Option target="Indice_Remisivo"/>
 		</Unit>
-		<Unit filename="/home/thiago/CLionProjects/Indice_Remisivo/source/list.h">
+		<Unit filename="/home/thiago/CLionProjects/Indice_Remisivo/source/linked_list/list.h">
 			<Option target="Indice_Remisivo"/>
 		</Unit>
 		<Unit filename="/home/thiago/CLionProjects/Indice_Remisivo/source/main.cpp">
+			<Option target="Indice_Remisivo"/>
+		</Unit>
+		<Unit filename="/home/thiago/CLionProjects/Indice_Remisivo/source/tree/tree.cpp">
+			<Option target="Indice_Remisivo"/>
+		</Unit>
+		<Unit filename="/home/thiago/CLionProjects/Indice_Remisivo/source/tree/tree.h">
 			<Option target="Indice_Remisivo"/>
 		</Unit>
 		<Unit filename="/home/thiago/CLionProjects/Indice_Remisivo/CMakeLists.txt">

@@ -177,32 +177,32 @@ source/indice_list.cpp.s:
 	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/indice_list.cpp.s
 .PHONY : source/indice_list.cpp.s
 
-source/list.o: source/list.cpp.o
+source/linked_list/list.o: source/linked_list/list.cpp.o
 
-.PHONY : source/list.o
+.PHONY : source/linked_list/list.o
 
 # target to build an object file
-source/list.cpp.o:
-	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/list.cpp.o
-.PHONY : source/list.cpp.o
+source/linked_list/list.cpp.o:
+	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/linked_list/list.cpp.o
+.PHONY : source/linked_list/list.cpp.o
 
-source/list.i: source/list.cpp.i
+source/linked_list/list.i: source/linked_list/list.cpp.i
 
-.PHONY : source/list.i
+.PHONY : source/linked_list/list.i
 
 # target to preprocess a source file
-source/list.cpp.i:
-	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/list.cpp.i
-.PHONY : source/list.cpp.i
+source/linked_list/list.cpp.i:
+	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/linked_list/list.cpp.i
+.PHONY : source/linked_list/list.cpp.i
 
-source/list.s: source/list.cpp.s
+source/linked_list/list.s: source/linked_list/list.cpp.s
 
-.PHONY : source/list.s
+.PHONY : source/linked_list/list.s
 
 # target to generate assembly for a file
-source/list.cpp.s:
-	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/list.cpp.s
-.PHONY : source/list.cpp.s
+source/linked_list/list.cpp.s:
+	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/linked_list/list.cpp.s
+.PHONY : source/linked_list/list.cpp.s
 
 source/main.o: source/main.cpp.o
 
@@ -231,6 +231,33 @@ source/main.cpp.s:
 	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/main.cpp.s
 .PHONY : source/main.cpp.s
 
+source/tree/tree.o: source/tree/tree.cpp.o
+
+.PHONY : source/tree/tree.o
+
+# target to build an object file
+source/tree/tree.cpp.o:
+	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/tree/tree.cpp.o
+.PHONY : source/tree/tree.cpp.o
+
+source/tree/tree.i: source/tree/tree.cpp.i
+
+.PHONY : source/tree/tree.i
+
+# target to preprocess a source file
+source/tree/tree.cpp.i:
+	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/tree/tree.cpp.i
+.PHONY : source/tree/tree.cpp.i
+
+source/tree/tree.s: source/tree/tree.cpp.s
+
+.PHONY : source/tree/tree.s
+
+# target to generate assembly for a file
+source/tree/tree.cpp.s:
+	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/tree/tree.cpp.s
+.PHONY : source/tree/tree.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -246,12 +273,15 @@ help:
 	@echo "... source/indice_list.o"
 	@echo "... source/indice_list.i"
 	@echo "... source/indice_list.s"
-	@echo "... source/list.o"
-	@echo "... source/list.i"
-	@echo "... source/list.s"
+	@echo "... source/linked_list/list.o"
+	@echo "... source/linked_list/list.i"
+	@echo "... source/linked_list/list.s"
 	@echo "... source/main.o"
 	@echo "... source/main.i"
 	@echo "... source/main.s"
+	@echo "... source/tree/tree.o"
+	@echo "... source/tree/tree.i"
+	@echo "... source/tree/tree.s"
 .PHONY : help
 
 
