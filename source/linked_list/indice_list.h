@@ -8,7 +8,7 @@
 #include<string>
 #include<iostream>
 
-#include "linked_list/list.h"
+#include "List.h"
 
 using namespace std;
 
@@ -32,7 +32,7 @@ public:
  */
 class list_index {
 private:
-    list keyWords; // Lista das palavras chaves
+    List keyWords; // Lista das palavras chaves
     word *head;
     int lenght;
 
@@ -47,7 +47,7 @@ public:
 
     void searchWords(ifstream &file);
 
-    void displayWords();
+    void printIndice();
 };
 
 #endif //INDICE_REMISIVO_INDICE_LIST_H

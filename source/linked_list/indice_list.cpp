@@ -9,8 +9,8 @@
 #include <cstdio>
 
 #include "indice_list.h"
-#include "linked_list/list.h"
-#include "helps.h"
+#include "List.h"
+#include "../helps.h"
 
 using namespace std;
 
@@ -52,8 +52,6 @@ void list_index::searchWords(ifstream &file) {
 
                 for (const auto &item : words) {
                     if (current->word == item) {
-//                        cout << "\titem: " << item << endl;
-//                        printf("\tNumline: %d \n\n", numLine);
                         push(item, numLine);
                     }
                 }
@@ -107,7 +105,10 @@ bool list_index::push(string content, unsigned int line) {
 }
 
 
-void list_index::displayWords() {
+/*
+ * Imprime o indice remissivo
+ */
+void list_index::printIndice() {
     if (this->head == nullptr) {
         cout << "Nenhuma palavra chave foi encontrada no texto." << endl;
     } else {

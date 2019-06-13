@@ -6,6 +6,7 @@
 #include <fstream>
 #include<string>
 #include<vector>
+#include<algorithm>
 
 #include "helps.h"
 
@@ -35,3 +36,35 @@ const vector<string> split(const string &string, const char &token) {
 
     return vetor;
 }
+
+/*
+ * Armazena todos as palavras chaves em um vetor e o retorna ordenado
+ * @param
+ *      ifstream &file: arquivo que contem as palavrass chaves
+ * */
+const vector<string> getKeyWords(ifstream &file) {
+    string line, current;
+    getline(file, line);
+    std::vector<std::string> keyWords = split(line, ' ');
+
+
+    return sortKeywordsAlphabetical(keyWords);
+}
+
+
+
+const vector<string> sortKeywordsAlphabetical(vector<string> keyWords) {
+    int lenght = keyWords.size();
+    for (int i = 0; i < lenght; i++) {
+        string current = keyWords[i];
+        std::transform(current.begin(), current.end(), current.begin(), ::tolower); // Converte string para minuscula
+
+        int j = i - 1;
+        while (j >= 0 && keyWords[j] > current) {
+            keyWords[j + 1] = keyWords[j];
+            j = j - 1;
+        }
+        keyWords[j + 1] = current;
+    }
+    return keyWords;
+}1

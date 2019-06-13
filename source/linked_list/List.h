@@ -20,13 +20,13 @@ public:
     }
 };
 
-class list {
+class List {
 private:
     Node *head;
     int lenght;
 
 public:
-    list() { // Construtor
+    List() { // Construtor
         head = nullptr;
         lenght = 0;
     }

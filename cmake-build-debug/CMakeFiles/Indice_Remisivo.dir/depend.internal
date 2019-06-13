@@ -4,19 +4,20 @@
 CMakeFiles/Indice_Remisivo.dir/source/helps.cpp.o
  /home/thiago/CLionProjects/Indice_Remisivo/source/helps.cpp
  /home/thiago/CLionProjects/Indice_Remisivo/source/helps.h
-CMakeFiles/Indice_Remisivo.dir/source/indice_list.cpp.o
- /home/thiago/CLionProjects/Indice_Remisivo/source/helps.h
- /home/thiago/CLionProjects/Indice_Remisivo/source/indice_list.cpp
- /home/thiago/CLionProjects/Indice_Remisivo/source/indice_list.h
- /home/thiago/CLionProjects/Indice_Remisivo/source/linked_list/list.h
-CMakeFiles/Indice_Remisivo.dir/source/linked_list/list.cpp.o
+CMakeFiles/Indice_Remisivo.dir/source/linked_list/List.cpp.o
  /home/thiago/CLionProjects/Indice_Remisivo/source/external/fort.h
  /home/thiago/CLionProjects/Indice_Remisivo/source/external/fort.hpp
- /home/thiago/CLionProjects/Indice_Remisivo/source/linked_list/list.cpp
- /home/thiago/CLionProjects/Indice_Remisivo/source/linked_list/list.h
+ /home/thiago/CLionProjects/Indice_Remisivo/source/linked_list/List.cpp
+ /home/thiago/CLionProjects/Indice_Remisivo/source/linked_list/List.h
+CMakeFiles/Indice_Remisivo.dir/source/linked_list/indice_list.cpp.o
+ /home/thiago/CLionProjects/Indice_Remisivo/source/helps.h
+ /home/thiago/CLionProjects/Indice_Remisivo/source/linked_list/List.h
+ /home/thiago/CLionProjects/Indice_Remisivo/source/linked_list/indice_list.cpp
+ /home/thiago/CLionProjects/Indice_Remisivo/source/linked_list/indice_list.h
 CMakeFiles/Indice_Remisivo.dir/source/main.cpp.o
- /home/thiago/CLionProjects/Indice_Remisivo/source/indice_list.h
- /home/thiago/CLionProjects/Indice_Remisivo/source/linked_list/list.h
+ /home/thiago/CLionProjects/Indice_Remisivo/source/helps.h
+ /home/thiago/CLionProjects/Indice_Remisivo/source/linked_list/List.h
+ /home/thiago/CLionProjects/Indice_Remisivo/source/linked_list/indice_list.h
  /home/thiago/CLionProjects/Indice_Remisivo/source/main.cpp
  /home/thiago/CLionProjects/Indice_Remisivo/source/tree/tree.h
 CMakeFiles/Indice_Remisivo.dir/source/tree/tree.cpp.o

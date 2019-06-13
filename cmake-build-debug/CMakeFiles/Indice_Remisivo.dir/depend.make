@@ -4,18 +4,19 @@
 CMakeFiles/Indice_Remisivo.dir/source/helps.cpp.o: ../source/helps.cpp
 CMakeFiles/Indice_Remisivo.dir/source/helps.cpp.o: ../source/helps.h
 
-CMakeFiles/Indice_Remisivo.dir/source/indice_list.cpp.o: ../source/helps.h
-CMakeFiles/Indice_Remisivo.dir/source/indice_list.cpp.o: ../source/indice_list.cpp
-CMakeFiles/Indice_Remisivo.dir/source/indice_list.cpp.o: ../source/indice_list.h
-CMakeFiles/Indice_Remisivo.dir/source/indice_list.cpp.o: ../source/linked_list/list.h
+CMakeFiles/Indice_Remisivo.dir/source/linked_list/List.cpp.o: ../source/external/fort.h
+CMakeFiles/Indice_Remisivo.dir/source/linked_list/List.cpp.o: ../source/external/fort.hpp
+CMakeFiles/Indice_Remisivo.dir/source/linked_list/List.cpp.o: ../source/linked_list/List.cpp
+CMakeFiles/Indice_Remisivo.dir/source/linked_list/List.cpp.o: ../source/linked_list/List.h
 
-CMakeFiles/Indice_Remisivo.dir/source/linked_list/list.cpp.o: ../source/external/fort.h
-CMakeFiles/Indice_Remisivo.dir/source/linked_list/list.cpp.o: ../source/external/fort.hpp
-CMakeFiles/Indice_Remisivo.dir/source/linked_list/list.cpp.o: ../source/linked_list/list.cpp
-CMakeFiles/Indice_Remisivo.dir/source/linked_list/list.cpp.o: ../source/linked_list/list.h
+CMakeFiles/Indice_Remisivo.dir/source/linked_list/indice_list.cpp.o: ../source/helps.h
+CMakeFiles/Indice_Remisivo.dir/source/linked_list/indice_list.cpp.o: ../source/linked_list/List.h
+CMakeFiles/Indice_Remisivo.dir/source/linked_list/indice_list.cpp.o: ../source/linked_list/indice_list.cpp
+CMakeFiles/Indice_Remisivo.dir/source/linked_list/indice_list.cpp.o: ../source/linked_list/indice_list.h
 
-CMakeFiles/Indice_Remisivo.dir/source/main.cpp.o: ../source/indice_list.h
-CMakeFiles/Indice_Remisivo.dir/source/main.cpp.o: ../source/linked_list/list.h
+CMakeFiles/Indice_Remisivo.dir/source/main.cpp.o: ../source/helps.h
+CMakeFiles/Indice_Remisivo.dir/source/main.cpp.o: ../source/linked_list/List.h
+CMakeFiles/Indice_Remisivo.dir/source/main.cpp.o: ../source/linked_list/indice_list.h
 CMakeFiles/Indice_Remisivo.dir/source/main.cpp.o: ../source/main.cpp
 CMakeFiles/Indice_Remisivo.dir/source/main.cpp.o: ../source/tree/tree.h
 

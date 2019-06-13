@@ -150,59 +150,59 @@ source/helps.cpp.s:
 	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/helps.cpp.s
 .PHONY : source/helps.cpp.s
 
-source/indice_list.o: source/indice_list.cpp.o
+source/linked_list/List.o: source/linked_list/List.cpp.o
 
-.PHONY : source/indice_list.o
-
-# target to build an object file
-source/indice_list.cpp.o:
-	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/indice_list.cpp.o
-.PHONY : source/indice_list.cpp.o
-
-source/indice_list.i: source/indice_list.cpp.i
-
-.PHONY : source/indice_list.i
-
-# target to preprocess a source file
-source/indice_list.cpp.i:
-	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/indice_list.cpp.i
-.PHONY : source/indice_list.cpp.i
-
-source/indice_list.s: source/indice_list.cpp.s
-
-.PHONY : source/indice_list.s
-
-# target to generate assembly for a file
-source/indice_list.cpp.s:
-	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/indice_list.cpp.s
-.PHONY : source/indice_list.cpp.s
-
-source/linked_list/list.o: source/linked_list/list.cpp.o
-
-.PHONY : source/linked_list/list.o
+.PHONY : source/linked_list/List.o
 
 # target to build an object file
-source/linked_list/list.cpp.o:
-	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/linked_list/list.cpp.o
-.PHONY : source/linked_list/list.cpp.o
+source/linked_list/List.cpp.o:
+	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/linked_list/List.cpp.o
+.PHONY : source/linked_list/List.cpp.o
 
-source/linked_list/list.i: source/linked_list/list.cpp.i
+source/linked_list/List.i: source/linked_list/List.cpp.i
 
-.PHONY : source/linked_list/list.i
+.PHONY : source/linked_list/List.i
 
 # target to preprocess a source file
-source/linked_list/list.cpp.i:
-	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/linked_list/list.cpp.i
-.PHONY : source/linked_list/list.cpp.i
+source/linked_list/List.cpp.i:
+	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/linked_list/List.cpp.i
+.PHONY : source/linked_list/List.cpp.i
 
-source/linked_list/list.s: source/linked_list/list.cpp.s
+source/linked_list/List.s: source/linked_list/List.cpp.s
 
-.PHONY : source/linked_list/list.s
+.PHONY : source/linked_list/List.s
 
 # target to generate assembly for a file
-source/linked_list/list.cpp.s:
-	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/linked_list/list.cpp.s
-.PHONY : source/linked_list/list.cpp.s
+source/linked_list/List.cpp.s:
+	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/linked_list/List.cpp.s
+.PHONY : source/linked_list/List.cpp.s
+
+source/linked_list/indice_list.o: source/linked_list/indice_list.cpp.o
+
+.PHONY : source/linked_list/indice_list.o
+
+# target to build an object file
+source/linked_list/indice_list.cpp.o:
+	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/linked_list/indice_list.cpp.o
+.PHONY : source/linked_list/indice_list.cpp.o
+
+source/linked_list/indice_list.i: source/linked_list/indice_list.cpp.i
+
+.PHONY : source/linked_list/indice_list.i
+
+# target to preprocess a source file
+source/linked_list/indice_list.cpp.i:
+	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/linked_list/indice_list.cpp.i
+.PHONY : source/linked_list/indice_list.cpp.i
+
+source/linked_list/indice_list.s: source/linked_list/indice_list.cpp.s
+
+.PHONY : source/linked_list/indice_list.s
+
+# target to generate assembly for a file
+source/linked_list/indice_list.cpp.s:
+	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/linked_list/indice_list.cpp.s
+.PHONY : source/linked_list/indice_list.cpp.s
 
 source/main.o: source/main.cpp.o
 
@@ -270,12 +270,12 @@ help:
 	@echo "... source/helps.o"
 	@echo "... source/helps.i"
 	@echo "... source/helps.s"
-	@echo "... source/indice_list.o"
-	@echo "... source/indice_list.i"
-	@echo "... source/indice_list.s"
-	@echo "... source/linked_list/list.o"
-	@echo "... source/linked_list/list.i"
-	@echo "... source/linked_list/list.s"
+	@echo "... source/linked_list/List.o"
+	@echo "... source/linked_list/List.i"
+	@echo "... source/linked_list/List.s"
+	@echo "... source/linked_list/indice_list.o"
+	@echo "... source/linked_list/indice_list.i"
+	@echo "... source/linked_list/indice_list.s"
 	@echo "... source/main.o"
 	@echo "... source/main.i"
 	@echo "... source/main.s"

@@ -24,10 +24,13 @@ public:
     }
 
     string getKey() { return key; };
+
     Leaf *getLeft() { return left; };
+
     Leaf *getRight() { return right; };
 
     void setLeft(Leaf *n) { left = n; };
+
     void setRight(Leaf *n) { right = n; };
 };
 
@@ -72,6 +75,12 @@ public:
 
     // Libera os nós da arvóre
     void freeTreeNodes(Leaf *n);
+};
+
+class indexTree{
+private:
+    Tree* root;
+
 };
 
 #endif //INDICE_REMISIVO_TREE_H

@@ -90,16 +90,16 @@
 		<Unit filename="/home/thiago/CLionProjects/Indice_Remisivo/source/helps.h">
 			<Option target="Indice_Remisivo"/>
 		</Unit>
-		<Unit filename="/home/thiago/CLionProjects/Indice_Remisivo/source/indice_list.cpp">
+		<Unit filename="/home/thiago/CLionProjects/Indice_Remisivo/source/linked_list/List.cpp">
 			<Option target="Indice_Remisivo"/>
 		</Unit>
-		<Unit filename="/home/thiago/CLionProjects/Indice_Remisivo/source/indice_list.h">
+		<Unit filename="/home/thiago/CLionProjects/Indice_Remisivo/source/linked_list/List.h">
 			<Option target="Indice_Remisivo"/>
 		</Unit>
-		<Unit filename="/home/thiago/CLionProjects/Indice_Remisivo/source/linked_list/list.cpp">
+		<Unit filename="/home/thiago/CLionProjects/Indice_Remisivo/source/linked_list/indice_list.cpp">
 			<Option target="Indice_Remisivo"/>
 		</Unit>
-		<Unit filename="/home/thiago/CLionProjects/Indice_Remisivo/source/linked_list/list.h">
+		<Unit filename="/home/thiago/CLionProjects/Indice_Remisivo/source/linked_list/indice_list.h">
 			<Option target="Indice_Remisivo"/>
 		</Unit>
 		<Unit filename="/home/thiago/CLionProjects/Indice_Remisivo/source/main.cpp">

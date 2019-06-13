@@ -2,7 +2,7 @@
 // Created by thiago on 11/06/19.
 //
 
-#include "list.h"
+#include "List.h"
 #include<string>
 #include<iostream>
 #include "../external/fort.hpp"
@@ -12,7 +12,7 @@ using namespace std;
 /*
  * Adciona um novo elemento no final da lista
  */
-void list::push(string content) {
+void List::push(string content) {
     if (head == nullptr)
         head = new Node(content);
     else {
@@ -26,7 +26,7 @@ void list::push(string content) {
 /*
  * Imprime os elementos da lista
  */
-void list::display() {
+void List::display() {
     int cont = 1;
     if (this->head == nullptr)
         cout << "Lista vazia" << endl;
