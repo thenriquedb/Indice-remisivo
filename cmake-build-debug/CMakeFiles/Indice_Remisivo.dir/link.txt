@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/Indice_Remisivo.dir/source/main.cpp.o CMakeFiles/Indice_Remisivo.dir/source/helps.cpp.o CMakeFiles/Indice_Remisivo.dir/source/list.cpp.o CMakeFiles/Indice_Remisivo.dir/source/indice_list.cpp.o  -o Indice_Remisivo 

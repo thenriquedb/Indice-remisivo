@@ -1,0 +1,3 @@
+/home/thiago/CLionProjects/Indice_Remisivo/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/thiago/CLionProjects/Indice_Remisivo/cmake-build-debug/CMakeFiles/Indice_Remisivo.dir
+/home/thiago/CLionProjects/Indice_Remisivo/cmake-build-debug/CMakeFiles/edit_cache.dir
