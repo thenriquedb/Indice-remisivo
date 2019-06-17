@@ -6,23 +6,41 @@
 
 #IncludeRegexTransform: 
 
-/home/thiago/CLionProjects/Indice_Remisivo/source/helps.cpp
+/home/thiago/CLionProjects/Indice_Remisivo/source/helps.h
 iostream
 -
-fstream
+vector
 -
+
+/home/thiago/CLionProjects/Indice_Remisivo/source/linked_list/List.h
+string
+-
+
+/home/thiago/CLionProjects/Indice_Remisivo/source/linked_list/indice_list.h
 string
 -
 vector
 -
-algorithm
+iostream
 -
+List.h
+/home/thiago/CLionProjects/Indice_Remisivo/source/linked_list/List.h
+
+/home/thiago/CLionProjects/Indice_Remisivo/source/main.cpp
+iostream
+-
+fstream
+-
+linked_list/indice_list.h
+/home/thiago/CLionProjects/Indice_Remisivo/source/linked_list/indice_list.h
+tree/tree.h
+/home/thiago/CLionProjects/Indice_Remisivo/source/tree/tree.h
 helps.h
 /home/thiago/CLionProjects/Indice_Remisivo/source/helps.h
 
-/home/thiago/CLionProjects/Indice_Remisivo/source/helps.h
+/home/thiago/CLionProjects/Indice_Remisivo/source/tree/tree.h
 iostream
 -
-vector
+fstream
 -
 

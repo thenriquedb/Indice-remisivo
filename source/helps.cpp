@@ -47,7 +47,6 @@ const vector<string> getKeyWords(ifstream &file) {
     getline(file, line);
     std::vector<std::string> keyWords = split(line, ' ');
 
-
     return sortKeywordsAlphabetical(keyWords);
 }
 
@@ -67,4 +66,4 @@ const vector<string> sortKeywordsAlphabetical(vector<string> keyWords) {
         keyWords[j + 1] = current;
     }
     return keyWords;
-}1
+}

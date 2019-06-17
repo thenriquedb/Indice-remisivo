@@ -14,22 +14,20 @@ int main() {
         printf("Erro na leitura dos arquivos. \n");
         exit(EXIT_FAILURE);
     }
-
     vector<string> keyWords = getKeyWords(keywordsTXT);
-    for (int i=0; i< keyWords.size(); i++)
-        cout << keyWords[i] << endl;
 
-    //    list_index index;
-    Tree arvore;
+    list_index index;
+    index.setKeyWords(keyWords);
+    index.searchWords(fileTxt);
 
-//    arvore.insertNode("Arroz");
-//    arvore.insertNode("Beterraba");
-//    arvore.insertNode("Caixeta");
-//    arvore.insertNode("Donkey");
-
-
-//    index.setKeyWords();
-//    index.searchWords(fileTxt);
 //    index.printIndice();
+
+    Tree arvore;
+//    arvore.insertNode("Mario");
+//    arvore.insertNode("Mano Walter");
+//    arvore.insertNode("Thiago");
+//    arvore.insertNode("Ana");
+    arvore.balancedTree(keyWords, 0, keyWords.size()-1);
+arvore.displayInOrden(arvore.getRoot());
     return 0;
 }

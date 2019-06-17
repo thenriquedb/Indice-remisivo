@@ -15,35 +15,29 @@
 using namespace std;
 
 /*
- * Armazena as palavras chaves em uma lista
+ * Recebe o vetor de palavras chaves ja ordenado e o adciona em uma lista encadeada
+ * @param:
+ *      keyWordsArray: vetor que contem as palavras chaves
  */
-void list_index::setKeyWords() {
+void list_index::setKeyWords(vector<string> keyWordsArray) {
     string word;
     int i = 1;
 
-    while (word != "s") {
-        cout << i << "º Palavre chave: ";
-        cin >> word;
-
-        if (word != "s")
-            keyWords.push(word);
-        else {
-
-            cout << "\n\n\n\n\nFoi digitado um total de " << i << " palavras chaves." << endl;
-            keyWords.display();
-            system("pause");
-            system("clear");
-        }
-        i++;
-    }
+    for (const auto &item: keyWordsArray)
+        keyWords.push(item);
 }
 
-
+/*
+ * Realiza a busca das palavras chaves no arquivo TXTX
+ * #param
+ *      ifstream file: Arquivo txt que contém o texto
+ */
 void list_index::searchWords(ifstream &file) {
     if (this->keyWords.getHead() != nullptr) {
         Node *current = keyWords.getHead();
-        string line, word;
+        string line;
         int numLine = 1;
+
 
         while (current != nullptr) {
             while (!file.eof()) {
@@ -66,6 +60,7 @@ void list_index::searchWords(ifstream &file) {
 }
 
 /*
+ * Adciona um novo item a lista encadeada
  * @param:
  *       string content: palavra chave
  *       unsigned int line: linha que aparece
@@ -119,7 +114,8 @@ void list_index::printIndice() {
             cout << current->content << "\t\t";
 
             for (int i = 0; i < current->contLines; i++) {
-                if (current->existingLines[i] != 0 && current->existingLines[i] < 100000) // Gambiara temporaria
+                if (current->existingLines[i] != 0 &&
+                    current->existingLines[i] < 100000) // Gambiara temporaria (ou não)
                     cout << current->existingLines[i] << "\t";
             }
 

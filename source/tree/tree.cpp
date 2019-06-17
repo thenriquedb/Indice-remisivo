@@ -2,12 +2,18 @@
 // Created by thiago on 13/06/19.
 //
 #include <iostream>
+#include <vector>
 #include "tree.h"
 
 
 using namespace std;
 
-void Tree::insertNode(string new_key) {
+/*
+ * Insere um novo nó na arvore
+ * @param
+ *      new_string: palavra que será adcionada a arvore
+ */
+void Tree::insertNode(const string &new_key) {
     if (root == nullptr) { // Caso a raiz for nula
         root = new Leaf(new_key);
     } else {
@@ -17,9 +23,13 @@ void Tree::insertNode(string new_key) {
     }
 }
 
-void Tree::insertAux(Leaf *n, string newKey) {
-    // Insere no esquerdo
-
+/*
+ * Função que adciona na arvore de forma recursiva
+ * @param:
+ *      Leaf *n: Folha; string newKey: palavra que será adcionada
+ */
+void Tree::insertAux(Leaf *n, const string &newKey) {
+    // Insere no direito
     if (newKey > n->getKey()) {
         if (n->getRight() == nullptr) {
             Leaf *temp = new Leaf(newKey);
@@ -28,13 +38,39 @@ void Tree::insertAux(Leaf *n, string newKey) {
             insertAux(n->getRight(), newKey);
     }
 
-        // Insere no direito
-    else if (newKey <  n->getKey()) {
-        if ( n->getLeft() == nullptr) {
+        // Insere no esquerdo
+    else if (newKey < n->getKey()) {
+        if (n->getLeft() == nullptr) {
             Leaf *temp = new Leaf(newKey);
             n->setLeft(temp);
         } else {
             insertAux(n->getLeft(), newKey);
         }
     }
+}
+
+/*
+ * Imprime a arvore utilizando o método In Order
+ * @param
+ *      Leaf *n: raiz
+ */
+void Tree::displayInOrden(Leaf *n) {
+    if (n != nullptr) {
+        displayInOrden(n->getLeft());
+        cout << n->getKey() << endl;
+        displayInOrden(n->getRight());
+
+    }
+}
+
+Leaf *Tree::balancedTree(vector<string> keyWords, unsigned int start, unsigned int final) {
+    if (start > final)
+        return nullptr;
+
+    int middle = (start + final) / 2;
+
+    insertNode(keyWords[middle]);
+    balancedTree(keyWords, start, middle - 1);
+    balancedTree(keyWords, middle + 1, final);
+
 }

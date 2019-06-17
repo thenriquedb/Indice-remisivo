@@ -6,6 +6,7 @@
 #define INDICE_REMISIVO_INDICE_LIST_H
 
 #include<string>
+#include<vector>
 #include<iostream>
 
 #include "List.h"
@@ -41,7 +42,7 @@ public:
         head = nullptr;
         lenght = 0;
     }
-    void setKeyWords();
+    void setKeyWords(vector<string> keyWordsArray);
 
     bool push(string word, unsigned int line);
 

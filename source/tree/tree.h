@@ -41,7 +41,7 @@ private:
     int elements[30]; // Vetor de elementos
     int indice; // Utilizado para o controle do vetor de elementos
 
-    void insertAux(Leaf *n, string newKey);
+    static void insertAux(Leaf *n, const string& newKey);
 
 public:
     Tree() { // Construtor
@@ -54,11 +54,15 @@ public:
 
     void setRoot(Leaf *n) { root = n; };
 
+    void displayInOrden(Leaf* n);
+
     // Insere um novo elemento na arvore
-    void insertNode(string new_key);
+    void insertNode(const string& new_key);
+
+    Leaf *balancedTree(vector<string> keyWords, unsigned int start, unsigned int final);
 
 
-    // Verifica se a arvore possui determinado elemento e retorna um valor booleano
+        // Verifica se a arvore possui determinado elemento e retorna um valor booleano
 //    Leaf *searchElement(Leaf *n, unsigned int k);
 
     // Retorna a altura da arvore
