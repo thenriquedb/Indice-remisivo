@@ -13,8 +13,12 @@ class Node {
 public:
     string word;
     Node *next;
+    int *existingLines;
+    int totalLines;
 
     Node(string content) {
+        this->totalLines = 0;
+        this->existingLines = nullptr;
         this->word = content;
         this->next = nullptr;
     }

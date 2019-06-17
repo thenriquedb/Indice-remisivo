@@ -16,6 +16,26 @@ vector
 string
 -
 
+/home/thiago/CLionProjects/Indice_Remisivo/source/linked_list/indice_list.cpp
+string
+-
+iostream
+-
+fstream
+-
+vector
+-
+cstdio
+-
+algorithm
+-
+indice_list.h
+/home/thiago/CLionProjects/Indice_Remisivo/source/linked_list/indice_list.h
+List.h
+/home/thiago/CLionProjects/Indice_Remisivo/source/linked_list/List.h
+../helps.h
+/home/thiago/CLionProjects/Indice_Remisivo/source/helps.h
+
 /home/thiago/CLionProjects/Indice_Remisivo/source/linked_list/indice_list.h
 string
 -

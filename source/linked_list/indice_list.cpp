@@ -7,6 +7,7 @@
 #include <fstream>
 #include <vector>
 #include <cstdio>
+#include<algorithm>
 
 #include "indice_list.h"
 #include "List.h"
@@ -15,87 +16,35 @@
 using namespace std;
 
 /*
- * Recebe o vetor de palavras chaves ja ordenado e o adciona em uma lista encadeada
- * @param:
- *      keyWordsArray: vetor que contem as palavras chaves
- */
-void list_index::setKeyWords(vector<string> keyWordsArray) {
-    string word;
-    int i = 1;
-
-    for (const auto &item: keyWordsArray)
-        keyWords.push(item);
-}
-
-/*
- * Realiza a busca das palavras chaves no arquivo TXTX
+ * Realiza a busca das palavras chaves no arquivo TXT
  * #param
  *      ifstream file: Arquivo txt que contém o texto
  */
 void list_index::searchWords(ifstream &file) {
     if (this->keyWords.getHead() != nullptr) {
-        Node *current = keyWords.getHead();
         string line;
         int numLine = 1;
 
+        while (!file.eof()) {
+            getline(file, line);
+            std::vector<std::string> words{split(line, ' ')};
+            Node *current = keyWords.getHead();
 
-        while (current != nullptr) {
-            while (!file.eof()) {
-                getline(file, line);
-                std::vector<std::string> words{split(line, ' ')};
-
+            /* Percorre a lista verificando se a palavra esta presente */
+            while (current != nullptr) {
                 for (const auto &item : words) {
-                    if (current->word == item) {
-                        push(item, numLine);
+                    string s = s_toLower(item);
+                    if (current->word == s && s.size() >= 4) {
+                        current->existingLines = allocateIntVector(numLine, current->existingLines,
+                                                                   current->totalLines);
+                        current->totalLines++;
                     }
                 }
-                numLine++;
+                current = current->next;
             }
 
-            numLine = 1;
-            file.seekg(0); // Retorna ponteiro do arquivo para o inicio
-            current = current->next;
+            numLine++;
         }
-    }
-}
-
-/*
- * Adciona um novo item a lista encadeada
- * @param:
- *       string content: palavra chave
- *       unsigned int line: linha que aparece
- */
-bool list_index::push(string content, unsigned int line) {
-    if (head == nullptr) {
-        head = new word;
-        head->content = content;
-        head->existingLines = new int;
-        head->existingLines[0] = line;
-        head->contLines++;
-    } else {
-        /*
-         * Verifica se a palavra ja existe na lista
-         */
-        word *current = this->head;
-        while (current != nullptr) {
-            if (current->content == content) {
-                current->existingLines = (int *) realloc(current->existingLines, (current->contLines++) * sizeof(int));
-                current->existingLines[current->contLines++] = line;
-                return true;
-            }
-            current = current->next;
-        }
-
-        // Caso não exista, será adcionado um novo item
-        word *new_word = new word;
-        new_word->content = content;
-        new_word->existingLines = new int;
-        new_word->existingLines[0] = line;
-        new_word->next = this->head;
-        new_word->contLines++;
-
-        this->head = new_word;
-//        this->lenght++;
     }
 }
 
@@ -104,22 +53,20 @@ bool list_index::push(string content, unsigned int line) {
  * Imprime o indice remissivo
  */
 void list_index::printIndice() {
-    if (this->head == nullptr) {
+    if (this->keyWords.getHead() == nullptr) {
         cout << "Nenhuma palavra chave foi encontrada no texto." << endl;
     } else {
-        word *current = this->head;
+        Node *current = this->keyWords.getHead();
 
         cout << "PALAVRA" << "\t\t\t" << "LINHAS" << endl;
         while (current != nullptr) {
-            cout << current->content << "\t\t";
-
-            for (int i = 0; i < current->contLines; i++) {
-                if (current->existingLines[i] != 0 &&
-                    current->existingLines[i] < 100000) // Gambiara temporaria (ou não)
+            if (current->existingLines != nullptr) {
+                cout << current->word << "\t\t";
+                for (int i = 0; i < current->totalLines; i++) {
                     cout << current->existingLines[i] << "\t";
+                }
+                cout << endl;
             }
-
-            cout << endl;
             current = current->next;
         }
     }

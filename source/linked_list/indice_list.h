@@ -34,17 +34,16 @@ public:
 class list_index {
 private:
     List keyWords; // Lista das palavras chaves
-    word *head;
+//    word *head;
     int lenght;
 
 public:
-    list_index() {
-        head = nullptr;
-        lenght = 0;
+    explicit list_index(vector<string> keyWordsArray) {
+        for (int i = keyWordsArray.size() - 1; i > 0; i--) {
+                keyWords.push(keyWordsArray[i]);
+        }
+        lenght = keyWordsArray.size();
     }
-    void setKeyWords(vector<string> keyWordsArray);
-
-    bool push(string word, unsigned int line);
 
     void searchWords(ifstream &file);
 

@@ -62,6 +62,21 @@ void Tree::displayInOrden(Leaf *n) {
 
     }
 }
+// Function to insert nodes in level order
+
+Leaf *Tree::insertLevelOrder(vector<string> keyWords, int start, int final) {
+    // Base case for recursion
+    if (start < final) {
+        Leaf *temp = new Leaf(keyWords[start]);
+        this->root = temp;
+
+        // insert left child
+        this->getRoot()->setLeft(insertLevelOrder(keyWords, 2 * start + 1, final));
+        this->getRoot()->setRight(insertLevelOrder(keyWords, 2 * start + 2, final));
+    }
+//    return root;
+}
+
 
 Leaf *Tree::balancedTree(vector<string> keyWords, unsigned int start, unsigned int final) {
     if (start > final)

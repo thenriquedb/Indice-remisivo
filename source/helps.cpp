@@ -50,8 +50,10 @@ const vector<string> getKeyWords(ifstream &file) {
     return sortKeywordsAlphabetical(keyWords);
 }
 
-
-
+string s_toLower(string s){
+    std::transform(s.begin(), s.end(), s.begin(), ::tolower); // Converte string para minuscula
+    return s;
+}
 const vector<string> sortKeywordsAlphabetical(vector<string> keyWords) {
     int lenght = keyWords.size();
     for (int i = 0; i < lenght; i++) {
@@ -67,3 +69,22 @@ const vector<string> sortKeywordsAlphabetical(vector<string> keyWords) {
     }
     return keyWords;
 }
+
+/*
+ *
+ */
+int *allocateIntVector(int numLine, int *p, int n) {
+    if (p == nullptr) {
+
+        p = static_cast<int *>(malloc(sizeof(int)));
+        p[0] = numLine;
+        return p;
+
+    } else {
+
+        p = static_cast<int *> (realloc(p, (n + 1) * sizeof(int)));
+        p[n] = numLine;
+        return p;
+    }
+}
+

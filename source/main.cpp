@@ -7,7 +7,7 @@
 
 using namespace std;
 
-int main() {
+int main(int argc, char *argv[]) {
     ifstream fileTxt("../texto.txt");
     ifstream keywordsTXT("../keywords.txt");
     if (!fileTxt.is_open() && !keywordsTXT.is_open()) {
@@ -16,18 +16,17 @@ int main() {
     }
     vector<string> keyWords = getKeyWords(keywordsTXT);
 
-    list_index index;
-    index.setKeyWords(keyWords);
+    list_index index(keyWords);
     index.searchWords(fileTxt);
-
-//    index.printIndice();
+    index.printIndice();
 
     Tree arvore;
 //    arvore.insertNode("Mario");
 //    arvore.insertNode("Mano Walter");
 //    arvore.insertNode("Thiago");
 //    arvore.insertNode("Ana");
-    arvore.balancedTree(keyWords, 0, keyWords.size()-1);
-arvore.displayInOrden(arvore.getRoot());
+//arvore.insertLevelOrder(keyWords, 0,keyWords.size());
+//    arvore.balancedTree(keyWords, 0, keyWords.size() - 1);
+    arvore.displayInOrden(arvore.getRoot());
     return 0;
 }

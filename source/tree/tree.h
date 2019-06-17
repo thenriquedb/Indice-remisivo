@@ -55,7 +55,7 @@ public:
     void setRoot(Leaf *n) { root = n; };
 
     void displayInOrden(Leaf* n);
-
+    Leaf* insertLevelOrder(vector<string> keyWords, int start, int final);
     // Insere um novo elemento na arvore
     void insertNode(const string& new_key);
 
