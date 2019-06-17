@@ -12,24 +12,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25d36b82-ff69-4100-b4bd-1830cbe7531c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Indice_Remisivo.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Indice_Remisivo.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Indice_Remisivo.dir/source/helps.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Indice_Remisivo.dir/source/helps.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Indice_Remisivo.dir/source/linked_list/List.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Indice_Remisivo.dir/source/linked_list/List.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Indice_Remisivo.dir/source/linked_list/indice_list.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Indice_Remisivo.dir/source/linked_list/indice_list.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Indice_Remisivo.dir/source/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Indice_Remisivo.dir/source/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Indice_Remisivo.dir/source/tree/tree.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Indice_Remisivo.dir/source/tree/tree.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Indice_Remisivo" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Indice_Remisivo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/keywords.txt" beforeDir="false" afterPath="$PROJECT_DIR$/keywords.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/helps.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/helps.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/helps.h" beforeDir="false" afterPath="$PROJECT_DIR$/source/helps.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/linked_list/List.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/linked_list/List.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/linked_list/List.h" beforeDir="false" afterPath="$PROJECT_DIR$/source/linked_list/List.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/linked_list/indice_list.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/linked_list/indice_list.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/linked_list/indice_list.h" beforeDir="false" afterPath="$PROJECT_DIR$/source/linked_list/indice_list.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/tree/tree.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/tree/tree.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/tree/tree.h" beforeDir="false" afterPath="$PROJECT_DIR$/source/tree/tree.h" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -134,10 +117,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/source/linked_list/indice_list.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="44" column="38" selection-start-line="44" selection-start-column="38" selection-end-line="44" selection-end-column="38" />
+            <state relative-caret-position="393">
+              <caret line="31" column="37" lean-forward="true" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
               <folding>
                 <element signature="e#118#134#0" expanded="true" />
+                <element signature="e#725#983#0" />
               </folding>
             </state>
           </provider>
@@ -279,12 +263,12 @@
       <workItem from="1560787105111" duration="1082000" />
       <workItem from="1560788245693" duration="172000" />
       <workItem from="1560798145332" duration="4971000" />
-      <workItem from="1560807208737" duration="370000" />
+      <workItem from="1560807208737" duration="528000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68472000" />
+    <option name="totallyTimeSpent" value="68630000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-1" width="2560" height="1050" extended-state="6" />
@@ -301,8 +285,8 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info active="true" anchor="bottom" id="Messages" order="8" sideWeight="0.48528242" visible="true" weight="0.4265659" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32899022" />
+      <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.48528242" weight="0.4265659" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32829374" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5075577" side_tool="true" weight="0.34665227" />
       <window_info anchor="bottom" id="Version Control" order="11" />
       <window_info anchor="bottom" id="CMake" order="12" />
@@ -493,10 +477,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/source/linked_list/indice_list.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="44" column="38" selection-start-line="44" selection-start-column="38" selection-end-line="44" selection-end-column="38" />
+        <state relative-caret-position="393">
+          <caret line="31" column="37" lean-forward="true" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
           <folding>
             <element signature="e#118#134#0" expanded="true" />
+            <element signature="e#725#983#0" />
           </folding>
         </state>
       </provider>

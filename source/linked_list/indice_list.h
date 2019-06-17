@@ -13,28 +13,12 @@
 
 using namespace std;
 
-
-class word {
-public:
-    string content;
-    int contLines; // Variavel para controle do vetor
-    int *existingLines; // Vetor para armazenar em quais linhas a palavra é encontrada
-    word *next;
-
-    word() {
-        contLines = 0;
-        next = nullptr;
-        existingLines = nullptr;
-    }
-};
-
 /*
  * Implementação do indice remissivo utilizando a estrutura de lista encadeada
  */
 class list_index {
 private:
     List keyWords; // Lista das palavras chaves
-//    word *head;
     int lenght;
 
 public:
