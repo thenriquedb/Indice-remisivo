@@ -3,7 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Indice_Remisivo.dir/source/helps.cpp.o"
   "CMakeFiles/Indice_Remisivo.dir/source/linked_list/List.cpp.o"
   "CMakeFiles/Indice_Remisivo.dir/source/linked_list/indice_list.cpp.o"
-  "CMakeFiles/Indice_Remisivo.dir/source/tree/tree.cpp.o"
+  "CMakeFiles/Indice_Remisivo.dir/source/bst/tree.cpp.o"
+  "CMakeFiles/Indice_Remisivo.dir/source/avl/avlTree.cpp.o"
   "Indice_Remisivo.pdb"
   "Indice_Remisivo"
 )

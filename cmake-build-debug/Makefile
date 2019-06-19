@@ -123,6 +123,60 @@ Indice_Remisivo/fast:
 	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/build
 .PHONY : Indice_Remisivo/fast
 
+source/avl/avlTree.o: source/avl/avlTree.cpp.o
+
+.PHONY : source/avl/avlTree.o
+
+# target to build an object file
+source/avl/avlTree.cpp.o:
+	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/avl/avlTree.cpp.o
+.PHONY : source/avl/avlTree.cpp.o
+
+source/avl/avlTree.i: source/avl/avlTree.cpp.i
+
+.PHONY : source/avl/avlTree.i
+
+# target to preprocess a source file
+source/avl/avlTree.cpp.i:
+	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/avl/avlTree.cpp.i
+.PHONY : source/avl/avlTree.cpp.i
+
+source/avl/avlTree.s: source/avl/avlTree.cpp.s
+
+.PHONY : source/avl/avlTree.s
+
+# target to generate assembly for a file
+source/avl/avlTree.cpp.s:
+	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/avl/avlTree.cpp.s
+.PHONY : source/avl/avlTree.cpp.s
+
+source/bst/tree.o: source/bst/tree.cpp.o
+
+.PHONY : source/bst/tree.o
+
+# target to build an object file
+source/bst/tree.cpp.o:
+	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/bst/tree.cpp.o
+.PHONY : source/bst/tree.cpp.o
+
+source/bst/tree.i: source/bst/tree.cpp.i
+
+.PHONY : source/bst/tree.i
+
+# target to preprocess a source file
+source/bst/tree.cpp.i:
+	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/bst/tree.cpp.i
+.PHONY : source/bst/tree.cpp.i
+
+source/bst/tree.s: source/bst/tree.cpp.s
+
+.PHONY : source/bst/tree.s
+
+# target to generate assembly for a file
+source/bst/tree.cpp.s:
+	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/bst/tree.cpp.s
+.PHONY : source/bst/tree.cpp.s
+
 source/helps.o: source/helps.cpp.o
 
 .PHONY : source/helps.o
@@ -231,33 +285,6 @@ source/main.cpp.s:
 	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/main.cpp.s
 .PHONY : source/main.cpp.s
 
-source/tree/tree.o: source/tree/tree.cpp.o
-
-.PHONY : source/tree/tree.o
-
-# target to build an object file
-source/tree/tree.cpp.o:
-	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/tree/tree.cpp.o
-.PHONY : source/tree/tree.cpp.o
-
-source/tree/tree.i: source/tree/tree.cpp.i
-
-.PHONY : source/tree/tree.i
-
-# target to preprocess a source file
-source/tree/tree.cpp.i:
-	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/tree/tree.cpp.i
-.PHONY : source/tree/tree.cpp.i
-
-source/tree/tree.s: source/tree/tree.cpp.s
-
-.PHONY : source/tree/tree.s
-
-# target to generate assembly for a file
-source/tree/tree.cpp.s:
-	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/tree/tree.cpp.s
-.PHONY : source/tree/tree.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -267,6 +294,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... Indice_Remisivo"
 	@echo "... edit_cache"
+	@echo "... source/avl/avlTree.o"
+	@echo "... source/avl/avlTree.i"
+	@echo "... source/avl/avlTree.s"
+	@echo "... source/bst/tree.o"
+	@echo "... source/bst/tree.i"
+	@echo "... source/bst/tree.s"
 	@echo "... source/helps.o"
 	@echo "... source/helps.i"
 	@echo "... source/helps.s"
@@ -279,9 +312,6 @@ help:
 	@echo "... source/main.o"
 	@echo "... source/main.i"
 	@echo "... source/main.s"
-	@echo "... source/tree/tree.o"
-	@echo "... source/tree/tree.i"
-	@echo "... source/tree/tree.s"
 .PHONY : help
 
 

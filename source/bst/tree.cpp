@@ -3,7 +3,9 @@
 //
 #include <iostream>
 #include <vector>
+
 #include "tree.h"
+#include "../helps.h"
 
 
 using namespace std;
@@ -49,6 +51,12 @@ void Tree::insertAux(Leaf *n, const string &newKey) {
     }
 }
 
+void Tree::insertKeyWords(vector<string> keyWords) {
+    for (const auto &item : keyWords)
+        if (item.size() >= 4)
+            this->insertNode(item);
+}
+
 /*
  * Imprime a arvore utilizando o método In Order
  * @param
@@ -57,35 +65,44 @@ void Tree::insertAux(Leaf *n, const string &newKey) {
 void Tree::displayInOrden(Leaf *n) {
     if (n != nullptr) {
         displayInOrden(n->getLeft());
-        cout << n->getKey() << endl;
+        cout << n->getKey() << "\t";
+        n->displayTotalLines();
+        cout << endl;
         displayInOrden(n->getRight());
-
     }
 }
-// Function to insert nodes in level order
 
-Leaf *Tree::insertLevelOrder(vector<string> keyWords, int start, int final) {
-    // Base case for recursion
-    if (start < final) {
-        Leaf *temp = new Leaf(keyWords[start]);
-        this->root = temp;
+void Tree::searchWords(ifstream &file) {
+    if (this->root != nullptr) {
+        string line;
+        int numLine = 1;
 
-        // insert left child
-        this->getRoot()->setLeft(insertLevelOrder(keyWords, 2 * start + 1, final));
-        this->getRoot()->setRight(insertLevelOrder(keyWords, 2 * start + 2, final));
+        while (!file.eof()) {
+            getline(file, line);
+            std::vector<std::string> words{split(line, ' ')};
+
+            for (const auto &item : words) {
+                Leaf *temp = search(this->root, item);
+                if (temp != nullptr && item.size() >= 4 && temp->getKey() == item) {
+                    temp->setNewLine(numLine);
+                }
+                temp = nullptr;
+            }
+            numLine++;
+        }
     }
-//    return root;
 }
 
+/*
+ * Retorna o nó que contem a string pesquisada
+ */
+Leaf *Tree::search(Leaf *l, string s) {
+    if (l == nullptr || l->getKey() == s)
+        return l;
 
-Leaf *Tree::balancedTree(vector<string> keyWords, unsigned int start, unsigned int final) {
-    if (start > final)
-        return nullptr;
+    if (s > this->root->getKey())
+        return search(l->getRight(), s);
 
-    int middle = (start + final) / 2;
-
-    insertNode(keyWords[middle]);
-    balancedTree(keyWords, start, middle - 1);
-    balancedTree(keyWords, middle + 1, final);
-
-}
+    if (s < this->root->getKey())
+        return search(l->getLeft(), s);
+};

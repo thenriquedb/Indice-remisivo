@@ -84,6 +84,18 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/thiago/CLionProjects/Indice_Remisivo/source/avl/avlTree.cpp">
+			<Option target="Indice_Remisivo"/>
+		</Unit>
+		<Unit filename="/home/thiago/CLionProjects/Indice_Remisivo/source/avl/avlTree.h">
+			<Option target="Indice_Remisivo"/>
+		</Unit>
+		<Unit filename="/home/thiago/CLionProjects/Indice_Remisivo/source/bst/tree.cpp">
+			<Option target="Indice_Remisivo"/>
+		</Unit>
+		<Unit filename="/home/thiago/CLionProjects/Indice_Remisivo/source/bst/tree.h">
+			<Option target="Indice_Remisivo"/>
+		</Unit>
 		<Unit filename="/home/thiago/CLionProjects/Indice_Remisivo/source/helps.cpp">
 			<Option target="Indice_Remisivo"/>
 		</Unit>
@@ -103,12 +115,6 @@
 			<Option target="Indice_Remisivo"/>
 		</Unit>
 		<Unit filename="/home/thiago/CLionProjects/Indice_Remisivo/source/main.cpp">
-			<Option target="Indice_Remisivo"/>
-		</Unit>
-		<Unit filename="/home/thiago/CLionProjects/Indice_Remisivo/source/tree/tree.cpp">
-			<Option target="Indice_Remisivo"/>
-		</Unit>
-		<Unit filename="/home/thiago/CLionProjects/Indice_Remisivo/source/tree/tree.h">
 			<Option target="Indice_Remisivo"/>
 		</Unit>
 		<Unit filename="/home/thiago/CLionProjects/Indice_Remisivo/CMakeLists.txt">

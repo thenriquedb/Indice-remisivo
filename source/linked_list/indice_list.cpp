@@ -34,6 +34,7 @@ void list_index::searchWords(ifstream &file) {
             while (current != nullptr) {
                 for (const auto &item : words) {
                     string s = s_toLower(item);
+
                     if (current->word == s && s.size() >= 4) {
                         current->existingLines = allocateIntVector(numLine, current->existingLines,
                                                                    current->totalLines);
@@ -42,10 +43,10 @@ void list_index::searchWords(ifstream &file) {
                 }
                 current = current->next;
             }
-
             numLine++;
         }
     }
+    file.seekg(0);
 }
 
 

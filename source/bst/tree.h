@@ -4,21 +4,29 @@
 
 #include <iostream>
 #include <fstream>
+#include "../helps.h"
+
 
 using namespace std;
 
 #ifndef INDICE_REMISIVO_TREE_H
 #define INDICE_REMISIVO_TREE_H
 
+/*
+ * Classe nó da arvore
+ */
 class Leaf {
 private:
     string key;
+    int *lines;
+    int totalLines;
     Leaf *left;
     Leaf *right;
 
 public:
     Leaf(string k) {
         this->key = k;
+        lines = nullptr;
         this->left = nullptr;
         this->right = nullptr;
     }
@@ -26,43 +34,52 @@ public:
     string getKey() { return key; };
 
     Leaf *getLeft() { return left; };
-
     Leaf *getRight() { return right; };
 
     void setLeft(Leaf *n) { left = n; };
-
     void setRight(Leaf *n) { right = n; };
+
+    int getTotalLines() { return totalLines; };
+
+    void setNewLine(int n) {
+        lines = allocateIntVector(n, lines, totalLines);
+        totalLines++;
+    }
+    void displayTotalLines() {
+        for (int i = 0; i < totalLines; i++)
+            cout << lines[i] << ' ';
+    }
 };
 
 class Tree {
 private:
     Leaf *root;
-    int totalNodes;
-    int elements[30]; // Vetor de elementos
-    int indice; // Utilizado para o controle do vetor de elementos
+    int height, totalNodes;
 
-    static void insertAux(Leaf *n, const string& newKey);
+    static void insertAux(Leaf *n, const string &newKey);
 
 public:
     Tree() { // Construtor
-        totalNodes = indice = 0;
+        totalNodes = height = 0;
         root = nullptr;
     }
 
     // Retorna raiz
     Leaf *getRoot() { return root; };
 
+
     void setRoot(Leaf *n) { root = n; };
 
-    void displayInOrden(Leaf* n);
-    Leaf* insertLevelOrder(vector<string> keyWords, int start, int final);
+    void displayInOrden(Leaf *n);
+
     // Insere um novo elemento na arvore
-    void insertNode(const string& new_key);
+    void insertNode(const string &new_key);
 
-    Leaf *balancedTree(vector<string> keyWords, unsigned int start, unsigned int final);
+    void insertKeyWords(vector<string> keyWords);
 
+    void searchWords(ifstream &file);
 
-        // Verifica se a arvore possui determinado elemento e retorna um valor booleano
+    // Verifica se a arvore possui determinado elemento e retorna um valor booleano
 //    Leaf *searchElement(Leaf *n, unsigned int k);
 
     // Retorna a altura da arvore
@@ -70,21 +87,14 @@ public:
 
     int getTotalNodes() { return totalNodes; };
 
-    // Imprime por level
-    void printLevel(Leaf *n);
 
     // Imprime todos os elementos de determinado level
     void printElementsByLevel(Leaf *n, unsigned int level);
 
+    Leaf *search(Leaf *l, string s);
 
     // Libera os nós da arvóre
     void freeTreeNodes(Leaf *n);
-};
-
-class indexTree{
-private:
-    Tree* root;
-
 };
 
 #endif //INDICE_REMISIVO_TREE_H

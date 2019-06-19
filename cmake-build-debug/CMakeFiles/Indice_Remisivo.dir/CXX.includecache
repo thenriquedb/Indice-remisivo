@@ -6,35 +6,29 @@
 
 #IncludeRegexTransform: 
 
-/home/thiago/CLionProjects/Indice_Remisivo/source/helps.h
-iostream
--
-vector
--
+/home/thiago/CLionProjects/Indice_Remisivo/source/avl/avlTree.h
+../bst/tree.h
+/home/thiago/CLionProjects/Indice_Remisivo/source/bst/tree.h
 
-/home/thiago/CLionProjects/Indice_Remisivo/source/linked_list/List.h
-string
--
-
-/home/thiago/CLionProjects/Indice_Remisivo/source/linked_list/indice_list.cpp
-string
--
+/home/thiago/CLionProjects/Indice_Remisivo/source/bst/tree.h
 iostream
 -
 fstream
 -
-vector
--
-cstdio
--
-algorithm
--
-indice_list.h
-/home/thiago/CLionProjects/Indice_Remisivo/source/linked_list/indice_list.h
-List.h
-/home/thiago/CLionProjects/Indice_Remisivo/source/linked_list/List.h
 ../helps.h
 /home/thiago/CLionProjects/Indice_Remisivo/source/helps.h
+
+/home/thiago/CLionProjects/Indice_Remisivo/source/helps.h
+iostream
+-
+vector
+-
+
+/home/thiago/CLionProjects/Indice_Remisivo/source/linked_list/List.h
+string
+-
+vector
+-
 
 /home/thiago/CLionProjects/Indice_Remisivo/source/linked_list/indice_list.h
 string
@@ -53,14 +47,10 @@ fstream
 -
 linked_list/indice_list.h
 /home/thiago/CLionProjects/Indice_Remisivo/source/linked_list/indice_list.h
-tree/tree.h
-/home/thiago/CLionProjects/Indice_Remisivo/source/tree/tree.h
+bst/tree.h
+/home/thiago/CLionProjects/Indice_Remisivo/source/bst/tree.h
+avl/avlTree.h
+/home/thiago/CLionProjects/Indice_Remisivo/source/avl/avlTree.h
 helps.h
 /home/thiago/CLionProjects/Indice_Remisivo/source/helps.h
-
-/home/thiago/CLionProjects/Indice_Remisivo/source/tree/tree.h
-iostream
--
-fstream
--
 

@@ -6,6 +6,7 @@
 #define INDICE_REMISIVO_LIST_H
 
 #include<string>
+#include <vector>
 
 using namespace std;
 
@@ -35,9 +36,11 @@ public:
         lenght = 0;
     }
 
+
     void push(string content);
 
     int getLenght() { return lenght; };
+
     Node *getHead() { return head; };
 
     void display();

@@ -25,7 +25,8 @@ const vector<string> split(const string &string, const char &token) {
         if (n != token) {
             buff += n;
         } else if (n == token && !buff.empty()) {
-            vetor.push_back(buff);
+//            cout << "Buff: " << buff << "   Final: " << buff[buff.size() - 1] << endl;
+            vetor.push_back(s_toLower(buff));
             buff = "";
         }
     }
@@ -38,8 +39,7 @@ const vector<string> split(const string &string, const char &token) {
 }
 
 /*
- * Armazena todos as palavras chaves em um vetor e o retorna ordenado
- * @param
+ * Armazena todos as palavras chaves em um vetor
  *      ifstream &file: arquivo que contem as palavrass chaves
  * */
 const vector<string> getKeyWords(ifstream &file) {
@@ -47,31 +47,20 @@ const vector<string> getKeyWords(ifstream &file) {
     getline(file, line);
     std::vector<std::string> keyWords = split(line, ' ');
 
-    return sortKeywordsAlphabetical(keyWords);
-}
-
-string s_toLower(string s){
-    std::transform(s.begin(), s.end(), s.begin(), ::tolower); // Converte string para minuscula
-    return s;
-}
-const vector<string> sortKeywordsAlphabetical(vector<string> keyWords) {
-    int lenght = keyWords.size();
-    for (int i = 0; i < lenght; i++) {
-        string current = keyWords[i];
-        std::transform(current.begin(), current.end(), current.begin(), ::tolower); // Converte string para minuscula
-
-        int j = i - 1;
-        while (j >= 0 && keyWords[j] > current) {
-            keyWords[j + 1] = keyWords[j];
-            j = j - 1;
-        }
-        keyWords[j + 1] = current;
-    }
     return keyWords;
 }
 
 /*
- *
+ * Recebe uma string e a retorna minuscula
+ * @apram string s
+ */
+string s_toLower(string s) {
+    std::transform(s.begin(), s.end(), s.begin(), ::tolower); // Converte string para minuscula
+    return s;
+}
+
+/*
+ * Realiza o armazenamento das linhas
  */
 int *allocateIntVector(int numLine, int *p, int n) {
     if (p == nullptr) {

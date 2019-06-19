@@ -1,7 +1,7 @@
 1. Good programming is not learned from
 2. generalities, but by seeing Good how significant
 3. programs can be made clean, easy to
-4. read, easy to maintain and modify,
+4. read, easy to maintain easy and modify,
 5. human-engineered, efficient, and reliable,
 6. by the aplication of common sense and
 7. by the use of good programming practices
