@@ -16,10 +16,10 @@ using namespace std;
  *      new_string: palavra que será adcionada a arvore
  */
 void Tree::insertNode(const string &new_key) {
-    if (root == nullptr) { // Caso a raiz for nula
-        root = new Leaf(new_key);
+    if (n == nullptr) { // Caso a raiz for nula
+        n = new Leaf(new_key);
     } else {
-        insertAux(this->root, new_key);
+        insertAux(this->n, new_key);
 
         totalNodes++;
     }
@@ -72,8 +72,11 @@ void Tree::displayInOrden(Leaf *n) {
     }
 }
 
+/*
+ * Realiza a busca das palavras chaves em um arquivo texto
+ */
 void Tree::searchWords(ifstream &file) {
-    if (this->root != nullptr) {
+    if (this->n != nullptr) {
         string line;
         int numLine = 1;
 
@@ -82,7 +85,7 @@ void Tree::searchWords(ifstream &file) {
             std::vector<std::string> words{split(line, ' ')};
 
             for (const auto &item : words) {
-                Leaf *temp = search(this->root, item);
+                Leaf *temp = search(this->n, item);
                 if (temp != nullptr && item.size() >= 4 && temp->getKey() == item) {
                     temp->setNewLine(numLine);
                 }
@@ -100,9 +103,23 @@ Leaf *Tree::search(Leaf *l, string s) {
     if (l == nullptr || l->getKey() == s)
         return l;
 
-    if (s > this->root->getKey())
+    if (s > this->n->getKey())
         return search(l->getRight(), s);
 
-    if (s < this->root->getKey())
+    if (s < this->n->getKey())
         return search(l->getLeft(), s);
 };
+/*
+ * Retorna a altura total da arvore
+ */
+int Tree::getTreeHeight(Leaf *n) {
+    int hleft, hright;
+    if (n == nullptr) // Arvore vazia
+        return -1;
+    else {
+        hleft = getTreeHeight(n->getLeft());
+        hright = getTreeHeight(n->getRight());
+
+        return (hleft > hright) ? hleft + 1 : hright + 1; //// Condição ? verdadeiro : falso
+    }
+}

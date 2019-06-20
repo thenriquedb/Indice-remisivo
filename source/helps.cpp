@@ -64,16 +64,16 @@ string s_toLower(string s) {
  */
 int *allocateIntVector(int numLine, int *p, int n) {
     if (p == nullptr) {
-
         p = static_cast<int *>(malloc(sizeof(int)));
         p[0] = numLine;
         return p;
-
     } else {
-
         p = static_cast<int *> (realloc(p, (n + 1) * sizeof(int)));
         p[n] = numLine;
         return p;
     }
 }
+
+int max(int a, int b) { return (a > b) ? a : b; }
+
 

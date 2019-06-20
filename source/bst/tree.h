@@ -18,14 +18,17 @@ using namespace std;
 class Leaf {
 private:
     string key;
-    int *lines;
-    int totalLines;
     Leaf *left;
     Leaf *right;
+
+    int *lines;
+    int totalLines, height;
 
 public:
     Leaf(string k) {
         this->key = k;
+        height = 1;
+        totalLines = 0;
         lines = nullptr;
         this->left = nullptr;
         this->right = nullptr;
@@ -34,17 +37,24 @@ public:
     string getKey() { return key; };
 
     Leaf *getLeft() { return left; };
+
     Leaf *getRight() { return right; };
 
+    int getTotalLines() { return totalLines; };
+
+    int getHeight() { return height; };
+
     void setLeft(Leaf *n) { left = n; };
+
     void setRight(Leaf *n) { right = n; };
 
-    int getTotalLines() { return totalLines; };
+    void setHeight(int h) { height = h; }
 
     void setNewLine(int n) {
         lines = allocateIntVector(n, lines, totalLines);
         totalLines++;
     }
+
     void displayTotalLines() {
         for (int i = 0; i < totalLines; i++)
             cout << lines[i] << ' ';
@@ -53,7 +63,7 @@ public:
 
 class Tree {
 private:
-    Leaf *root;
+    Leaf *n;
     int height, totalNodes;
 
     static void insertAux(Leaf *n, const string &newKey);
@@ -61,40 +71,37 @@ private:
 public:
     Tree() { // Construtor
         totalNodes = height = 0;
-        root = nullptr;
+        n = nullptr;
     }
 
-    // Retorna raiz
-    Leaf *getRoot() { return root; };
 
+    void initBST(vector<string> keyWords, ifstream& file) {
+        insertKeyWords(std::move(keyWords));
+        searchWords(file);
+    }
 
-    void setRoot(Leaf *n) { root = n; };
+    Leaf *getRoot() { return n; };
+
+    void setRoot(Leaf *n) { n = n; };
 
     void displayInOrden(Leaf *n);
 
-    // Insere um novo elemento na arvore
     void insertNode(const string &new_key);
 
     void insertKeyWords(vector<string> keyWords);
 
     void searchWords(ifstream &file);
 
-    // Verifica se a arvore possui determinado elemento e retorna um valor booleano
-//    Leaf *searchElement(Leaf *n, unsigned int k);
-
-    // Retorna a altura da arvore
-    int getHeight(Leaf *n);
+    int getTreeHeight(Leaf *n);
 
     int getTotalNodes() { return totalNodes; };
 
-
-    // Imprime todos os elementos de determinado level
-    void printElementsByLevel(Leaf *n, unsigned int level);
-
     Leaf *search(Leaf *l, string s);
 
+
+
     // Libera os nós da arvóre
-    void freeTreeNodes(Leaf *n);
+//    void freeTreeNodes(Leaf *n);
 };
 
 #endif //INDICE_REMISIVO_TREE_H

@@ -25,13 +25,15 @@ int main(int argc, char *argv[]) {
 
     Tree arvore;
 
-    printf("\nARVORE \n\n");
-    arvore.insertKeyWords(keyWords);
-    arvore.searchWords(fileTxt);
-
-    arvore.displayInOrden(arvore.getRoot());
+//    printf("\nARVORE \n\n");
+//    arvore.initBST(keyWords, fileTxt);
+//    arvore.displayInOrden(arvore.getRoot());
 
     avlTree avl;
+    avl.init(keyWords,fileTxt);
+
+    printf("\nAVL\n\n");
+    avl.displayInOrden(avl.getRoot());
 
     return 0;
 }
