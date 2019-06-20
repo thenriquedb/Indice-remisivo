@@ -90,10 +90,31 @@
 		<Unit filename="/home/thiago/CLionProjects/Indice_Remisivo/source/avl/avlTree.h">
 			<Option target="Indice_Remisivo"/>
 		</Unit>
+		<Unit filename="/home/thiago/CLionProjects/Indice_Remisivo/source/benchmarks/benchmarks.cpp">
+			<Option target="Indice_Remisivo"/>
+		</Unit>
+		<Unit filename="/home/thiago/CLionProjects/Indice_Remisivo/source/benchmarks/benchmarks.h">
+			<Option target="Indice_Remisivo"/>
+		</Unit>
 		<Unit filename="/home/thiago/CLionProjects/Indice_Remisivo/source/bst/tree.cpp">
 			<Option target="Indice_Remisivo"/>
 		</Unit>
 		<Unit filename="/home/thiago/CLionProjects/Indice_Remisivo/source/bst/tree.h">
+			<Option target="Indice_Remisivo"/>
+		</Unit>
+		<Unit filename="/home/thiago/CLionProjects/Indice_Remisivo/source/external/fort.c">
+			<Option target="Indice_Remisivo"/>
+		</Unit>
+		<Unit filename="/home/thiago/CLionProjects/Indice_Remisivo/source/external/fort.h">
+			<Option target="Indice_Remisivo"/>
+		</Unit>
+		<Unit filename="/home/thiago/CLionProjects/Indice_Remisivo/source/external/fort.hpp">
+			<Option target="Indice_Remisivo"/>
+		</Unit>
+		<Unit filename="/home/thiago/CLionProjects/Indice_Remisivo/source/hash/hash.cpp">
+			<Option target="Indice_Remisivo"/>
+		</Unit>
+		<Unit filename="/home/thiago/CLionProjects/Indice_Remisivo/source/hash/hash.h">
 			<Option target="Indice_Remisivo"/>
 		</Unit>
 		<Unit filename="/home/thiago/CLionProjects/Indice_Remisivo/source/helps.cpp">

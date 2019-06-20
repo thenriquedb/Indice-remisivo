@@ -7,8 +7,14 @@
 
 #include<iostream>
 #include <vector>
+#include <chrono>
+#include "external/fort.hpp"
+#include "external/fort.h"
 
 using namespace std;
+int totalLinesFile(ifstream& file);
+
+//void displayTimes(fort::table table,int leaf, int totalLines, int totalKeyWords, string structure, double time);
 
 const vector<string> split(const string &string, const char &token);
 
@@ -16,9 +22,13 @@ const vector<string> getKeyWords(ifstream &file);
 
 const vector<string> sortKeywordsAlphabetical(vector<string> keyWords);
 
-int *allocateIntVector(int numLine, int *p, int n);
+int* allocateIntVector(int numLine, int *p, int n);
 
 string s_toLower(string s);
 
+chrono::duration<double> runtime(chrono::time_point<std::chrono::system_clock> startTime,
+                                 chrono::time_point<std::chrono::system_clock> endTime);
+
+double averageRunningTime(double sumTimes, int c);
 
 #endif //INDICE_REMISIVO_HELPS_H

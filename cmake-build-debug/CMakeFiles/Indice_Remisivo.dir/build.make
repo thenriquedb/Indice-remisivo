@@ -135,6 +135,45 @@ CMakeFiles/Indice_Remisivo.dir/source/avl/avlTree.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Indice_Remisivo.dir/source/avl/avlTree.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/thiago/CLionProjects/Indice_Remisivo/source/avl/avlTree.cpp -o CMakeFiles/Indice_Remisivo.dir/source/avl/avlTree.cpp.s
 
+CMakeFiles/Indice_Remisivo.dir/source/hash/hash.cpp.o: CMakeFiles/Indice_Remisivo.dir/flags.make
+CMakeFiles/Indice_Remisivo.dir/source/hash/hash.cpp.o: ../source/hash/hash.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/thiago/CLionProjects/Indice_Remisivo/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Indice_Remisivo.dir/source/hash/hash.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Indice_Remisivo.dir/source/hash/hash.cpp.o -c /home/thiago/CLionProjects/Indice_Remisivo/source/hash/hash.cpp
+
+CMakeFiles/Indice_Remisivo.dir/source/hash/hash.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Indice_Remisivo.dir/source/hash/hash.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/thiago/CLionProjects/Indice_Remisivo/source/hash/hash.cpp > CMakeFiles/Indice_Remisivo.dir/source/hash/hash.cpp.i
+
+CMakeFiles/Indice_Remisivo.dir/source/hash/hash.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Indice_Remisivo.dir/source/hash/hash.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/thiago/CLionProjects/Indice_Remisivo/source/hash/hash.cpp -o CMakeFiles/Indice_Remisivo.dir/source/hash/hash.cpp.s
+
+CMakeFiles/Indice_Remisivo.dir/source/external/fort.c.o: CMakeFiles/Indice_Remisivo.dir/flags.make
+CMakeFiles/Indice_Remisivo.dir/source/external/fort.c.o: ../source/external/fort.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/thiago/CLionProjects/Indice_Remisivo/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/Indice_Remisivo.dir/source/external/fort.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Indice_Remisivo.dir/source/external/fort.c.o   -c /home/thiago/CLionProjects/Indice_Remisivo/source/external/fort.c
+
+CMakeFiles/Indice_Remisivo.dir/source/external/fort.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Indice_Remisivo.dir/source/external/fort.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/thiago/CLionProjects/Indice_Remisivo/source/external/fort.c > CMakeFiles/Indice_Remisivo.dir/source/external/fort.c.i
+
+CMakeFiles/Indice_Remisivo.dir/source/external/fort.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Indice_Remisivo.dir/source/external/fort.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/thiago/CLionProjects/Indice_Remisivo/source/external/fort.c -o CMakeFiles/Indice_Remisivo.dir/source/external/fort.c.s
+
+CMakeFiles/Indice_Remisivo.dir/source/benchmarks/benchmarks.cpp.o: CMakeFiles/Indice_Remisivo.dir/flags.make
+CMakeFiles/Indice_Remisivo.dir/source/benchmarks/benchmarks.cpp.o: ../source/benchmarks/benchmarks.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/thiago/CLionProjects/Indice_Remisivo/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Indice_Remisivo.dir/source/benchmarks/benchmarks.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Indice_Remisivo.dir/source/benchmarks/benchmarks.cpp.o -c /home/thiago/CLionProjects/Indice_Remisivo/source/benchmarks/benchmarks.cpp
+
+CMakeFiles/Indice_Remisivo.dir/source/benchmarks/benchmarks.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Indice_Remisivo.dir/source/benchmarks/benchmarks.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/thiago/CLionProjects/Indice_Remisivo/source/benchmarks/benchmarks.cpp > CMakeFiles/Indice_Remisivo.dir/source/benchmarks/benchmarks.cpp.i
+
+CMakeFiles/Indice_Remisivo.dir/source/benchmarks/benchmarks.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Indice_Remisivo.dir/source/benchmarks/benchmarks.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/thiago/CLionProjects/Indice_Remisivo/source/benchmarks/benchmarks.cpp -o CMakeFiles/Indice_Remisivo.dir/source/benchmarks/benchmarks.cpp.s
+
 # Object files for target Indice_Remisivo
 Indice_Remisivo_OBJECTS = \
 "CMakeFiles/Indice_Remisivo.dir/source/main.cpp.o" \
@@ -142,7 +181,10 @@ Indice_Remisivo_OBJECTS = \
 "CMakeFiles/Indice_Remisivo.dir/source/linked_list/List.cpp.o" \
 "CMakeFiles/Indice_Remisivo.dir/source/linked_list/indice_list.cpp.o" \
 "CMakeFiles/Indice_Remisivo.dir/source/bst/tree.cpp.o" \
-"CMakeFiles/Indice_Remisivo.dir/source/avl/avlTree.cpp.o"
+"CMakeFiles/Indice_Remisivo.dir/source/avl/avlTree.cpp.o" \
+"CMakeFiles/Indice_Remisivo.dir/source/hash/hash.cpp.o" \
+"CMakeFiles/Indice_Remisivo.dir/source/external/fort.c.o" \
+"CMakeFiles/Indice_Remisivo.dir/source/benchmarks/benchmarks.cpp.o"
 
 # External object files for target Indice_Remisivo
 Indice_Remisivo_EXTERNAL_OBJECTS =
@@ -153,9 +195,12 @@ Indice_Remisivo: CMakeFiles/Indice_Remisivo.dir/source/linked_list/List.cpp.o
 Indice_Remisivo: CMakeFiles/Indice_Remisivo.dir/source/linked_list/indice_list.cpp.o
 Indice_Remisivo: CMakeFiles/Indice_Remisivo.dir/source/bst/tree.cpp.o
 Indice_Remisivo: CMakeFiles/Indice_Remisivo.dir/source/avl/avlTree.cpp.o
+Indice_Remisivo: CMakeFiles/Indice_Remisivo.dir/source/hash/hash.cpp.o
+Indice_Remisivo: CMakeFiles/Indice_Remisivo.dir/source/external/fort.c.o
+Indice_Remisivo: CMakeFiles/Indice_Remisivo.dir/source/benchmarks/benchmarks.cpp.o
 Indice_Remisivo: CMakeFiles/Indice_Remisivo.dir/build.make
 Indice_Remisivo: CMakeFiles/Indice_Remisivo.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/thiago/CLionProjects/Indice_Remisivo/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable Indice_Remisivo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/thiago/CLionProjects/Indice_Remisivo/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable Indice_Remisivo"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Indice_Remisivo.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

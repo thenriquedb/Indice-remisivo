@@ -150,6 +150,33 @@ source/avl/avlTree.cpp.s:
 	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/avl/avlTree.cpp.s
 .PHONY : source/avl/avlTree.cpp.s
 
+source/benchmarks/benchmarks.o: source/benchmarks/benchmarks.cpp.o
+
+.PHONY : source/benchmarks/benchmarks.o
+
+# target to build an object file
+source/benchmarks/benchmarks.cpp.o:
+	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/benchmarks/benchmarks.cpp.o
+.PHONY : source/benchmarks/benchmarks.cpp.o
+
+source/benchmarks/benchmarks.i: source/benchmarks/benchmarks.cpp.i
+
+.PHONY : source/benchmarks/benchmarks.i
+
+# target to preprocess a source file
+source/benchmarks/benchmarks.cpp.i:
+	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/benchmarks/benchmarks.cpp.i
+.PHONY : source/benchmarks/benchmarks.cpp.i
+
+source/benchmarks/benchmarks.s: source/benchmarks/benchmarks.cpp.s
+
+.PHONY : source/benchmarks/benchmarks.s
+
+# target to generate assembly for a file
+source/benchmarks/benchmarks.cpp.s:
+	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/benchmarks/benchmarks.cpp.s
+.PHONY : source/benchmarks/benchmarks.cpp.s
+
 source/bst/tree.o: source/bst/tree.cpp.o
 
 .PHONY : source/bst/tree.o
@@ -176,6 +203,60 @@ source/bst/tree.s: source/bst/tree.cpp.s
 source/bst/tree.cpp.s:
 	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/bst/tree.cpp.s
 .PHONY : source/bst/tree.cpp.s
+
+source/external/fort.o: source/external/fort.c.o
+
+.PHONY : source/external/fort.o
+
+# target to build an object file
+source/external/fort.c.o:
+	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/external/fort.c.o
+.PHONY : source/external/fort.c.o
+
+source/external/fort.i: source/external/fort.c.i
+
+.PHONY : source/external/fort.i
+
+# target to preprocess a source file
+source/external/fort.c.i:
+	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/external/fort.c.i
+.PHONY : source/external/fort.c.i
+
+source/external/fort.s: source/external/fort.c.s
+
+.PHONY : source/external/fort.s
+
+# target to generate assembly for a file
+source/external/fort.c.s:
+	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/external/fort.c.s
+.PHONY : source/external/fort.c.s
+
+source/hash/hash.o: source/hash/hash.cpp.o
+
+.PHONY : source/hash/hash.o
+
+# target to build an object file
+source/hash/hash.cpp.o:
+	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/hash/hash.cpp.o
+.PHONY : source/hash/hash.cpp.o
+
+source/hash/hash.i: source/hash/hash.cpp.i
+
+.PHONY : source/hash/hash.i
+
+# target to preprocess a source file
+source/hash/hash.cpp.i:
+	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/hash/hash.cpp.i
+.PHONY : source/hash/hash.cpp.i
+
+source/hash/hash.s: source/hash/hash.cpp.s
+
+.PHONY : source/hash/hash.s
+
+# target to generate assembly for a file
+source/hash/hash.cpp.s:
+	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/hash/hash.cpp.s
+.PHONY : source/hash/hash.cpp.s
 
 source/helps.o: source/helps.cpp.o
 
@@ -297,9 +378,18 @@ help:
 	@echo "... source/avl/avlTree.o"
 	@echo "... source/avl/avlTree.i"
 	@echo "... source/avl/avlTree.s"
+	@echo "... source/benchmarks/benchmarks.o"
+	@echo "... source/benchmarks/benchmarks.i"
+	@echo "... source/benchmarks/benchmarks.s"
 	@echo "... source/bst/tree.o"
 	@echo "... source/bst/tree.i"
 	@echo "... source/bst/tree.s"
+	@echo "... source/external/fort.o"
+	@echo "... source/external/fort.i"
+	@echo "... source/external/fort.s"
+	@echo "... source/hash/hash.o"
+	@echo "... source/hash/hash.i"
+	@echo "... source/hash/hash.s"
 	@echo "... source/helps.o"
 	@echo "... source/helps.i"
 	@echo "... source/helps.s"

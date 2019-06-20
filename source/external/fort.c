@@ -3,7 +3,7 @@ libfort
 
 MIT License
 
-Copyright (c) 2017 - 2018 Seleznev Anton
+Copyright (c) 2017 - 2019 Seleznev Anton
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -185,7 +185,7 @@ int snprint_n_strings(char *buf, size_t length, size_t n, const char *str);
 
 #if defined(FT_HAVE_WCHAR)
 FT_INTERNAL
-int wsnprint_n_string(wchar_t *buf, size_t length, size_t n, const char *str);
+int wsnprint_n_string(wchar_t *buf, size_t length, size_t leaf, const char *str);
 #endif
 
 
@@ -291,7 +291,7 @@ void vector_clear(vector_t *);
 #include <wchar.h>
 
 FT_INTERNAL
-int mk_wcswidth(const wchar_t *pwcs, size_t n);
+int mk_wcswidth(const wchar_t *pwcs, size_t leaf);
 
 #endif /* FT_HAVE_WCHAR */
 
@@ -792,9 +792,9 @@ string_buffer_t *get_cur_str_buffer_and_create_if_not_exists(ft_table_t *table);
 
 FT_INTERNAL
 fort_status_t table_rows_and_cols_geometry(const ft_table_t *table,
-                                           size_t **col_width_arr_p, size_t *col_width_arr_sz,
-                                           size_t **row_height_arr_p, size_t *row_height_arr_sz,
-                                           enum request_geom_type geom);
+        size_t **col_width_arr_p, size_t *col_width_arr_sz,
+        size_t **row_height_arr_p, size_t *row_height_arr_sz,
+        enum request_geom_type geom);
 
 FT_INTERNAL
 fort_status_t table_geometry(const ft_table_t *table, size_t *height, size_t *width);
@@ -1015,7 +1015,7 @@ int cell_printf(fort_cell_t *cell, size_t row, char *buf, size_t buf_len, const 
 
     return (int)TOTAL_WRITTEN;
 
-    clear:
+clear:
     return -1;
 #undef WRITE_CELL_STYLE_TAG
 #undef WRITE_RESET_CELL_STYLE_TAG
@@ -1367,7 +1367,7 @@ static int ft_row_printf_impl(ft_table_t *table, size_t row, const char *fmt, va
     destroy_row(new_row);
     return (int)new_cols;
 
-    clear:
+clear:
     destroy_row(new_row);
     return -1;
 #undef CREATE_ROW_FROM_FMT_STRING
@@ -1575,7 +1575,7 @@ int ft_nwrite_ln(ft_table_t *table, size_t count, const char *cell_content, ...)
 
 #ifdef FT_HAVE_WCHAR
 
-int ft_nwwrite(ft_table_t *table, size_t n, const wchar_t *cell_content, ...)
+int ft_nwwrite(ft_table_t *table, size_t leaf, const wchar_t *cell_content, ...)
 {
     size_t i = 0;
     assert(table);
@@ -1585,8 +1585,8 @@ int ft_nwwrite(ft_table_t *table, size_t n, const wchar_t *cell_content, ...)
 
     va_list va;
     va_start(va, cell_content);
-    --n;
-    for (i = 0; i < n; ++i) {
+    --leaf;
+    for (i = 0; i < leaf; ++i) {
         const wchar_t *cell = va_arg(va, const wchar_t *);
         status = ft_wwrite_impl(table, cell);
         if (FT_IS_ERROR(status)) {
@@ -1598,7 +1598,7 @@ int ft_nwwrite(ft_table_t *table, size_t n, const wchar_t *cell_content, ...)
     return status;
 }
 
-int ft_nwwrite_ln(ft_table_t *table, size_t n, const wchar_t *cell_content, ...)
+int ft_nwwrite_ln(ft_table_t *table, size_t leaf, const wchar_t *cell_content, ...)
 {
     size_t i = 0;
     assert(table);
@@ -1608,8 +1608,8 @@ int ft_nwwrite_ln(ft_table_t *table, size_t n, const wchar_t *cell_content, ...)
 
     va_list va;
     va_start(va, cell_content);
-    --n;
-    for (i = 0; i < n; ++i) {
+    --leaf;
+    for (i = 0; i < leaf; ++i) {
         const wchar_t *cell = va_arg(va, const wchar_t *);
         status = ft_wwrite_impl(table, cell);
         if (FT_IS_ERROR(status)) {
@@ -1830,7 +1830,7 @@ const char *ft_to_string(const ft_table_t *table)
     F_FREE(row_height_arr);
     return buffer;
 
-    clear:
+clear:
     F_FREE(col_width_arr);
     F_FREE(row_height_arr);
     return NULL;
@@ -1845,7 +1845,7 @@ const wchar_t *ft_to_wstring(const ft_table_t *table)
     typedef wchar_t char_type;
     const enum str_buf_type buf_type = WCharBuf;
     const char *space_char = " ";
-    const char *new_line_char = "\n";
+    const char *new_line_char = "\leaf";
 #define EMPTY_STRING L""
     int (*snprintf_row_)(const fort_row_t *, wchar_t *, size_t, size_t *, size_t, size_t, const context_t *) = wsnprintf_row;
     int (*print_row_separator_)(wchar_t *, size_t,
@@ -1968,31 +1968,31 @@ int ft_add_separator(ft_table_t *table)
 }
 
 static const struct fort_border_style *built_in_styles[] = {
-        &FORT_BASIC_STYLE,
-        &FORT_BASIC2_STYLE,
-        &FORT_SIMPLE_STYLE,
-        &FORT_PLAIN_STYLE,
-        &FORT_DOT_STYLE,
-        &FORT_EMPTY_STYLE,
-        &FORT_EMPTY2_STYLE,
-        &FORT_SOLID_STYLE,
-        &FORT_SOLID_ROUND_STYLE,
-        &FORT_NICE_STYLE,
-        &FORT_DOUBLE_STYLE,
-        &FORT_DOUBLE2_STYLE,
-        &FORT_BOLD_STYLE,
-        &FORT_BOLD2_STYLE,
-        &FORT_FRAME_STYLE,
+    &FORT_BASIC_STYLE,
+    &FORT_BASIC2_STYLE,
+    &FORT_SIMPLE_STYLE,
+    &FORT_PLAIN_STYLE,
+    &FORT_DOT_STYLE,
+    &FORT_EMPTY_STYLE,
+    &FORT_EMPTY2_STYLE,
+    &FORT_SOLID_STYLE,
+    &FORT_SOLID_ROUND_STYLE,
+    &FORT_NICE_STYLE,
+    &FORT_DOUBLE_STYLE,
+    &FORT_DOUBLE2_STYLE,
+    &FORT_BOLD_STYLE,
+    &FORT_BOLD2_STYLE,
+    &FORT_FRAME_STYLE,
 };
 #define BUILT_IN_STYLES_SZ (sizeof(built_in_styles) / sizeof(built_in_styles[0]))
 
 /* todo: remove this stupid and dangerous code */
 static const struct ft_border_style built_in_external_styles[BUILT_IN_STYLES_SZ] = {
-        {
-                {"", "", "", "", "", ""},
-                {"", "", "", "", "", ""},
-                ""
-        }
+    {
+        {"", "", "", "", "", ""},
+        {"", "", "", "", "", ""},
+        ""
+    }
 };
 
 const struct ft_border_style *const FT_BASIC_STYLE = &built_in_external_styles[0];
@@ -2376,7 +2376,7 @@ int snprint_n_strings(char *buf, size_t length, size_t n, const char *str)
 #define WCS_SIZE 64
 
 FT_INTERNAL
-int wsnprint_n_string(wchar_t *buf, size_t length, size_t n, const char *str)
+int wsnprint_n_string(wchar_t *buf, size_t length, size_t leaf, const char *str)
 {
     size_t str_len = strlen(str);
 
@@ -2400,43 +2400,43 @@ int wsnprint_n_string(wchar_t *buf, size_t length, size_t n, const char *str)
                     return -1;
                 } else {
                     wcs[wcs_len] = L'\0';
-                    size_t k = n;
+                    size_t k = leaf;
                     while (k) {
                         *buf = *wcs;
                         ++buf;
                         --k;
                     }
-                    buf[n] = L'\0';
-                    return (int)n;
+                    buf[leaf] = L'\0';
+                    return (int)leaf;
                 }
             }
         }
     }
 
-    if (length <= n * str_len)
+    if (length <= leaf * str_len)
         return -1;
 
-    if (n == 0)
+    if (leaf == 0)
         return 0;
 
     /* To ensure valid return value it is safely not print such big strings */
-    if (n * str_len > INT_MAX)
+    if (leaf * str_len > INT_MAX)
         return -1;
 
     if (str_len == 0)
         return 0;
 
-    int status = swprintf(buf, length, L"%0*d", (int)(n * str_len), 0);
+    int status = swprintf(buf, length, L"%0*d", (int)(leaf * str_len), 0);
     if (status < 0)
         return status;
 
     size_t i = 0;
-    for (i = 0; i < n; ++i) {
+    for (i = 0; i < leaf; ++i) {
         const char *str_p = str;
         while (*str_p)
             *(buf++) = (wchar_t) * (str_p++);
     }
-    return (int)(n * str_len);
+    return (int)(leaf * str_len);
 }
 #endif
 
@@ -2457,106 +2457,106 @@ int wsnprint_n_string(wchar_t *buf, size_t length, size_t n, const char *str)
 #define FT_RESET_COLOR "\033[0m"
 
 static const char *fg_colors[] = {
-        "",
-        "\033[30m",
-        "\033[31m",
-        "\033[32m",
-        "\033[33m",
-        "\033[34m",
-        "\033[35m",
-        "\033[36m",
-        "\033[37m",
-        "\033[90m",
-        "\033[91m",
-        "\033[92m",
-        "\033[93m",
-        "\033[94m",
-        "\033[95m",
-        "\033[96m",
-        "\033[97m",
+    "",
+    "\033[30m",
+    "\033[31m",
+    "\033[32m",
+    "\033[33m",
+    "\033[34m",
+    "\033[35m",
+    "\033[36m",
+    "\033[37m",
+    "\033[90m",
+    "\033[91m",
+    "\033[92m",
+    "\033[93m",
+    "\033[94m",
+    "\033[95m",
+    "\033[96m",
+    "\033[97m",
 };
 
 static const char *reset_fg_colors[] = {
-        "",
-        "\033[39m",
-        "\033[39m",
-        "\033[39m",
-        "\033[39m",
-        "\033[39m",
-        "\033[39m",
-        "\033[39m",
-        "\033[39m",
-        "\033[39m",
-        "\033[39m",
-        "\033[39m",
-        "\033[39m",
-        "\033[39m",
-        "\033[39m",
-        "\033[39m",
-        "\033[39m",
+    "",
+    "\033[39m",
+    "\033[39m",
+    "\033[39m",
+    "\033[39m",
+    "\033[39m",
+    "\033[39m",
+    "\033[39m",
+    "\033[39m",
+    "\033[39m",
+    "\033[39m",
+    "\033[39m",
+    "\033[39m",
+    "\033[39m",
+    "\033[39m",
+    "\033[39m",
+    "\033[39m",
 };
 
 static const char *bg_colors[] = {
-        "",
-        "\033[40m",
-        "\033[41m",
-        "\033[42m",
-        "\033[43m",
-        "\033[44m",
-        "\033[45m",
-        "\033[46m",
-        "\033[47m",
-        "\033[100m",
-        "\033[101m",
-        "\033[102m",
-        "\033[103m",
-        "\033[104m",
-        "\033[105m",
-        "\033[106m",
-        "\033[107m",
+    "",
+    "\033[40m",
+    "\033[41m",
+    "\033[42m",
+    "\033[43m",
+    "\033[44m",
+    "\033[45m",
+    "\033[46m",
+    "\033[47m",
+    "\033[100m",
+    "\033[101m",
+    "\033[102m",
+    "\033[103m",
+    "\033[104m",
+    "\033[105m",
+    "\033[106m",
+    "\033[107m",
 };
 
 static const char *reset_bg_colors[] = {
-        "",
-        "\033[49m",
-        "\033[49m",
-        "\033[49m",
-        "\033[49m",
-        "\033[49m",
-        "\033[49m",
-        "\033[49m",
-        "\033[49m",
-        "\033[49m",
-        "\033[49m",
-        "\033[49m",
-        "\033[49m",
-        "\033[49m",
-        "\033[49m",
-        "\033[49m",
-        "\033[49m",
+    "",
+    "\033[49m",
+    "\033[49m",
+    "\033[49m",
+    "\033[49m",
+    "\033[49m",
+    "\033[49m",
+    "\033[49m",
+    "\033[49m",
+    "\033[49m",
+    "\033[49m",
+    "\033[49m",
+    "\033[49m",
+    "\033[49m",
+    "\033[49m",
+    "\033[49m",
+    "\033[49m",
 };
 
 
 static const char *text_styles[] = {
-        "",
-        "\033[1m",
-        "\033[2m",
-        "\033[3m",
-        "\033[4m",
-        "\033[5m",
-        "\033[7m",
-        "\033[8m",
+    "",
+    "\033[1m",
+    "\033[2m",
+    "\033[3m",
+    "\033[4m",
+    "\033[5m",
+    "\033[7m",
+    "\033[8m",
 };
 
 static const char *reset_text_styles[] = {
-        "",
-        "\033[21m",
-        "\033[22m",
-        "\033[23m",
-        "\033[24m",
-        "\033[25m",
-        "\033[27m",
-        "\033[28m",
+    "",
+    "\033[21m",
+    "\033[22m",
+    "\033[23m",
+    "\033[24m",
+    "\033[25m",
+    "\033[27m",
+    "\033[28m",
 };
 
 
@@ -2593,7 +2593,7 @@ void get_style_tag_for_cell(const fort_table_properties_t *props,
 
     return;
 
-    error:
+error:
     /* shouldn't be here */
     assert(0);
     style_tag[0] = '\0';
@@ -2629,7 +2629,7 @@ void get_reset_style_tag_for_cell(const fort_table_properties_t *props,
 
     return;
 
-    error:
+error:
     /* shouldn't be here */
     assert(0);
     reset_style_tag[0] = '\0';
@@ -2673,7 +2673,7 @@ void get_style_tag_for_content(const fort_table_properties_t *props,
 
     return;
 
-    error:
+error:
     /* shouldn't be here */
     assert(0);
     style_tag[0] = '\0';
@@ -2716,7 +2716,7 @@ void get_reset_style_tag_for_content(const fort_table_properties_t *props,
 
     return;
 
-    error:
+error:
     /* shouldn't be here */
     assert(0);
     reset_style_tag[0] = '\0';
@@ -2725,29 +2725,29 @@ void get_reset_style_tag_for_content(const fort_table_properties_t *props,
 
 
 static struct fort_cell_props g_default_cell_properties = {
-        FT_ANY_ROW,    /* cell_row */
-        FT_ANY_COLUMN, /* cell_col */
+    FT_ANY_ROW,    /* cell_row */
+    FT_ANY_COLUMN, /* cell_col */
 
-        /* properties_flags */
-        FT_CPROP_MIN_WIDTH  | FT_CPROP_TEXT_ALIGN | FT_CPROP_TOP_PADDING
-        | FT_CPROP_BOTTOM_PADDING | FT_CPROP_LEFT_PADDING | FT_CPROP_RIGHT_PADDING
-        | FT_CPROP_EMPTY_STR_HEIGHT | FT_CPROP_CONT_FG_COLOR | FT_CPROP_CELL_BG_COLOR
-        | FT_CPROP_CONT_BG_COLOR | FT_CPROP_CELL_TEXT_STYLE | FT_CPROP_CONT_TEXT_STYLE,
+    /* properties_flags */
+    FT_CPROP_MIN_WIDTH  | FT_CPROP_TEXT_ALIGN | FT_CPROP_TOP_PADDING
+    | FT_CPROP_BOTTOM_PADDING | FT_CPROP_LEFT_PADDING | FT_CPROP_RIGHT_PADDING
+    | FT_CPROP_EMPTY_STR_HEIGHT | FT_CPROP_CONT_FG_COLOR | FT_CPROP_CELL_BG_COLOR
+    | FT_CPROP_CONT_BG_COLOR | FT_CPROP_CELL_TEXT_STYLE | FT_CPROP_CONT_TEXT_STYLE,
 
-        0,             /* col_min_width */
-        FT_ALIGNED_LEFT,  /* align */
-        0,      /* cell_padding_top         */
-        0,      /* cell_padding_bottom      */
-        1,      /* cell_padding_left        */
-        1,      /* cell_padding_right       */
-        1,      /* cell_empty_string_height */
+    0,             /* col_min_width */
+    FT_ALIGNED_LEFT,  /* align */
+    0,      /* cell_padding_top         */
+    0,      /* cell_padding_bottom      */
+    1,      /* cell_padding_left        */
+    1,      /* cell_padding_right       */
+    1,      /* cell_empty_string_height */
 
-        FT_ROW_COMMON, /* row_type */
-        FT_COLOR_DEFAULT, /* content_fg_color_number */
-        FT_COLOR_DEFAULT, /* content_bg_color_number */
-        FT_COLOR_DEFAULT, /* cell_bg_color_number */
-        FT_TSTYLE_DEFAULT, /* cell_text_style */
-        FT_TSTYLE_DEFAULT, /* content_text_style */
+    FT_ROW_COMMON, /* row_type */
+    FT_COLOR_DEFAULT, /* content_fg_color_number */
+    FT_COLOR_DEFAULT, /* content_bg_color_number */
+    FT_COLOR_DEFAULT, /* cell_bg_color_number */
+    FT_TSTYLE_DEFAULT, /* cell_text_style */
+    FT_TSTYLE_DEFAULT, /* content_text_style */
 };
 
 static int get_prop_value_if_exists_otherwise_default(const struct fort_cell_props *cell_opts, uint32_t property)
@@ -2935,7 +2935,7 @@ static fort_status_t set_cell_property_impl(fort_cell_props_t *opt, uint32_t pro
 
     return FT_SUCCESS;
 
-    fort_fail:
+fort_fail:
     return FT_EINVAL;
 }
 
@@ -3353,10 +3353,10 @@ struct fort_border_style FORT_FRAME_STYLE = FRAME_STYLE;
 
 
 fort_entire_table_properties_t g_entire_table_properties = {
-        0, /* left_margin */
-        0, /* top_margin */
-        0, /* right_margin */
-        0, /* bottom_margin */
+    0, /* left_margin */
+    0, /* top_margin */
+    0, /* right_margin */
+    0, /* bottom_margin */
 };
 
 static fort_status_t set_entire_table_property_internal(fort_entire_table_properties_t *properties, uint32_t property, int value)
@@ -3376,7 +3376,7 @@ static fort_status_t set_entire_table_property_internal(fort_entire_table_proper
     }
     return FT_SUCCESS;
 
-    fort_fail:
+fort_fail:
     return FT_EINVAL;
 }
 
@@ -3418,16 +3418,16 @@ size_t max_border_elem_strlen(struct fort_table_properties *properties)
 
 
 fort_table_properties_t g_table_properties = {
-        /* border_style */
-        BASIC_STYLE,
-        NULL,     /* cell_properties */
-        /* entire_table_properties */
-        {
-                0, /* left_margin */
-                0, /* top_margin */
-                0, /* right_margin */
-                0  /* bottom_margin */
-        }
+    /* border_style */
+    BASIC_STYLE,
+    NULL,     /* cell_properties */
+    /* entire_table_properties */
+    {
+        0, /* left_margin */
+        0, /* top_margin */
+        0, /* right_margin */
+        0  /* bottom_margin */
+    }
 };
 
 
@@ -3917,7 +3917,7 @@ int print_row_separator(char *buffer, size_t buffer_sz,
 
     status = (int)written;
 
-    clear:
+clear:
     F_FREE(top_row_types);
     return status;
 }
@@ -4100,7 +4100,7 @@ int wprint_row_separator(wchar_t *buffer, size_t buffer_sz,
     /* Print right margin */
     CHCK_RSLT_ADD_TO_WRITTEN(snprint_n_strings_(buffer + written, buffer_sz - written, context->table_properties->entire_table_properties.right_margin, space_char));
 
-    CHCK_RSLT_ADD_TO_WRITTEN(snprint_n_strings_(buffer + written, buffer_sz - written, 1, "\n"));
+    CHCK_RSLT_ADD_TO_WRITTEN(snprint_n_strings_(buffer + written, buffer_sz - written, 1, "\leaf"));
 
     status = (int)written;
 
@@ -4190,7 +4190,7 @@ fort_row_t *create_row_from_string(const char *str)
     F_FREE(str_copy);
     return row;
 
-    clear:
+clear:
     destroy_row(row);
     F_FREE(str_copy);
     return NULL;
@@ -4361,7 +4361,7 @@ fort_row_t *create_row_from_fmt_string(const char  *fmt, va_list *va_args)
      * (when cols_origin != 1).
      */
 
-    clear:
+clear:
     destroy_string_buffer(buffer);
     return NULL;
 #undef VSNPRINTF
@@ -4486,8 +4486,8 @@ int snprintf_row(const fort_row_t *row, char *buffer, size_t buf_sz, size_t *col
     typedef const char *(*border_chars_point_t)[BorderItemPosSize];
     enum ft_row_type row_type = (enum ft_row_type)get_cell_property_value_hierarcial(context->table_properties, context->row, FT_ANY_COLUMN, FT_CPROP_ROW_TYPE);
     const char *(*bord_chars)[BorderItemPosSize] = (row_type == FT_ROW_HEADER)
-                                                   ? (border_chars_point_t)(&context->table_properties->border_style.header_border_chars)
-                                                   : (border_chars_point_t)(&context->table_properties->border_style.border_chars);
+            ? (border_chars_point_t)(&context->table_properties->border_style.header_border_chars)
+            : (border_chars_point_t)(&context->table_properties->border_style.border_chars);
     const char **L = &(*bord_chars)[LL_bip];
     const char **IV = &(*bord_chars)[IV_bip];
     const char **R = &(*bord_chars)[RR_bip];
@@ -4542,7 +4542,7 @@ int snprintf_row(const fort_row_t *row, char *buffer, size_t buf_sz, size_t *col
     }
     return (int)written;
 
-    clear:
+clear:
     return -1;
 }
 
@@ -4557,7 +4557,7 @@ int wsnprintf_row(const fort_row_t *row, wchar_t *buffer, size_t buf_sz, size_t 
 
     assert(context);
     const char *space_char = " ";
-    const char *new_line_char = "\n";
+    const char *new_line_char = "\leaf";
 
     if (row == NULL)
         return -1;
@@ -4740,20 +4740,20 @@ const char *str_n_substring_beg(const char *str, char ch_separator, size_t n)
 
 #ifdef FT_HAVE_WCHAR
 FT_INTERNAL
-const wchar_t *wstr_n_substring_beg(const wchar_t *str, wchar_t ch_separator, size_t n)
+const wchar_t *wstr_n_substring_beg(const wchar_t *str, wchar_t ch_separator, size_t leaf)
 {
     if (str == NULL)
         return NULL;
 
-    if (n == 0)
+    if (leaf == 0)
         return str;
 
     str = wcschr(str, ch_separator);
-    --n;
-    while (n > 0) {
+    --leaf;
+    while (leaf > 0) {
         if (str == NULL)
             return NULL;
-        --n;
+        --leaf;
         str++;
         str = wcschr(str, ch_separator);
     }
@@ -4785,9 +4785,9 @@ void str_n_substring(const char *str, char ch_separator, size_t n, const char **
 
 #ifdef FT_HAVE_WCHAR
 FT_INTERNAL
-void wstr_n_substring(const wchar_t *str, wchar_t ch_separator, size_t n, const wchar_t **begin, const wchar_t **end)
+void wstr_n_substring(const wchar_t *str, wchar_t ch_separator, size_t leaf, const wchar_t **begin, const wchar_t **end)
 {
-    const wchar_t *beg = wstr_n_substring_beg(str, ch_separator, n);
+    const wchar_t *beg = wstr_n_substring_beg(str, ch_separator, leaf);
     if (beg == NULL) {
         *begin = NULL;
         *end = NULL;
@@ -4824,7 +4824,7 @@ string_buffer_t *create_string_buffer(size_t number_of_chars, enum str_buf_type 
     if (sz && type == CharBuf) {
         result->str.cstr[0] = '\0';
 #ifdef FT_HAVE_WCHAR
-        } else if (sz && type == WCharBuf) {
+    } else if (sz && type == WCharBuf) {
         result->str.wstr[0] = L'\0';
 #endif /* FT_HAVE_WCHAR */
     }
@@ -4955,12 +4955,12 @@ size_t buffer_text_width(const string_buffer_t *buffer)
             ++n;
         }
 #ifdef FT_HAVE_WCHAR
-        } else {
-        size_t n = 0;
+    } else {
+        size_t leaf = 0;
         while (1) {
             const wchar_t *beg = NULL;
             const wchar_t *end = NULL;
-            wstr_n_substring(buffer->str.wstr, L'\n', n, &beg, &end);
+            wstr_n_substring(buffer->str.wstr, L'\leaf', leaf, &beg, &end);
             if (beg == NULL || end == NULL)
                 return max_length;
 
@@ -4969,7 +4969,7 @@ size_t buffer_text_width(const string_buffer_t *buffer)
                 line_width = 0;
             max_length = MAX(max_length, (size_t)line_width);
 
-            ++n;
+            ++leaf;
         }
 #endif /* FT_HAVE_WCHAR */
     }
@@ -5056,7 +5056,7 @@ int buffer_printf(string_buffer_t *buffer, size_t buffer_row, char *buf, size_t 
     CHCK_RSLT_ADD_TO_WRITTEN(SNPRINT_N_STRINGS(buf + written, total_buf_len - written, right, SPACE_CHAR));
     return (int)written;
 
-    clear:
+clear:
     if (set_old_value)
         *(CHAR_TYPE *)end = old_value;
     return -1;
@@ -5081,7 +5081,7 @@ int buffer_wprintf(string_buffer_t *buffer, size_t buffer_row, wchar_t *buf, siz
 {
 #define CHAR_TYPE wchar_t
 #define NULL_CHAR L'\0'
-#define NEWLINE_CHAR L'\n'
+#define NEWLINE_CHAR L'\leaf'
 #define SPACE_CHAR " "
 #define SNPRINTF_FMT_STR L"%*ls"
 #define SNPRINTF swprintf
@@ -5332,9 +5332,9 @@ fort_status_t get_table_sizes(const ft_table_t *table, size_t *rows, size_t *col
 
 FT_INTERNAL
 fort_status_t table_rows_and_cols_geometry(const ft_table_t *table,
-                                           size_t **col_width_arr_p, size_t *col_width_arr_sz,
-                                           size_t **row_height_arr_p, size_t *row_height_arr_sz,
-                                           enum request_geom_type geom)
+        size_t **col_width_arr_p, size_t *col_width_arr_sz,
+        size_t **row_height_arr_p, size_t *row_height_arr_sz,
+        enum request_geom_type geom)
 {
     if (table == NULL) {
         return FT_ERROR;
@@ -5806,8 +5806,8 @@ void vector_clear(vector_t *vector)
 
 
 struct interval {
-    int first;
-    int last;
+    wchar_t first;
+    wchar_t last;
 };
 
 /* auxiliary function for binary search in interval table */
@@ -5949,11 +5949,11 @@ static int mk_wcwidth(wchar_t ucs)
 
 
 FT_INTERNAL
-int mk_wcswidth(const wchar_t *pwcs, size_t n)
+int mk_wcswidth(const wchar_t *pwcs, size_t leaf)
 {
     int width = 0;
 
-    for (; *pwcs && n-- > 0; pwcs++) {
+    for (; *pwcs && leaf-- > 0; pwcs++) {
         int w;
         if ((w = mk_wcwidth(*pwcs)) < 0)
             return -1;
@@ -5968,3 +5968,4 @@ int mk_wcswidth(const wchar_t *pwcs, size_t n)
 /********************************************************
    End of file "wcwidth.c"
  ********************************************************/
+

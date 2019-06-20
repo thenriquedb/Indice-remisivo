@@ -3,7 +3,7 @@ libfort
 
 MIT License
 
-Copyright (c) 2017 - 2018 Seleznev Anton
+Copyright (c) 2017 - 2019 Seleznev Anton
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -39,6 +39,16 @@ SOFTWARE.
 #include <stdlib.h>
 #include <stdint.h>
 #include <limits.h>
+
+/*****************************************************************************
+ *               VERSION
+ *****************************************************************************/
+
+#define LIBFORT_MAJOR_VERSION 0
+#define LIBFORT_MINOR_VERSION 1
+#define LIBFORT_REVISION 5
+#define LIBFORT_VERSION_STR "0.1.5"
+
 
 /*****************************************************************************
  *               Configuration
@@ -614,6 +624,11 @@ struct ft_border_style {
 /**
  * @defgroup BasicStyles
  * @name Built-in table border styles.
+ * @note Built-in border styles (FT_BASIC_STYLE, FT_BASIC2_STYLE ...) can be
+ * used as arguments for @ref ft_set_border_style and
+ * @ref ft_set_default_border_style, but their fields shouldn't be accessed
+ * directly because implementation doesn't guarantee that these objects are
+ * properly initialized.
  * @{
  */
 extern const struct ft_border_style *const FT_BASIC_STYLE;
@@ -870,8 +885,8 @@ int ft_wprintf_ln(ft_table_t *table, const wchar_t *fmt, ...);
     (0 ? CHECK_IF_ARGS_ARE_WSTRINGS(__VA_ARGS__) : ft_nwwrite(table, FT_PP_NARG_(__VA_ARGS__), __VA_ARGS__))
 #define ft_wwrite_ln(table, ...)\
     (0 ? CHECK_IF_ARGS_ARE_WSTRINGS(__VA_ARGS__) : ft_nwwrite_ln(table, FT_PP_NARG_(__VA_ARGS__), __VA_ARGS__))
-int ft_nwwrite(ft_table_t *table, size_t n, const wchar_t *cell_content, ...);
-int ft_nwwrite_ln(ft_table_t *table, size_t n, const wchar_t *cell_content, ...);
+int ft_nwwrite(ft_table_t *table, size_t leaf, const wchar_t *cell_content, ...);
+int ft_nwwrite_ln(ft_table_t *table, size_t leaf, const wchar_t *cell_content, ...);
 
 int ft_row_wwrite(ft_table_t *table, size_t cols, const wchar_t *row_cells[]);
 int ft_row_wwrite_ln(ft_table_t *table, size_t cols, const wchar_t *row_cells[]);

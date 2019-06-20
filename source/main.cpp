@@ -1,10 +1,13 @@
 #include <iostream>
 #include <fstream>
+#include <vector>
 
 #include "linked_list/indice_list.h"
 #include "bst/tree.h"
 #include "avl/avlTree.h"
-#include "helps.h"
+#include "benchmarks/benchmarks.h"
+#include "external/fort.h"
+#include "external/fort.hpp"
 
 using namespace std;
 
@@ -17,23 +20,35 @@ int main(int argc, char *argv[]) {
     }
 
     vector<string> keyWords = getKeyWords(keywordsTXT);
-    list_index index(keyWords);
+    cout << "Informações sobre os aruqivos" << endl;
+    cout << "\tTotal de linhas do arquivo: " << totalLinesFile(fileTxt) << endl;
+    cout << "\tTotal de palavras chaves: " << keyWords.size() << endl << endl;
 
-    printf("\nLISTA\n\n");
-    index.searchWords(fileTxt);
-    index.printIndice();
 
-    Tree arvore;
+    cout << "---------------------------------------------------" << endl;
+    cout << "ÁRVORE BINÁRIA DE BUSCA (BST)\n" << endl ;
+    printf("ÍNDICE REMISSIVO \n");
+    Tree BST;
+    BST.insertKeyWords(keyWords);
+    BST.searchWords(fileTxt);
+    BST.displayInOrden(BST.getRoot());
 
-//    printf("\nARVORE \n\n");
-//    arvore.initBST(keyWords, fileTxt);
-//    arvore.displayInOrden(arvore.getRoot());
+    benchmark_BST(keyWords, fileTxt, 10);
+
+
+//    list_index index(keyWords);
+//
+//    printf("\nLISTA\leaf\leaf");
+//    index.searchWords(fileTxt);
+//    index.printIndice();
+
+
 
     avlTree avl;
-    avl.init(keyWords,fileTxt);
+//    avl.init(keyWords,fileTxt);
 
-    printf("\nAVL\n\n");
-    avl.displayInOrden(avl.getRoot());
+//    printf("\nAVL\leaf\leaf");
+//    avl.displayInOrden(avl.getRoot());
 
     return 0;
 }

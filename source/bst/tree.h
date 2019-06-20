@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <chrono>
 #include "../helps.h"
 
 
@@ -53,6 +54,7 @@ public:
     void setNewLine(int n) {
         lines = allocateIntVector(n, lines, totalLines);
         totalLines++;
+
     }
 
     void displayTotalLines() {
@@ -63,7 +65,7 @@ public:
 
 class Tree {
 private:
-    Leaf *n;
+    Leaf *leaf;
     int height, totalNodes;
 
     static void insertAux(Leaf *n, const string &newKey);
@@ -71,16 +73,13 @@ private:
 public:
     Tree() { // Construtor
         totalNodes = height = 0;
-        n = nullptr;
+        leaf = nullptr;
     }
 
 
-    void initBST(vector<string> keyWords, ifstream& file) {
-        insertKeyWords(std::move(keyWords));
-        searchWords(file);
-    }
+    double benchmark(vector<string> keyWords, ifstream &file);
 
-    Leaf *getRoot() { return n; };
+    Leaf *getRoot() { return leaf; };
 
     void setRoot(Leaf *n) { n = n; };
 
@@ -101,7 +100,7 @@ public:
 
 
     // Libera os nós da arvóre
-//    void freeTreeNodes(Leaf *n);
+//    void freeTreeNodes(Leaf *leaf);
 };
 
 #endif //INDICE_REMISIVO_TREE_H

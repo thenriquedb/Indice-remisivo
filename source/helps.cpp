@@ -2,6 +2,7 @@
 // Created by thiago on 11/06/19.
 //
 
+
 #include <iostream>
 #include <fstream>
 #include<string>
@@ -13,9 +14,42 @@
 using namespace std;
 
 /*
+ * Retorna o total de linhas do arquivo de texto
+ */
+int totalLinesFile(ifstream &file) {
+    int cont = 0;
+    string line;
+
+    while (!file.eof()) {
+        getline(file, line);
+        cont++;
+    }
+    return cont;
+}
+
+
+chrono::duration<double> runtime(chrono::time_point<std::chrono::system_clock> startTime,
+                                 chrono::time_point<std::chrono::system_clock> endTime) {
+    return endTime - startTime;
+}
+
+/*
+ * Retorna o tempo medio de execução
+ * @param:
+ *       long float sumTimes: a soma do tempo de todas as execuções
+ *       int c: quantidade de execuções
+ */
+double averageRunningTime(double sumTimes, int c) {
+    return sumTimes / c;
+}
+
+
+/*
  * Recebe um string e a separa em pedaços de acordo com o token.
- * Retorna um vetor contendo as partes
- *
+ * Retorna um vetor cuja cada posição contém um pedaço da string
+ * @param
+ *      const string &string: frase que será divida
+ *      const char &token: token que ira separar os pedaços. EX: ',' '.' ' ' ';'
  */
 const vector<string> split(const string &string, const char &token) {
     std::string buff = {};
@@ -74,6 +108,11 @@ int *allocateIntVector(int numLine, int *p, int n) {
     }
 }
 
+
+
+/*
+ * Recebe dois números e retorna o maior
+ */
 int max(int a, int b) { return (a > b) ? a : b; }
 
 
