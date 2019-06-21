@@ -15,4 +15,9 @@
 #include "../avl/avlTree.h"
 
 void benchmark_BST(vector<string> keyWords, ifstream&file, int totalExecutions);
+
+void benchmark_AVL(vector<string> keyWords, ifstream &file, int totalExecutions);
+void benchmark_LinkedList(vector<string> keyWords, ifstream &file, int totalExecutions);
+
+
 #endif //INDICE_REMISIVO_BENCHMARKS_H

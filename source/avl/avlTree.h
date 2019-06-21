@@ -12,17 +12,38 @@
 /*
  * Classe avlTree é uma classe filha de Tree
  */
-class avlTree : public Tree {
+class avlTree {
 private:
-    Leaf *rr_rotation(Leaf *parent);
-    Leaf *ll_rotation(Leaf *parent);
-    Leaf *lr_rotation(Leaf *parent);
-    Leaf *rl_rotation(Leaf *parent);
-    int heightDifference(Leaf *n);
+    Leaf *root;
+    int height, totalNodes;
+
 
 public:
-    void init(vector<string> keyWords, ifstream& file);
-    Leaf *balance(Leaf *n);
+
+    avlTree() {
+        root = nullptr;
+        height = totalNodes = 0;
+    }
+
+    double benchmarkAVL(vector<string> keyWords, ifstream &file);
+
+    Leaf *search(Leaf *l, string s);
+
+    int heightDifference(Leaf *n);
+
+    void insertKeyWords_avl(vector<string> keyWords);
+
+    Leaf *rightRotate(Leaf *y);
+
+    Leaf *leftRotate(Leaf *y);
+
+    Leaf *getRoot() { return root; };
+
+    void displayInOrden(Leaf *n);
+
+    void searchWords(ifstream &file);
+
+
     Leaf *insert_avl(Leaf *n, const string &new_key);
 };
 

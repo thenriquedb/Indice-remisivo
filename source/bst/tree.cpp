@@ -5,6 +5,7 @@
 //
 #include <iostream>
 #include <vector>
+#include <chrono>
 
 #include "tree.h"
 #include "../helps.h"
@@ -15,8 +16,10 @@ using namespace std;
 double Tree::benchmark(vector<string> keyWords, ifstream &file){
     chrono::time_point<std::chrono::system_clock> start, end;
     start = chrono::system_clock::now();
+
     insertKeyWords(std::move(keyWords));
     searchWords(file);
+
     end = std::chrono::system_clock::now();
 
     chrono::duration<double> elapsed_seconds = runtime(start,end);
@@ -28,10 +31,10 @@ double Tree::benchmark(vector<string> keyWords, ifstream &file){
  *      new_string: palavra que será adcionada a arvore
  */
 void Tree::insertNode(const string &new_key) {
-    if (leaf == nullptr) { // Caso a raiz for nula
-        leaf = new Leaf(new_key);
+    if (root == nullptr) { // Caso a raiz for nula
+        root = new Leaf(new_key);
     } else {
-        insertAux(this->leaf, new_key);
+        insertAux(this->root, new_key);
     }
     totalNodes++;
 }
@@ -92,7 +95,7 @@ void Tree::displayInOrden(Leaf *n) {
  * Realiza a busca das palavras chaves em um arquivo texto
  */
 void Tree::searchWords(ifstream &file) {
-    if (this->leaf != nullptr) {
+    if (this->root != nullptr) {
         string line;
         int numLine = 1;
 
@@ -103,7 +106,7 @@ void Tree::searchWords(ifstream &file) {
             std::vector<std::string> words{split(line, ' ')};
 
             for (const auto &item : words) {
-                Leaf *temp = search(this->leaf, item);
+                Leaf *temp = search(this->root, item);
                 if (temp != nullptr && item.size() >= 4 && temp->getKey() == item) {
                     temp->setNewLine(numLine);
                 }
@@ -121,25 +124,9 @@ Leaf *Tree::search(Leaf *l, string s) {
     if (l == nullptr || l->getKey() == s)
         return l;
 
-    if (s > this->leaf->getKey())
+    if (s > this->root->getKey())
         return search(l->getRight(), s);
 
-    if (s < this->leaf->getKey())
+    if (s < this->root->getKey())
         return search(l->getLeft(), s);
 };
-
-/*
- * Retorna a altura total da arvore
- */
-int Tree::getTreeHeight(Leaf *n) {
-    int hleft, hright;
-    if (n == nullptr) // Arvore vazia
-        return -1;
-    else {
-        hleft = getTreeHeight(n->getLeft());
-        hright = getTreeHeight(n->getRight());
-
-        return (hleft > hright) ? hleft + 1 : hright + 1; //// Condição ? verdadeiro : falso
-    }
-}
-

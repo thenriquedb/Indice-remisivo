@@ -3,6 +3,7 @@
 //
 
 #include "avlTree.h"
+#include "../helps.h"
 
 /*
  * Insere as palavras chaves nos nós da arvore e realiza a busca no arquivo de texto
@@ -10,41 +11,104 @@
  *       vector<string> keyWords: Vetor de palavras chaves
  *       ifstream& file: arquivo que contém o texto que será lido
  */
-void avlTree::init(vector<string> keyWords, ifstream& file){
-    insertKeyWords(keyWords);
+double avlTree::benchmarkAVL(vector<string> keyWords, ifstream &file) {
+    chrono::time_point<std::chrono::system_clock> start, end;
+    start = chrono::system_clock::now();
+
+    insertKeyWords_avl(std::move(keyWords));
     searchWords(file);
+    end = std::chrono::system_clock::now();
+
+    chrono::duration<double> elapsed_seconds = runtime(start, end);
+    return elapsed_seconds.count();
 }
 
-Leaf* avlTree::insert_avl(Leaf*n, const string &new_key){
-    if (n == NULL) {
-        n = new Leaf(new_key);
-        return n;
-    } else if (new_key < n->getKey()) {
-        n->setLeft(insert_avl(n->getLeft(), new_key));
-        n = balance(n);
-    } else if (new_key >= n->getKey()) {
-        n->setRight(insert_avl(n->getRight(), new_key));
-        n = balance(n);
-    } return n;
-}
-
-/*
- * Realiza o balanceamento da arvore
- */
-Leaf *avlTree::balance(Leaf *n) {
-    int bal_factor = heightDifference(n);
-
-    if (bal_factor > 1) {
-        if (heightDifference(n->getLeft()) > 0)
-            n = ll_rotation(n);
-        else
-            n = lr_rotation(n);
-    } else if (bal_factor < -1) {
-        if (heightDifference(n->getRight()) > 0)
-            n = rl_rotation(n);
-        else
-            n = rr_rotation(n);
+void avlTree::insertKeyWords_avl(vector<string> keyWords) {
+    for (const auto &item : keyWords) {
+        if (item.size() >= 4)
+            this->root = insert_avl(this->getRoot(), item);
     }
+}
+
+void avlTree::displayInOrden(Leaf *n) {
+    if (n != nullptr) {
+        displayInOrden(n->getLeft());
+        cout << "\t" << n->getKey() << "\t";
+        n->displayTotalLines();
+        cout << endl;
+        displayInOrden(n->getRight());
+    }
+}
+
+void avlTree::searchWords(ifstream &file) {
+    if (this->root != nullptr) {
+        string line;
+        int numLine = 1;
+
+        // Retorna o ponteiro de leitura para o inicio do arquivo
+        file.seekg(0);
+        while (!file.eof()) {
+            getline(file, line);
+            std::vector<std::string> words{split(line, ' ')};
+
+            for (const auto &item : words) {
+                Leaf *temp = search(this->root, item);
+                if (temp != nullptr && item.size() >= 4 && temp->getKey() == item) {
+                    temp->setNewLine(numLine);
+                }
+            }
+            numLine++;
+        }
+    }
+}
+
+Leaf *avlTree::search(Leaf *l, string s) {
+    if (l == nullptr || l->getKey() == s)
+        return l;
+
+    if (s > this->root->getKey())
+        return search(l->getRight(), s);
+
+    if (s < this->root->getKey())
+        return search(l->getLeft(), s);
+};
+
+Leaf *avlTree::insert_avl(Leaf *n, const string &new_key) {
+    if (n == nullptr)
+        return new Leaf(new_key);
+    if (new_key < n->getKey()) {
+        n->setLeft(insert_avl(n->getLeft(), new_key));
+    } else if (new_key > n->getKey()) {
+        n->setRight(insert_avl(n->getRight(), new_key));
+    } else
+        return n;
+
+    if (n->getLeft() == nullptr || n->getRight() == nullptr)
+        n->setHeight(1);
+    else
+        n->setHeight(1 + maxNumber(n->getLeft()->getHeight(), n->getRight()->getHeight()));
+
+    int balance = heightDifference(n);
+
+    if (balance > 1 && new_key < n->getLeft()->getKey())
+        return rightRotate(n);
+
+    // Right Right Case
+    if (balance < -1 && new_key > n->getRight()->getKey())
+        return leftRotate(n);
+
+    // Left Right Case
+    if (balance > 1 && new_key > n->getLeft()->getKey()) {
+        n->setLeft(leftRotate(n->getLeft()));
+        return rightRotate(n);
+    }
+
+    // Right Left Case
+    if (balance < -1 && new_key < n->getRight()->getKey()) {
+        n->setRight(rightRotate(n->getRight()));
+        return leftRotate(n);
+    }
+
     return n;
 }
 
@@ -53,51 +117,43 @@ Leaf *avlTree::balance(Leaf *n) {
  * dois nós
  */
 int avlTree::heightDifference(Leaf *n) {
-    int r_height = n->getRight()->getHeight();
-    int l_height = n->getLeft()->getHeight();
+    if (n == nullptr)
+        return 0;
 
-    return l_height - r_height;
+    if (n->getLeft() == nullptr || n->getRight() == nullptr)
+        return 1;;
+
+    return n->getLeft()->getHeight() - n->getRight()->getHeight();
 }
 
-/*
- * Realiza a rotação direita-direita
- */
-Leaf *avlTree::rr_rotation(Leaf *parent) {
-    Leaf *temp;
-    temp = parent->getRight();
-    parent->setLeft(temp->getLeft());
-    temp->setLeft(parent);
-    return temp;
+Leaf *avlTree::rightRotate(Leaf *y) {
+    Leaf *x = y->getLeft();
+    Leaf *T2 = x->getRight();
+
+    // Perform rotation
+    x->setRight(y);
+    y->setLeft(T2);
+
+    // Update heights
+    y->setHeight(1 + maxNumber(y->getLeft()->getHeight(), y->getRight()->getHeight()));
+    x->setHeight(1 + maxNumber(x->getLeft()->getHeight(), x->getRight()->getHeight()));
+
+    // Return new root
+    return x;
 }
 
-/*
- * Realiza a rotação esquerda-esquerda
- */
-Leaf *avlTree::ll_rotation(Leaf *parent) {
-    Leaf *temp;
-    temp = parent->getLeft();
-    parent->setLeft(temp->getRight());
-    temp->setRight(parent);
-    return temp;
-}
+Leaf *avlTree::leftRotate(Leaf *y) {
+    Leaf *x = y->getRight();
+    Leaf *T2 = x->getLeft();
 
-/*
- *Realiza a rotação esquerda-direita
- */
-Leaf *avlTree::lr_rotation(Leaf *parent) {
-    Leaf *temp;
-    temp = parent->getLeft();
-    parent->setLeft(rr_rotation(temp));
-    return ll_rotation(parent);
-}
+    // Perform rotation
+    x->setRight(T2);
+    y->setLeft(x);
 
-/*
- * Realiza a rotação direita-esquerda
- */
-Leaf *avlTree::rl_rotation(Leaf *parent) {
-    Leaf *temp;
-    temp = parent->getRight();
-    parent->setRight(ll_rotation(temp));
-    return rr_rotation(parent);
-}
+    // Update heights
+    y->setHeight(1 + maxNumber(y->getLeft()->getHeight(), y->getRight()->getHeight()));
+    x->setHeight(1 + maxNumber(x->getLeft()->getHeight(), x->getRight()->getHeight()));
 
+    // Return new root
+    return y;
+}

@@ -44,8 +44,6 @@ public:
     Node *getHead() { return head; };
 
     void display();
-
-//    void alphabetical_order();
 };
 
 #endif //INDICE_REMISIVO_LIST_H

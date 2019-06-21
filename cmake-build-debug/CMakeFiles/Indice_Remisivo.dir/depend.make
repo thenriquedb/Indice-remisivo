@@ -34,6 +34,8 @@ CMakeFiles/Indice_Remisivo.dir/source/helps.cpp.o: ../source/external/fort.hpp
 CMakeFiles/Indice_Remisivo.dir/source/helps.cpp.o: ../source/helps.cpp
 CMakeFiles/Indice_Remisivo.dir/source/helps.cpp.o: ../source/helps.h
 
+CMakeFiles/Indice_Remisivo.dir/source/linked_list/List.cpp.o: ../source/external/fort.h
+CMakeFiles/Indice_Remisivo.dir/source/linked_list/List.cpp.o: ../source/external/fort.hpp
 CMakeFiles/Indice_Remisivo.dir/source/linked_list/List.cpp.o: ../source/linked_list/List.cpp
 CMakeFiles/Indice_Remisivo.dir/source/linked_list/List.cpp.o: ../source/linked_list/List.h
 

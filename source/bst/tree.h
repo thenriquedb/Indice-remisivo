@@ -28,8 +28,9 @@ private:
 public:
     Leaf(string k) {
         this->key = k;
-        height = 1;
+        height = 0;
         totalLines = 0;
+
         lines = nullptr;
         this->left = nullptr;
         this->right = nullptr;
@@ -43,12 +44,12 @@ public:
 
     int getTotalLines() { return totalLines; };
 
-    int getHeight() { return height; };
+    int getHeight() {return height; };
 
     void setLeft(Leaf *n) { left = n; };
 
     void setRight(Leaf *n) { right = n; };
-
+//    int getTreeHeight(Leaf *n);
     void setHeight(int h) { height = h; }
 
     void setNewLine(int n) {
@@ -65,23 +66,23 @@ public:
 
 class Tree {
 private:
-    Leaf *leaf;
+    Leaf *root;
     int height, totalNodes;
-
     static void insertAux(Leaf *n, const string &newKey);
+
+protected:
+    void setRoot(Leaf* n){ root = n;}
 
 public:
     Tree() { // Construtor
         totalNodes = height = 0;
-        leaf = nullptr;
+        root = nullptr;
     }
 
 
     double benchmark(vector<string> keyWords, ifstream &file);
 
-    Leaf *getRoot() { return leaf; };
-
-    void setRoot(Leaf *n) { n = n; };
+    Leaf *getRoot() { return root; };
 
     void displayInOrden(Leaf *n);
 

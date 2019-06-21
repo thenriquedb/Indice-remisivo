@@ -22,14 +22,17 @@ private:
     int lenght;
 
 public:
-    explicit list_index(vector<string> keyWordsArray) {
+    void insertKeyWords(vector<string> keyWordsArray) {
         for (int i = keyWordsArray.size() - 1; i > 0; i--) {
+            if (keyWordsArray[i].size() >= 4)
                 keyWords.push(keyWordsArray[i]);
         }
         lenght = keyWordsArray.size();
     }
 
     void searchWords(ifstream &file);
+
+    double benchmark(vector<string> keyWords, ifstream &file);
 
     void printIndice();
 };

@@ -113,6 +113,6 @@ int *allocateIntVector(int numLine, int *p, int n) {
 /*
  * Recebe dois números e retorna o maior
  */
-int max(int a, int b) { return (a > b) ? a : b; }
+int maxNumber(int a, int b) { return (a > b) ? a : b; }
 
 

@@ -5822,7 +5822,7 @@ static int bisearch(wchar_t ucs, const struct interval *table, int max)
         if (ucs > table[mid].last)
             min = mid + 1;
         else if (ucs < table[mid].first)
-            max = mid - 1;
+            maxNumber = mid - 1;
         else
             return 1;
     }
