@@ -83,6 +83,9 @@ void list_index::printIndice() {
     }
 }
 
+/*
+ * Retorna o tempo de execução
+ */
 double list_index::benchmark(vector<string> keyWords, ifstream &file) {
     chrono::time_point<std::chrono::system_clock> start, end;
     start = chrono::system_clock::now();

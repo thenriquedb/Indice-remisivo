@@ -22,21 +22,3 @@ void List::push(string content) {
     }
     this->lenght++;
 }
-
-/*
- * Imprime os elementos da lista
- */
-void List::display() {
-    int cont = 1;
-    if (this->head == nullptr)
-        cout << "Lista vazia" << endl;
-    else {
-        Node *temp = this->head;
-        while (temp != nullptr) {
-            cout << "\t" << cont << "º: " << temp->word << endl;
-            temp = temp->next;
-            cont++;
-        }
-    }
-}
-

@@ -33,16 +33,6 @@ chrono::duration<double> runtime(chrono::time_point<std::chrono::system_clock> s
     return endTime - startTime;
 }
 
-/*
- * Retorna o tempo medio de execução
- * @param:
- *       long float sumTimes: a soma do tempo de todas as execuções
- *       int c: quantidade de execuções
- */
-double averageRunningTime(double sumTimes, int c) {
-    return sumTimes / c;
-}
-
 
 /*
  * Recebe um string e a separa em pedaços de acordo com o token.
@@ -59,7 +49,6 @@ const vector<string> split(const string &string, const char &token) {
         if (n != token) {
             buff += n;
         } else if (n == token && !buff.empty()) {
-//            cout << "Buff: " << buff << "   Final: " << buff[buff.size() - 1] << endl;
             vetor.push_back(s_toLower(buff));
             buff = "";
         }
@@ -116,3 +105,8 @@ int *allocateIntVector(int numLine, int *p, int n) {
 int maxNumber(int a, int b) { return (a > b) ? a : b; }
 
 
+//void exportBenchmark_txt(ofstream file, string line){
+//
+//
+//}
+//

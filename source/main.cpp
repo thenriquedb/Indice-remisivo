@@ -6,8 +6,6 @@
 #include "bst/tree.h"
 #include "avl/avlTree.h"
 #include "benchmarks/benchmarks.h"
-#include "external/fort.h"
-#include "external/fort.hpp"
 
 using namespace std;
 
@@ -22,11 +20,11 @@ int main(int argc, char *argv[]) {
 
     vector<string> keyWords = getKeyWords(keywordsTXT);
     cout << "Informações sobre os aruqivos" << endl;
-    cout << "\tTotal de linhas do arquivo: " << totalLinesFile(fileTxt) << endl << endl;
+    cout << "\tTotal de linhas do arquivo: " << totalLinesFile(fileTxt)  << endl;
     cout << "\tTotal de palavras chaves: " << keyWords.size() << endl;
-
-
     cout << ":.:.:.:.:.::.:.:.:.:.::.:.:.:.:.::.:.:.:.:.::.:.:.:.:.:" << endl;
+
+
     cout << "\t\tLISTA ENCADEADA\n" << endl;
     printf("ÍNDICE REMISSIVO \n");
     list_index linkedList;
@@ -55,6 +53,10 @@ int main(int argc, char *argv[]) {
     AVL.displayInOrden(AVL.getRoot());
     benchmark_AVL(keyWords, fileTxt, 10);
     cout << ":.:.:.:.:.::.:.:.:.:.::.:.:.:.:.::.:.:.:.:.::.:.:.:.:.:" << endl;
+
+    // Fechar os arquivos
+    keywordsTXT.close();
+    fileTxt.close();
 
     return 0;
 }

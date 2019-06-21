@@ -36,14 +36,9 @@ public:
         lenght = 0;
     }
 
-
     void push(string content);
-
     int getLenght() { return lenght; };
-
     Node *getHead() { return head; };
-
-    void display();
 };
 
 #endif //INDICE_REMISIVO_LIST_H
