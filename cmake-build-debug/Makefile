@@ -231,32 +231,32 @@ source/external/fort.c.s:
 	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/external/fort.c.s
 .PHONY : source/external/fort.c.s
 
-source/hash/hash.o: source/hash/hash.cpp.o
+source/hash/hashTable.o: source/hash/hashTable.cpp.o
 
-.PHONY : source/hash/hash.o
+.PHONY : source/hash/hashTable.o
 
 # target to build an object file
-source/hash/hash.cpp.o:
-	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/hash/hash.cpp.o
-.PHONY : source/hash/hash.cpp.o
+source/hash/hashTable.cpp.o:
+	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/hash/hashTable.cpp.o
+.PHONY : source/hash/hashTable.cpp.o
 
-source/hash/hash.i: source/hash/hash.cpp.i
+source/hash/hashTable.i: source/hash/hashTable.cpp.i
 
-.PHONY : source/hash/hash.i
+.PHONY : source/hash/hashTable.i
 
 # target to preprocess a source file
-source/hash/hash.cpp.i:
-	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/hash/hash.cpp.i
-.PHONY : source/hash/hash.cpp.i
+source/hash/hashTable.cpp.i:
+	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/hash/hashTable.cpp.i
+.PHONY : source/hash/hashTable.cpp.i
 
-source/hash/hash.s: source/hash/hash.cpp.s
+source/hash/hashTable.s: source/hash/hashTable.cpp.s
 
-.PHONY : source/hash/hash.s
+.PHONY : source/hash/hashTable.s
 
 # target to generate assembly for a file
-source/hash/hash.cpp.s:
-	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/hash/hash.cpp.s
-.PHONY : source/hash/hash.cpp.s
+source/hash/hashTable.cpp.s:
+	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/hash/hashTable.cpp.s
+.PHONY : source/hash/hashTable.cpp.s
 
 source/helps.o: source/helps.cpp.o
 
@@ -387,9 +387,9 @@ help:
 	@echo "... source/external/fort.o"
 	@echo "... source/external/fort.i"
 	@echo "... source/external/fort.s"
-	@echo "... source/hash/hash.o"
-	@echo "... source/hash/hash.i"
-	@echo "... source/hash/hash.s"
+	@echo "... source/hash/hashTable.o"
+	@echo "... source/hash/hashTable.i"
+	@echo "... source/hash/hashTable.s"
 	@echo "... source/helps.o"
 	@echo "... source/helps.i"
 	@echo "... source/helps.s"

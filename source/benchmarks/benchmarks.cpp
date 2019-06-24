@@ -16,7 +16,7 @@
 
 using namespace std;
 
-void benchmark_BST(vector<string> keyWords, ifstream &file, int totalExecutions) {
+void benchmark_BST(vector<string> keyWords,  vector<double> *times, ifstream &file, int totalExecutions) {
     fort::table table;
     double time, sumTimes = 0, min, max;
 
@@ -44,10 +44,11 @@ void benchmark_BST(vector<string> keyWords, ifstream &file, int totalExecutions)
     table2 << min << max << sumTimes << sumTimes / totalExecutions << fort::endr;
     std::cout << table2.to_string() << std::endl;
 
+    times->push_back(sumTimes / totalExecutions);
     exportBenchmark_txt("BST", table.to_string(), table2.to_string());
 }
 
-void benchmark_AVL(vector<string> keyWords, ifstream &file, int totalExecutions) {
+void benchmark_AVL(vector<string> keyWords,  vector<double> *times, ifstream &file, int totalExecutions) {
     fort::table table;
     double time, sumTimes = 0, min, max;
 
@@ -74,10 +75,11 @@ void benchmark_AVL(vector<string> keyWords, ifstream &file, int totalExecutions)
     table2 << min << max << sumTimes << sumTimes / totalExecutions << fort::endr;
     std::cout << table2.to_string() << std::endl;
 
+    times->push_back(sumTimes / totalExecutions);
     exportBenchmark_txt("AVL", table.to_string(), table2.to_string());
 }
 
-void benchmark_LinkedList(vector<string> keyWords, ifstream &file, int totalExecutions) {
+void benchmark_LinkedList(vector<string> keyWords, vector<double> *times, ifstream &file, int totalExecutions) {
     fort::table table;
     double time, sumTimes = 0, min, max;
 
@@ -105,12 +107,13 @@ void benchmark_LinkedList(vector<string> keyWords, ifstream &file, int totalExec
     table2 << min << max << sumTimes << sumTimes / totalExecutions << fort::endr;
     std::cout << table2.to_string() << std::endl;
 
+    times->push_back(sumTimes / totalExecutions);
     exportBenchmark_txt("Lista_encadeada", table.to_string(), table2.to_string());
 }
 
 void exportBenchmark_txt(string type, string table1, string table2) {
     ofstream file, fileAll;
-    string path = "../outputs/benchmarks/benchmark_"+type+".txt";
+    string path = "../outputs/benchmarks/benchmark_" + type + ".txt";
     file.open(path, ios::app);
     fileAll.open("../outputs/benchmarks/benchmarks_ALL.txt", ios::app);
 

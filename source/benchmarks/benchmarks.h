@@ -16,8 +16,10 @@
 
 void exportBenchmark_txt(string type, string table1, string table2);
 
-void benchmark_BST(vector<string> keyWords, ifstream&file, int totalExecutions);
-void benchmark_AVL(vector<string> keyWords, ifstream &file, int totalExecutions);
-void benchmark_LinkedList(vector<string> keyWords, ifstream &file, int totalExecutions);
+void benchmark_BST(vector<string> keyWords, vector<double> *times, ifstream &file, int totalExecutions);
+
+void benchmark_AVL(vector<string> keyWords,vector<double> *times,  ifstream &file, int totalExecutions);
+
+void benchmark_LinkedList(vector<string> keyWords, vector<double> *times, ifstream &file, int totalExecutions);
 
 #endif //INDICE_REMISIVO_BENCHMARKS_H

@@ -83,14 +83,15 @@ void Tree::insertKeyWords(vector<string> keyWords) {
  */
 void Tree::displayInOrden(Leaf *n) {
     if (n != nullptr) {
-        displayInOrden(n->getLeft());
-        cout << "\t" << n->getKey() << "\t";
-        n->displayTotalLines();
-        cout << endl;
-        displayInOrden(n->getRight());
+        if (n->getTotalLines() > 0) {
+            displayInOrden(n->getLeft());
+            cout << "\t" << n->getKey() << "\t";
+            n->displayTotalLines();
+            cout << endl;
+            displayInOrden(n->getRight());
+        }
     }
 }
-
 /*
  * Realiza a busca das palavras chaves em um arquivo texto
  */
