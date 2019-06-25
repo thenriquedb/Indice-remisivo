@@ -6,7 +6,6 @@
 #include<iostream>
 #include <fstream>
 #include <vector>
-#include <cstdio>
 #include<algorithm>
 #include <chrono>
 
@@ -60,17 +59,13 @@ void list_index::printIndice() {
         table << fort::header << "Palavra chave" << "Linhas" << fort::endr;
         Node *current = this->keyWords.getHead();
 
-//        cout << "PALAVRA" << "\t\t\t" << "LINHAS" << endl;
         while (current != nullptr) {
             if (current->existingLines != nullptr) {
                 table << current->word;
-//                cout << current->word << "\t\t";
                 for (int i = 0; i < current->totalLines; i++) {
                     table << current->existingLines[i];
-//                    cout << current->existingLines[i] << "\t";
                 }
                 table << fort::endr;
-//                cout << endl;
             }
             current = current->next;
         }

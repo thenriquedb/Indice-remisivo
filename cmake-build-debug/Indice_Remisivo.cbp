@@ -111,10 +111,16 @@
 		<Unit filename="/home/thiago/CLionProjects/Indice_Remisivo/source/external/fort.hpp">
 			<Option target="Indice_Remisivo"/>
 		</Unit>
-		<Unit filename="/home/thiago/CLionProjects/Indice_Remisivo/source/hash/hashTable.cpp">
+		<Unit filename="/home/thiago/CLionProjects/Indice_Remisivo/source/hash/hashZiviani.cpp">
 			<Option target="Indice_Remisivo"/>
 		</Unit>
-		<Unit filename="/home/thiago/CLionProjects/Indice_Remisivo/source/hash/hashTable.h">
+		<Unit filename="/home/thiago/CLionProjects/Indice_Remisivo/source/hash/hashZiviani.h">
+			<Option target="Indice_Remisivo"/>
+		</Unit>
+		<Unit filename="/home/thiago/CLionProjects/Indice_Remisivo/source/hash/hash_linkedList.cpp">
+			<Option target="Indice_Remisivo"/>
+		</Unit>
+		<Unit filename="/home/thiago/CLionProjects/Indice_Remisivo/source/hash/hash_linkedList.h">
 			<Option target="Indice_Remisivo"/>
 		</Unit>
 		<Unit filename="/home/thiago/CLionProjects/Indice_Remisivo/source/helps.cpp">

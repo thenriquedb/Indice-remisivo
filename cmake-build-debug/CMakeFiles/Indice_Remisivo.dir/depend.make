@@ -17,6 +17,7 @@ CMakeFiles/Indice_Remisivo.dir/source/benchmarks/benchmarks.cpp.o: ../source/ben
 CMakeFiles/Indice_Remisivo.dir/source/benchmarks/benchmarks.cpp.o: ../source/bst/tree.h
 CMakeFiles/Indice_Remisivo.dir/source/benchmarks/benchmarks.cpp.o: ../source/external/fort.h
 CMakeFiles/Indice_Remisivo.dir/source/benchmarks/benchmarks.cpp.o: ../source/external/fort.hpp
+CMakeFiles/Indice_Remisivo.dir/source/benchmarks/benchmarks.cpp.o: ../source/hash/hashZiviani.h
 CMakeFiles/Indice_Remisivo.dir/source/benchmarks/benchmarks.cpp.o: ../source/helps.h
 CMakeFiles/Indice_Remisivo.dir/source/benchmarks/benchmarks.cpp.o: ../source/linked_list/List.h
 CMakeFiles/Indice_Remisivo.dir/source/benchmarks/benchmarks.cpp.o: ../source/linked_list/indice_list.h
@@ -27,8 +28,18 @@ CMakeFiles/Indice_Remisivo.dir/source/bst/tree.cpp.o: ../source/external/fort.h
 CMakeFiles/Indice_Remisivo.dir/source/bst/tree.cpp.o: ../source/external/fort.hpp
 CMakeFiles/Indice_Remisivo.dir/source/bst/tree.cpp.o: ../source/helps.h
 
-CMakeFiles/Indice_Remisivo.dir/source/hash/hashTable.cpp.o: ../source/hash/hashTable.cpp
-CMakeFiles/Indice_Remisivo.dir/source/hash/hashTable.cpp.o: ../source/hash/hashTable.h
+CMakeFiles/Indice_Remisivo.dir/source/hash/hashZiviani.cpp.o: ../source/external/fort.h
+CMakeFiles/Indice_Remisivo.dir/source/hash/hashZiviani.cpp.o: ../source/external/fort.hpp
+CMakeFiles/Indice_Remisivo.dir/source/hash/hashZiviani.cpp.o: ../source/hash/hashZiviani.cpp
+CMakeFiles/Indice_Remisivo.dir/source/hash/hashZiviani.cpp.o: ../source/hash/hashZiviani.h
+CMakeFiles/Indice_Remisivo.dir/source/hash/hashZiviani.cpp.o: ../source/helps.h
+
+CMakeFiles/Indice_Remisivo.dir/source/hash/hash_linkedList.cpp.o: ../source/external/fort.h
+CMakeFiles/Indice_Remisivo.dir/source/hash/hash_linkedList.cpp.o: ../source/external/fort.hpp
+CMakeFiles/Indice_Remisivo.dir/source/hash/hash_linkedList.cpp.o: ../source/hash/hash_linkedList.cpp
+CMakeFiles/Indice_Remisivo.dir/source/hash/hash_linkedList.cpp.o: ../source/hash/hash_linkedList.h
+CMakeFiles/Indice_Remisivo.dir/source/hash/hash_linkedList.cpp.o: ../source/helps.h
+CMakeFiles/Indice_Remisivo.dir/source/hash/hash_linkedList.cpp.o: ../source/linked_list/List.h
 
 CMakeFiles/Indice_Remisivo.dir/source/helps.cpp.o: ../source/external/fort.h
 CMakeFiles/Indice_Remisivo.dir/source/helps.cpp.o: ../source/external/fort.hpp
@@ -52,7 +63,8 @@ CMakeFiles/Indice_Remisivo.dir/source/main.cpp.o: ../source/benchmarks/benchmark
 CMakeFiles/Indice_Remisivo.dir/source/main.cpp.o: ../source/bst/tree.h
 CMakeFiles/Indice_Remisivo.dir/source/main.cpp.o: ../source/external/fort.h
 CMakeFiles/Indice_Remisivo.dir/source/main.cpp.o: ../source/external/fort.hpp
-CMakeFiles/Indice_Remisivo.dir/source/main.cpp.o: ../source/hash/hashTable.h
+CMakeFiles/Indice_Remisivo.dir/source/main.cpp.o: ../source/hash/hashZiviani.h
+CMakeFiles/Indice_Remisivo.dir/source/main.cpp.o: ../source/hash/hash_linkedList.h
 CMakeFiles/Indice_Remisivo.dir/source/main.cpp.o: ../source/helps.h
 CMakeFiles/Indice_Remisivo.dir/source/main.cpp.o: ../source/linked_list/List.h
 CMakeFiles/Indice_Remisivo.dir/source/main.cpp.o: ../source/linked_list/indice_list.h

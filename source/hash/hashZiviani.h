@@ -12,31 +12,45 @@
 #include <iostream>
 #include <vector>
 
+#include "../helps.h"
+
 using namespace std;
 
 class hashNode {
 private:
     string word;
-    int key;
+    int key, totalLines;
+    int *existingLines;
 
 public:
     void insertItem(string value, int k) {
         word = std::move(value);
         key = k;
+        totalLines = 0;
+        existingLines = nullptr;
     };
 
     string getValue() { return word; };
+
+    void setNewLine(unsigned int n) {
+        existingLines = allocateIntVector(n, existingLines, totalLines);
+        totalLines++;
+    }
+
+    int getExistingLines(int i) { return existingLines[i]; };
+
+    int getTotalLines() { return totalLines; };
 
     int getKey() { return key; };
 
 };
 
-class hashTable {
+class hashZiviani {
+private:
     hashNode *table;
     int capacity;
     vector<int> weights;
 
-private:
     // Gera os valores dos pesos aleatoriamente
     int generateWeights() {
         std::srand(time(nullptr));
@@ -55,9 +69,10 @@ private:
 
     int searchIndex(string key);
 
+    hashNode getTable(int index) { return table[index]; };
 
 public:
-    explicit hashTable(unsigned int capacity) {
+    explicit hashZiviani(unsigned int capacity) {
         this->capacity = capacity; // Tamanho maximo da tabela
         this->table = new hashNode[this->capacity];
 
@@ -70,12 +85,13 @@ public:
 
     void insert(string key);
 
-    string searchWord(string key);
+    void searchKeywords(ifstream &file);
 
     void insertKeyWords(vector<string> keywords);
 
-    // Temporario
-    void printElemnto();
+    double benchmark(vector<string> keyWords, ifstream &file);
+
+    void printIndice();
 
 };
 

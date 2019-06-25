@@ -5,8 +5,14 @@
 #include "linked_list/indice_list.h"
 #include "bst/tree.h"
 #include "avl/avlTree.h"
-#include "hash/hashTable.h"
+
+#include "hash/hashZiviani.h"
+#include "hash/hash_linkedList.h"
+
 #include "benchmarks/benchmarks.h"
+
+#define ZIVIANI_HASH_SIZE 1007
+#define EXECUTIONS 10
 
 using namespace std;
 
@@ -30,10 +36,6 @@ int main(int argc, char *argv[]) {
     cout << ":.:.:.:.:.::.:.:.:.:.::.:.:.:.:.::.:.:.:.:.::.:.:.:.:.:" << endl;
 
 
-    hashTable tabela(1007);
-tabela.insertKeyWords(keyWords);
-    tabela.printElemnto();
-
 //
 //    cout << "\t\tLISTA ENCADEADA\n" << endl;
 //    printf("ÍNDICE REMISSIVO \n");
@@ -41,9 +43,9 @@ tabela.insertKeyWords(keyWords);
 //    linkedList.insertKeyWords(keyWords);
 //    linkedList.searchWords(fileTxt);
 //    linkedList.printIndice();
-//    benchmark_LinkedList(keyWords, &times, fileTxt, 10);
+//    benchmark_LinkedList(keyWords, &times, fileTxt, EXECUTIONS);
 //    cout << ":.:.:.:.:.::.:.:.:.:.::.:.:.:.:.::.:.:.:.:.::.:.:.:.:.:" << endl;
-//
+
 //
 //    cout << "\t\tÁRVORE BINÁRIA DE BUSCA (BST)\n" << endl;
 //    Tree BST;
@@ -51,7 +53,7 @@ tabela.insertKeyWords(keyWords);
 //    BST.searchWords(fileTxt);
 //    printf("ÍNDICE REMISSIVO \n");
 //    BST.displayInOrden(BST.getRoot());
-//    benchmark_BST(keyWords, &times, fileTxt, 10);
+//    benchmark_BST(keyWords, &times, fileTxt, EXECUTIONS);
 //    cout << ":.:.:.:.:.::.:.:.:.:.::.:.:.:.:.::.:.:.:.:.::.:.:.:.:.:" << endl;
 //
 //
@@ -61,10 +63,26 @@ tabela.insertKeyWords(keyWords);
 //    AVL.insertKeyWords_avl(keyWords);
 //    AVL.searchWords(fileTxt);
 //    AVL.displayInOrden(AVL.getRoot());
-//    benchmark_AVL(keyWords, &times, fileTxt, 10);
+//    benchmark_AVL(keyWords, &times, fileTxt, EXECUTIONS);
 //    cout << ":.:.:.:.:.::.:.:.:.:.::.:.:.:.:.::.:.:.:.:.::.:.:.:.:.:" << endl;
 //
-//
+
+
+//    cout << "\t\tHASH ZIVIANIn" << endl;
+//    printf("ÍNDICE REMISSIVO \n");
+//    hashZiviani tabela(ZIVIANI_HASH_SIZE);
+//    tabela.insertKeyWords(keyWords);
+//    tabela.searchKeywords(fileTxt);
+//    tabela.printIndice();
+//    benchmark_ZivianiHash(keyWords, ZIVIANI_HASH_SIZE, &times, fileTxt, EXECUTIONS);
+
+    cout << "\t\tHASH UTILIZANDO LISTA ENCADEADA" << endl;
+    printf("ÍNDICE REMISSIVO \n");
+    hash_linkedList hash_ll(26);
+    hash_ll.insert("bacaxi");
+    hash_ll.insert("bacate");
+
+
 //    /*
 //     * Impressão do menor desempenho - TEMPORARIO
 //     */

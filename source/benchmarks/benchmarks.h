@@ -14,12 +14,14 @@
 #include "../bst/tree.h"
 #include "../avl/avlTree.h"
 
-void exportBenchmark_txt(string type, string table1, string table2);
+void benchmark_AVL(vector<string> keyWords, vector<double> *times, ifstream &file, int totalExecutions);
 
 void benchmark_BST(vector<string> keyWords, vector<double> *times, ifstream &file, int totalExecutions);
 
-void benchmark_AVL(vector<string> keyWords,vector<double> *times,  ifstream &file, int totalExecutions);
-
 void benchmark_LinkedList(vector<string> keyWords, vector<double> *times, ifstream &file, int totalExecutions);
+
+void benchmark_ZivianiHash(vector<string> keyWords, int CAPACITY, vector<double> *times, ifstream &file, int totalExecutions);
+
+void exportBenchmark_txt(string type, string table1, string table2);
 
 #endif //INDICE_REMISIVO_BENCHMARKS_H

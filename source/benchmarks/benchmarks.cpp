@@ -13,6 +13,7 @@
 #include "../bst/tree.h"
 #include "../avl/avlTree.h"
 #include "../linked_list/indice_list.h"
+#include "../hash/hashZiviani.h"
 
 using namespace std;
 
@@ -109,6 +110,42 @@ void benchmark_LinkedList(vector<string> keyWords, vector<double> *times, ifstre
 
     times->push_back(sumTimes / totalExecutions);
     exportBenchmark_txt("Lista_encadeada", table.to_string(), table2.to_string());
+}
+
+void benchmark_ZivianiHash(vector<string> keyWords, int CAPACITY, vector<double> *times, ifstream &file, int totalExecutions) {
+    fort::table table;
+    double time, sumTimes = 0, min, max;
+
+    cout << "\nBENCHMARK" << endl;
+    table << fort::header << "N" << "Estrutura" << "Tempo" << fort::endr;
+
+    for (int i = 0; i < totalExecutions; i++) {
+        hashZiviani temp(CAPACITY);
+        temp.insertKeyWords(keyWords);
+        temp.searchKeywords(file);
+        time = temp.benchmark(keyWords, file);
+
+        if (i == 0)
+            min = max = time;
+        if (time < min)
+            min = time;
+        if (time > max)
+            max = time;
+
+        sumTimes += time;
+        table << i << "Ziviani Hash" << time << fort::endr;
+    }
+
+    std::cout << table.to_string() << std::endl;
+
+    cout << "RESULTADOS" << endl;
+    fort::table table2;
+    table2 << fort::header << "Menor tempo" << "Maior tempo" << "Tempo total" << "Tempo médio" << fort::endr;
+    table2 << min << max << sumTimes << sumTimes / totalExecutions << fort::endr;
+    std::cout << table2.to_string() << std::endl;
+
+    times->push_back(sumTimes / totalExecutions);
+    exportBenchmark_txt("Hash (Ziviani)", table.to_string(), table2.to_string());
 }
 
 void exportBenchmark_txt(string type, string table1, string table2) {
