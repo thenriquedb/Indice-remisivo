@@ -72,7 +72,8 @@ int hashZiviani::searchIndex(string key) {
 }
 
 /*
- * Procura as palavras chaeves no arquivo texto
+ * Realiza a busca das palavras chaves em um arquivo texto
+ * @param ifstream &file arquivo que contém o texto a ser lido
  */
 void hashZiviani::searchKeywords(ifstream &file) {
     int numLine = 1;
@@ -103,7 +104,7 @@ void hashZiviani::printIndice() {
     printTable << fort::header << "Palavra chave" << "Linhas" << fort::endr;
 
     for (int i = 0; i < capacity; ++i) {
-        if (table[i].getKey() != -1) {
+        if (table[i].getKey() != -1 && table[i].getTotalLines() > 0) {
             printTable << table[i].getValue();
 
             for (int j = 0; j < table[i].getTotalLines(); ++j) {

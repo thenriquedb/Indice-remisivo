@@ -37,51 +37,52 @@ int main(int argc, char *argv[]) {
 
 
 //
-//    cout << "\t\tLISTA ENCADEADA\n" << endl;
-//    printf("ÍNDICE REMISSIVO \n");
-//    list_index linkedList;
-//    linkedList.insertKeyWords(keyWords);
-//    linkedList.searchWords(fileTxt);
-//    linkedList.printIndice();
+    cout << "\t\tLISTA ENCADEADA\n" << endl;
+    printf("ÍNDICE REMISSIVO \n");
+    list_index linkedList;
+    linkedList.insertKeyWords(keyWords);
+    linkedList.searchWords(fileTxt);
+    linkedList.printIndice();
 //    benchmark_LinkedList(keyWords, &times, fileTxt, EXECUTIONS);
-//    cout << ":.:.:.:.:.::.:.:.:.:.::.:.:.:.:.::.:.:.:.:.::.:.:.:.:.:" << endl;
+    cout << ":.:.:.:.:.::.:.:.:.:.::.:.:.:.:.::.:.:.:.:.::.:.:.:.:.:" << endl;
 
 //
-//    cout << "\t\tÁRVORE BINÁRIA DE BUSCA (BST)\n" << endl;
-//    Tree BST;
-//    BST.insertKeyWords(keyWords);
-//    BST.searchWords(fileTxt);
-//    printf("ÍNDICE REMISSIVO \n");
-//    BST.displayInOrden(BST.getRoot());
+    cout << "\t\tÁRVORE BINÁRIA DE BUSCA (BST)\n" << endl;
+    Tree BST;
+    BST.insertKeyWords(keyWords);
+    BST.searchWords(fileTxt);
+    printf("ÍNDICE REMISSIVO \n");
+    BST.displayInOrden(BST.getRoot());
 //    benchmark_BST(keyWords, &times, fileTxt, EXECUTIONS);
-//    cout << ":.:.:.:.:.::.:.:.:.:.::.:.:.:.:.::.:.:.:.:.::.:.:.:.:.:" << endl;
-//
-//
-//    cout << "AVL\n" << endl;
-//    printf("ÍNDICE REMISSIVO \n");
-//    avlTree AVL;
-//    AVL.insertKeyWords_avl(keyWords);
-//    AVL.searchWords(fileTxt);
-//    AVL.displayInOrden(AVL.getRoot());
+    cout << ":.:.:.:.:.::.:.:.:.:.::.:.:.:.:.::.:.:.:.:.::.:.:.:.:.:" << endl;
+
+
+    cout << "AVL\n" << endl;
+    printf("ÍNDICE REMISSIVO \n");
+    avlTree AVL;
+    AVL.insertKeyWords_avl(keyWords);
+    AVL.searchWords(fileTxt);
+    AVL.displayInOrden(AVL.getRoot());
 //    benchmark_AVL(keyWords, &times, fileTxt, EXECUTIONS);
-//    cout << ":.:.:.:.:.::.:.:.:.:.::.:.:.:.:.::.:.:.:.:.::.:.:.:.:.:" << endl;
-//
+    cout << ":.:.:.:.:.::.:.:.:.:.::.:.:.:.:.::.:.:.:.:.::.:.:.:.:.:" << endl;
 
 
-//    cout << "\t\tHASH ZIVIANIn" << endl;
-//    printf("ÍNDICE REMISSIVO \n");
-//    hashZiviani tabela(ZIVIANI_HASH_SIZE);
-//    tabela.insertKeyWords(keyWords);
-//    tabela.searchKeywords(fileTxt);
-//    tabela.printIndice();
+    cout << "\t\t\tHASH ZIVIANI\n" << endl;
+    printf("ÍNDICE REMISSIVO \n");
+    hashZiviani tabela(ZIVIANI_HASH_SIZE);
+    tabela.insertKeyWords(keyWords);
+    tabela.searchKeywords(fileTxt);
+    tabela.printIndice();
 //    benchmark_ZivianiHash(keyWords, ZIVIANI_HASH_SIZE, &times, fileTxt, EXECUTIONS);
+    cout << ":.:.:.:.:.::.:.:.:.:.::.:.:.:.:.::.:.:.:.:.::.:.:.:.:.:" << endl;
 
-    cout << "\t\tHASH UTILIZANDO LISTA ENCADEADA" << endl;
+    cout << "\t\t\tHASH UTILIZANDO LISTA ENCADEADA \n" << endl;
     printf("ÍNDICE REMISSIVO \n");
     hash_linkedList hash_ll(26);
-    hash_ll.insert("bacaxi");
-    hash_ll.insert("bacate");
 
+    hash_ll.insertKeyWords(keyWords);
+    hash_ll.searchKeywords(fileTxt);
+    hash_ll.printIndice();
 
 //    /*
 //     * Impressão do menor desempenho - TEMPORARIO
@@ -111,7 +112,6 @@ int main(int argc, char *argv[]) {
 
     // Fechar os arquivos
     keywordsTXT.close();
-
     fileTxt.close();
 
     return 0;

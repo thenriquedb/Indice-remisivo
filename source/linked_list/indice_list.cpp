@@ -28,7 +28,7 @@ void list_index::searchWords(ifstream &file) {
 
         while (!file.eof()) {
             getline(file, line);
-            std::vector<std::string> words{split(line, ' ')};
+            vector<string> words{split(line, ' ')};
             Node *current = keyWords.getHead();
             /* Percorre a lista verificando se a palavra esta presente */
             while (current != nullptr) {

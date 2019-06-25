@@ -11,9 +11,10 @@
 #include "../helps.h"
 #include "../external/fort.h"
 #include "../external/fort.hpp"
+
 using namespace std;
 
-double Tree::benchmark(vector<string> keyWords, ifstream &file){
+double Tree::benchmark(vector<string> keyWords, ifstream &file) {
     chrono::time_point<std::chrono::system_clock> start, end;
     start = chrono::system_clock::now();
 
@@ -22,9 +23,10 @@ double Tree::benchmark(vector<string> keyWords, ifstream &file){
 
     end = std::chrono::system_clock::now();
 
-    chrono::duration<double> elapsed_seconds = runtime(start,end);
+    chrono::duration<double> elapsed_seconds = runtime(start, end);
     return elapsed_seconds.count();
 }
+
 /*
  * Insere um novo nó na arvore
  * @param
@@ -77,13 +79,13 @@ void Tree::insertKeyWords(vector<string> keyWords) {
 }
 
 /*
- * Imprime a arvore utilizando o método In Order
- * @param
- *      Leaf *leaf: raiz
+ * Imprime a arvóre na seguinte ordem: ESQUERDA - RAIZ - DIREITA.
+ * Recebe como parámetro inicial a raiz da arvóre
+ * @param Leaf *n
  */
 void Tree::displayInOrden(Leaf *n) {
     if (n != nullptr) {
-        if (n->getTotalLines() > 0) {
+        if (n->getExistingLines() != nullptr) {
             displayInOrden(n->getLeft());
             cout << "\t" << n->getKey() << "\t";
             n->displayTotalLines();
@@ -92,8 +94,10 @@ void Tree::displayInOrden(Leaf *n) {
         }
     }
 }
+
 /*
  * Realiza a busca das palavras chaves em um arquivo texto
+ * @param ifstream &file arquivo que contém o texto a ser lido
  */
 void Tree::searchWords(ifstream &file) {
     if (this->root != nullptr) {
@@ -119,7 +123,8 @@ void Tree::searchWords(ifstream &file) {
 }
 
 /*
- * Retorna o nó que contem a string pesquisada
+ * Retorna o nó que contem a string pesquisada. Recebe como parametro incial a raiz da arvoré.
+ * @param Leaf *l, string s
  */
 Leaf *Tree::search(Leaf *l, string s) {
     if (l == nullptr || l->getKey() == s)

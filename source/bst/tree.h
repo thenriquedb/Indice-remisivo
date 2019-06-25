@@ -58,6 +58,8 @@ public:
 
     }
 
+    int* getExistingLines() { return lines; };
+
     void displayTotalLines() {
         for (int i = 0; i < totalLines; i++)
             cout << lines[i] << ' ';

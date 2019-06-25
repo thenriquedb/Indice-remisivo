@@ -7,6 +7,9 @@
 
 #include<string>
 #include <vector>
+#include <iostream>
+
+#include "../helps.h"
 
 using namespace std;
 
@@ -23,6 +26,14 @@ public:
         this->word = content;
         this->next = nullptr;
     }
+
+
+    void setNewLine(unsigned int n) {
+        existingLines = allocateIntVector(n, existingLines, totalLines);
+        totalLines++;
+    }
+
+    int getExistingLines(int i) { return existingLines[i]; };
 };
 
 class List {
@@ -37,7 +48,9 @@ public:
     }
 
     void push(string content);
+
     int getLenght() { return lenght; };
+
     Node *getHead() { return head; };
 };
 

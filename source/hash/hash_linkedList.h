@@ -8,6 +8,7 @@
 #include <string>
 #include <ctime>
 #include <iostream>
+#include <fstream>
 #include <vector>
 
 #include "../helps.h"
@@ -16,21 +17,33 @@
 
 class hashNode_ll {
 private:
-//    string content;
     List collisions;
     int key;
 
 public:
-
     void setKey(int k) { key = k; };
 
     int getKey() { return key; };
+
+    List getCollisions() { return collisions; };
 
     void insert(string value, int k) {
         collisions.push(value);
         key = k;
     };
 
+
+    Node *findElement(string value) {
+        Node *current = collisions.getHead();
+
+        while (current != nullptr) {
+            if (current->word == value)
+                return current;
+            current = current->next;
+        }
+
+        return nullptr;
+    }
 };
 
 class hash_linkedList {
@@ -42,18 +55,23 @@ public:
     hash_linkedList(int capacity) {
         this->capacity = capacity; // Tamanho maximo da tabela
         this->table = new hashNode_ll[this->capacity];
+
+        for (int i = 0; i < capacity; ++i) {
+            table[i].insert("\0", -1);
+        }
     }
 
-    void insert(string value) {
-        int index = getHash(value);
-        table->insert(value, index);
-    }
+    void insert(string value);
+
+    void printIndice();
+
+    void searchKeywords(ifstream &file);
+
+    void insertKeyWords(vector<string> keywords);
 
     // Retorna um valor entre 0 e 25.
     // Caracter ASCII (97 - 122)
-    int getHash(string value) {
-        return (122 - (int) value[0]);
-    }
+    int getHash(string value);
 };
 
 

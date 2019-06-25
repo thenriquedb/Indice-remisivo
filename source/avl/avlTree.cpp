@@ -30,16 +30,27 @@ void avlTree::insertKeyWords_avl(vector<string> keyWords) {
     }
 }
 
+/*
+ * Imprime a arvóre na seguinte ordem: ESQUERDA - RAIZ - DIREITA.
+ * Recebe como parámetro inicial a raiz da arvóre
+ * @param Leaf *n
+ */
 void avlTree::displayInOrden(Leaf *n) {
     if (n != nullptr) {
-        displayInOrden(n->getLeft());
-        cout << "\t" << n->getKey() << "\t";
-        n->displayTotalLines();
-        cout << endl;
-        displayInOrden(n->getRight());
+        if (n->getExistingLines() != nullptr) {
+            displayInOrden(n->getLeft());
+            cout << "\t" << n->getKey() << "\t";
+            n->displayTotalLines();
+            cout << endl;
+            displayInOrden(n->getRight());
+        }
     }
 }
 
+/*
+ * Realiza a busca das palavras chaves em um arquivo texto
+ * @param ifstream &file arquivo que contém o texto a ser lido
+ */
 void avlTree::searchWords(ifstream &file) {
     if (this->root != nullptr) {
         string line;
