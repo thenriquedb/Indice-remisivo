@@ -49,7 +49,7 @@ const vector<string> split(const string &string, const char &token) {
         if (n != token) {
             buff += n;
         } else if (n == token && !buff.empty()) {
-            vetor.push_back(s_toLower(buff));
+            vetor.push_back(s_toLower(clear_string(buff)));
             buff = "";
         }
     }
@@ -89,6 +89,21 @@ string s_toLower(string s) {
 string s_toUpper(string s) {
     std::transform(s.begin(), s.end(), s.begin(), ::toupper); // Converte string para minuscula
     return s;
+}
+
+/*
+ * Remove alguns caracter especial da uma string
+ */
+string clear_string(string word) {
+    std::string output;
+
+    for(auto n:word) {
+        if (n != '.' && n != ',' && n != ':' && n != ';') {
+            output += n;
+        }
+    }
+
+    return output;
 }
 
 /*

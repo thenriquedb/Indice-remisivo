@@ -21,13 +21,24 @@
 
 using namespace std;
 
-void benchmark_BST(vector<string> keyWords, vector<double> *times, ifstream &file, int totalExecutions) {
-    fort::table table;
+/*
+ * Realiza o teste de desemenho da estrutura BST.
+ * O calculo do tempo é feito levando em consideração o tempo de inserção das palavras na estrutura e o tempo gasto para
+ * a pesquisa das mesmas no arquivo TXT.
+ *
+ * @param
+ *      vector<string> keyWords -  vetor que contém as palavras chaves
+ *      vector<averageTimes> *times - vetor da classe "averageTimes" que armazena as informações sobre o benchmark
+ *      ifstream &file - arquivo de texto que será lido
+ *      int totalExecutions - número de vezes que o benchmark será rodado
+ */
+void benchmark_BST(vector<string> keyWords, vector<averageTimes> *times, ifstream &file, int totalExecutions) {
     double time, sumTimes = 0, min, max;
 
-    cout << "\nBENCHMARK" << endl;
+    fort::table table;
     table << fort::header << "N" << "Estrutura" << "Tempo" << fort::endr;
 
+    cout << "\nBENCHMARK" << endl;
     for (int i = 0; i < totalExecutions; i++) {
         Tree temp;
         time = temp.benchmark(keyWords, file);
@@ -49,16 +60,31 @@ void benchmark_BST(vector<string> keyWords, vector<double> *times, ifstream &fil
     table2 << min << max << sumTimes << sumTimes / totalExecutions << fort::endr;
     std::cout << table2.to_string() << std::endl;
 
-    times->push_back(sumTimes / totalExecutions);
+    // Exportando o tempos de execução
+    averageTimes temp;
+    temp.setTimes("BST", sumTimes, sumTimes / totalExecutions, min, max);
+    times->push_back(temp);
     exportBenchmark_txt("BST", table.to_string(), table2.to_string());
 }
 
-void benchmark_AVL(vector<string> keyWords, vector<double> *times, ifstream &file, int totalExecutions) {
-    fort::table table;
+/*
+ * Realiza o teste de desemenho da estrutura AVL.
+ * O calculo do tempo é feito levando em consideração o tempo de inserção das palavras na estrutura e o tempo gasto para
+ * a pesquisa das mesmas no arquivo TXT.
+ *
+ * @param
+ *      vector<string> keyWords -  vetor que contém as palavras chaves
+ *      vector<averageTimes> *times - vetor da classe "averageTimes" que armazena as informações sobre o benchmark
+ *      ifstream &file - arquivo de texto que será lido
+ *      int totalExecutions - número de vezes que o benchmark será rodado
+ */
+void benchmark_AVL(vector<string> keyWords, vector<averageTimes> *times, ifstream &file, int totalExecutions) {
     double time, sumTimes = 0, min, max;
 
-    cout << "\nBENCHMARK" << endl;
+    fort::table table;
     table << fort::header << "N" << "Estrutura" << "Tempo" << fort::endr;
+
+    cout << "\nBENCHMARK" << endl;
     for (int i = 0; i < totalExecutions; i++) {
         avlTree temp;
         time = temp.benchmarkAVL(keyWords, file);
@@ -80,11 +106,25 @@ void benchmark_AVL(vector<string> keyWords, vector<double> *times, ifstream &fil
     table2 << min << max << sumTimes << sumTimes / totalExecutions << fort::endr;
     std::cout << table2.to_string() << std::endl;
 
-    times->push_back(sumTimes / totalExecutions);
+    // Exportando o tempos de execução
+    averageTimes temp;
+    temp.setTimes("AVL", sumTimes, sumTimes / totalExecutions, min, max);
+    times->push_back(temp);
     exportBenchmark_txt("AVL", table.to_string(), table2.to_string());
 }
 
-void benchmark_LinkedList(vector<string> keyWords, vector<double> *times, ifstream &file, int totalExecutions) {
+/*
+ * Realiza o teste de desemenho da estrutura de lista encadeada.
+ * O calculo do tempo é feito levando em consideração o tempo de inserção das palavras na estrutura e o tempo gasto para
+ * a pesquisa das mesmas no arquivo TXT.
+ *
+ * @param
+ *      vector<string> keyWords -  vetor que contém as palavras chaves
+ *      vector<averageTimes> *times - vetor da classe "averageTimes" que armazena as informações sobre o benchmark
+ *      ifstream &file - arquivo de texto que será lido
+ *      int totalExecutions - número de vezes que o benchmark será rodado
+ */
+void benchmark_LinkedList(vector<string> keyWords, vector<averageTimes> *times, ifstream &file, int totalExecutions) {
     fort::table table;
     double time, sumTimes = 0, min, max;
 
@@ -103,8 +143,8 @@ void benchmark_LinkedList(vector<string> keyWords, vector<double> *times, ifstre
         sumTimes += time;
         table << i << "Lista encadeada" << time << fort::endr;
     }
-    std::cout << table.to_string() << std::endl;
 
+    std::cout << table.to_string() << std::endl;
 
     cout << "RESULTADOS" << endl;
     fort::table table2;
@@ -112,26 +152,40 @@ void benchmark_LinkedList(vector<string> keyWords, vector<double> *times, ifstre
     table2 << min << max << sumTimes << sumTimes / totalExecutions << fort::endr;
     std::cout << table2.to_string() << std::endl;
 
-    times->push_back(sumTimes / totalExecutions);
+    // Exportando o tempos de execução
+    averageTimes temp;
+    temp.setTimes("Lista encadeada", sumTimes, sumTimes / totalExecutions, min, max);
+    times->push_back(temp);
+
     exportBenchmark_txt("Lista_encadeada", table.to_string(), table2.to_string());
 }
 
-void benchmarkHash(string type, vector<string> keyWords, int CAPACITY, vector<double> *times,
+/*
+ * Realiza o teste de desemenho das estruturas open e closed hash.
+ * O calculo do tempo é feito levando em consideração o tempo de inserção das palavras na estrutura e o tempo gasto para
+ * a pesquisa das mesmas no arquivo TXT.
+ *
+ * @param
+ *      vector<string> keyWords -  vetor que contém as palavras chaves
+ *      vector<averageTimes> *times - vetor da classe "averageTimes" que armazena as informações sobre o benchmark
+ *      ifstream &file - arquivo de texto que será lido
+ *      int totalExecutions - número de vezes que o benchmark será rodado
+ */
+void benchmarkHash(string type, vector<string> keyWords, int CAPACITY, vector<averageTimes> *times,
                    ifstream &file, int totalExecutions) {
 
     // Executa todas as três funções de calculo de hash
     for (int hashFunction = 1; hashFunction <= 3; ++hashFunction) {
-        fort::table table;
         double time, sumTimes = 0, min, max;
-        string s_hashFunction = (type + " hash ") + to_string(hashFunction);
 
+        string s_hashFunction = (type + " hash ") + to_string(hashFunction);
         closedHash temp_closedHash(CAPACITY, hashFunction);
         openHash temp_openHash(CAPACITY, hashFunction);
 
-
-        cout << "\nBENCHMARK UTILIZANDO O A FUNÇÃO HASH " << hashFunction << endl;
+        fort::table table;
         table << fort::header << "N" << "Estrutura" << "Tempo" << fort::endr;
 
+        cout << "\nBENCHMARK UTILIZANDO O A FUNÇÃO HASH " << hashFunction << endl;
         for (int i = 0; i < totalExecutions; i++) {
             // Caso deseja realziar o benchmark da estrutura closed hash
             if (type == "closed") {
@@ -173,7 +227,12 @@ void benchmarkHash(string type, vector<string> keyWords, int CAPACITY, vector<do
         table2 << min << max << sumTimes << sumTimes / totalExecutions << fort::endr;
 
         std::cout << table2.to_string() << std::endl;
-        times->push_back(sumTimes / totalExecutions);
+
+        // Exportando o tempos de execução
+        averageTimes temp;
+        temp.setTimes(type + " hash - Metodo " + to_string(hashFunction), sumTimes, sumTimes / totalExecutions, min,
+                      max);
+        times->push_back(temp);
         exportBenchmark_txt("closedHash", table.to_string(), table2.to_string());
     }
 }
@@ -209,4 +268,38 @@ void exportBenchmark_txt(string type, string table1, string table2) {
 
     file.close();
     fileAll.close();
+}
+
+void checkBenchmarkResults(vector<averageTimes> times) {
+    double min, max, average, total;
+    string dataStruct_min, dataStruct_max, dataStruct_average, dataStruct_total;
+
+    min = times[0].getMinTime();
+    max = times[0].getMaxTime();
+    average = times[0].getAverageTime();
+    total = times[0].getTotalTime();
+
+    for (int i = 0; i < times.size(); i++) {
+        if (times[i].getMinTime() < min) {
+            dataStruct_min = times[i].getDataStruct();
+            min = times[i].getMinTime();
+        }
+        if (times[i].getMaxTime() > max) {
+            dataStruct_max = times[i].getDataStruct();
+            max = times[i].getMaxTime();
+        }
+        if (times[i].getAverageTime() < average) {
+            dataStruct_average= times[i].getDataStruct();
+            average = times[i].getAverageTime();
+        }
+        if (times[i].getTotalTime() < total) {
+            dataStruct_total = times[i].getDataStruct();
+            total = times[i].getTotalTime();
+        }
+    }
+
+    cout << "Menor tempo registrado foi de " << min << " utilizando a estrutura " << dataStruct_min << endl;
+    cout << "Maior tempo registrado foi de " << max << " utilizando a estrutura " << dataStruct_max << endl;
+    cout << "Menor tempo medio registrado foi de " << average << " utilizando a estrutura " << dataStruct_average << endl;
+    cout << "Menor tempo total de execução registrado foi de " << total << " utilizando a estrutura " << dataStruct_total<< endl;
 }
