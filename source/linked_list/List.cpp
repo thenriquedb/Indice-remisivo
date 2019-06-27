@@ -11,6 +11,8 @@ using namespace std;
 
 /*
  * Adciona um novo elemento no final da lista
+ * @param
+ *      string content Palavra  a ser inserida
  */
 void List::push(string content) {
     if (head == nullptr)
@@ -21,4 +23,33 @@ void List::push(string content) {
         this->head = new_node;
     }
     this->lenght++;
+}
+
+/*
+ * Re-organiza as palavras em ordem alfabética
+*/
+Node *List::sortList() {
+    Node *sorted = nullptr;
+    while (this->head) {
+        // Pop
+        Node *head = this->head;
+        this->head = this->head->next;
+
+        // Find the place to insert.
+        Node *lead = sorted;
+        Node *trail = nullptr;
+        while (lead && lead->word <= head->word) {
+            trail = lead;
+            lead = lead->next;
+        }
+
+        // Insert either within the list or at the head.
+        head->next = lead;
+        if (trail)
+            trail->next = head;
+        else
+            sorted = head;
+    }
+    this->head = sorted;
+
 }

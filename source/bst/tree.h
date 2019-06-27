@@ -26,7 +26,7 @@ private:
     int totalLines, height;
 
 public:
-    Leaf(string k) {
+    explicit Leaf(string k) {
         this->key = k;
         height = 0;
         totalLines = 0;
@@ -37,33 +37,19 @@ public:
     }
 
     string getKey() { return key; };
-
     Leaf *getLeft() { return left; };
-
     Leaf *getRight() { return right; };
-
-    int getTotalLines() { return totalLines; };
-
     int getHeight() {return height; };
-
     void setLeft(Leaf *n) { left = n; };
-
     void setRight(Leaf *n) { right = n; };
-//    int getTreeHeight(Leaf *n);
     void setHeight(int h) { height = h; }
-
     void setNewLine(int n) {
         lines = allocateIntVector(n, lines, totalLines);
         totalLines++;
 
     }
-
     int* getExistingLines() { return lines; };
-
-    void displayTotalLines() {
-        for (int i = 0; i < totalLines; i++)
-            cout << lines[i] << ' ';
-    }
+    void displayTotalLines() { for (int i = 0; i < totalLines; i++) cout << lines[i] << ' '; }
 };
 
 class Tree {
@@ -74,36 +60,20 @@ private:
 
 protected:
     void setRoot(Leaf* n){ root = n;}
+    Leaf *getRoot() { return root; };
+    void displayInOrden(Leaf *n);
+    void insertNode(const string &new_key);
+    void insertKeyWords(vector<string> keyWords);
+    void searchWords(ifstream &file);
+    Leaf *search(Leaf *l, string s);
 
 public:
     Tree() { // Construtor
         totalNodes = height = 0;
         root = nullptr;
     }
-
-
+    void run(vector<string> keyWords,  ifstream &file);
     double benchmark(vector<string> keyWords, ifstream &file);
-
-    Leaf *getRoot() { return root; };
-
-    void displayInOrden(Leaf *n);
-
-    void insertNode(const string &new_key);
-
-    void insertKeyWords(vector<string> keyWords);
-
-    void searchWords(ifstream &file);
-
-    int getTreeHeight(Leaf *n);
-
-    int getTotalNodes() { return totalNodes; };
-
-    Leaf *search(Leaf *l, string s);
-
-
-
-    // Libera os nós da arvóre
-//    void freeTreeNodes(Leaf *leaf);
 };
 
 #endif //INDICE_REMISIVO_TREE_H

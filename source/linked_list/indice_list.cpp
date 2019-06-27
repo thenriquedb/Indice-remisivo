@@ -15,6 +15,12 @@
 
 using namespace std;
 
+void list_index::run(vector<string>keyWordsArray, ifstream&file){
+    this->insertKeyWords(keyWordsArray);
+    this->searchWords(file);
+    this->printIndice();
+}
+
 /*
  * Realiza a busca das palavras chaves no arquivo TXT
  * #param
@@ -52,6 +58,7 @@ void list_index::searchWords(ifstream &file) {
  * Imprime o indice remissivo
  */
 void list_index::printIndice() {
+    this->keyWords.sortList();
     if (this->keyWords.getHead() == nullptr) {
         cout << "Nenhuma palavra chave foi encontrada no texto." << endl;
     } else {
@@ -93,4 +100,18 @@ double list_index::benchmark(vector<string> keyWords, ifstream &file) {
 
     chrono::duration<double> elapsed_seconds = runtime(start, end);
     return elapsed_seconds.count();
+}
+
+/*
+ * Recebe um vetor contendo todas as palvras chaves lidas do arquivo e em seguida
+ * as inseres na estrutura.
+ * @param
+ *      vector<string> keyWordsArray Vetor com as palavras chave
+ */
+void list_index::insertKeyWords(vector<string> keyWordsArray) {
+    for (int i = keyWordsArray.size() - 1; i > 0; i--) {
+        if (keyWordsArray[i].size() >= 4)
+            keyWords.push(keyWordsArray[i]);
+    }
+    lenght = keyWordsArray.size();
 }

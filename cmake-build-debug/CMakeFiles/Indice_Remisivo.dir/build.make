@@ -161,31 +161,31 @@ CMakeFiles/Indice_Remisivo.dir/source/benchmarks/benchmarks.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Indice_Remisivo.dir/source/benchmarks/benchmarks.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/thiago/CLionProjects/Indice_Remisivo/source/benchmarks/benchmarks.cpp -o CMakeFiles/Indice_Remisivo.dir/source/benchmarks/benchmarks.cpp.s
 
-CMakeFiles/Indice_Remisivo.dir/source/hash/hashZiviani.cpp.o: CMakeFiles/Indice_Remisivo.dir/flags.make
-CMakeFiles/Indice_Remisivo.dir/source/hash/hashZiviani.cpp.o: ../source/hash/hashZiviani.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/thiago/CLionProjects/Indice_Remisivo/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Indice_Remisivo.dir/source/hash/hashZiviani.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Indice_Remisivo.dir/source/hash/hashZiviani.cpp.o -c /home/thiago/CLionProjects/Indice_Remisivo/source/hash/hashZiviani.cpp
+CMakeFiles/Indice_Remisivo.dir/source/hash/closedHash.cpp.o: CMakeFiles/Indice_Remisivo.dir/flags.make
+CMakeFiles/Indice_Remisivo.dir/source/hash/closedHash.cpp.o: ../source/hash/closedHash.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/thiago/CLionProjects/Indice_Remisivo/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Indice_Remisivo.dir/source/hash/closedHash.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Indice_Remisivo.dir/source/hash/closedHash.cpp.o -c /home/thiago/CLionProjects/Indice_Remisivo/source/hash/closedHash.cpp
 
-CMakeFiles/Indice_Remisivo.dir/source/hash/hashZiviani.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Indice_Remisivo.dir/source/hash/hashZiviani.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/thiago/CLionProjects/Indice_Remisivo/source/hash/hashZiviani.cpp > CMakeFiles/Indice_Remisivo.dir/source/hash/hashZiviani.cpp.i
+CMakeFiles/Indice_Remisivo.dir/source/hash/closedHash.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Indice_Remisivo.dir/source/hash/closedHash.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/thiago/CLionProjects/Indice_Remisivo/source/hash/closedHash.cpp > CMakeFiles/Indice_Remisivo.dir/source/hash/closedHash.cpp.i
 
-CMakeFiles/Indice_Remisivo.dir/source/hash/hashZiviani.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Indice_Remisivo.dir/source/hash/hashZiviani.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/thiago/CLionProjects/Indice_Remisivo/source/hash/hashZiviani.cpp -o CMakeFiles/Indice_Remisivo.dir/source/hash/hashZiviani.cpp.s
+CMakeFiles/Indice_Remisivo.dir/source/hash/closedHash.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Indice_Remisivo.dir/source/hash/closedHash.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/thiago/CLionProjects/Indice_Remisivo/source/hash/closedHash.cpp -o CMakeFiles/Indice_Remisivo.dir/source/hash/closedHash.cpp.s
 
-CMakeFiles/Indice_Remisivo.dir/source/hash/hash_linkedList.cpp.o: CMakeFiles/Indice_Remisivo.dir/flags.make
-CMakeFiles/Indice_Remisivo.dir/source/hash/hash_linkedList.cpp.o: ../source/hash/hash_linkedList.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/thiago/CLionProjects/Indice_Remisivo/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Indice_Remisivo.dir/source/hash/hash_linkedList.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Indice_Remisivo.dir/source/hash/hash_linkedList.cpp.o -c /home/thiago/CLionProjects/Indice_Remisivo/source/hash/hash_linkedList.cpp
+CMakeFiles/Indice_Remisivo.dir/source/hash/openHash.cpp.o: CMakeFiles/Indice_Remisivo.dir/flags.make
+CMakeFiles/Indice_Remisivo.dir/source/hash/openHash.cpp.o: ../source/hash/openHash.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/thiago/CLionProjects/Indice_Remisivo/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Indice_Remisivo.dir/source/hash/openHash.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Indice_Remisivo.dir/source/hash/openHash.cpp.o -c /home/thiago/CLionProjects/Indice_Remisivo/source/hash/openHash.cpp
 
-CMakeFiles/Indice_Remisivo.dir/source/hash/hash_linkedList.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Indice_Remisivo.dir/source/hash/hash_linkedList.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/thiago/CLionProjects/Indice_Remisivo/source/hash/hash_linkedList.cpp > CMakeFiles/Indice_Remisivo.dir/source/hash/hash_linkedList.cpp.i
+CMakeFiles/Indice_Remisivo.dir/source/hash/openHash.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Indice_Remisivo.dir/source/hash/openHash.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/thiago/CLionProjects/Indice_Remisivo/source/hash/openHash.cpp > CMakeFiles/Indice_Remisivo.dir/source/hash/openHash.cpp.i
 
-CMakeFiles/Indice_Remisivo.dir/source/hash/hash_linkedList.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Indice_Remisivo.dir/source/hash/hash_linkedList.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/thiago/CLionProjects/Indice_Remisivo/source/hash/hash_linkedList.cpp -o CMakeFiles/Indice_Remisivo.dir/source/hash/hash_linkedList.cpp.s
+CMakeFiles/Indice_Remisivo.dir/source/hash/openHash.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Indice_Remisivo.dir/source/hash/openHash.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/thiago/CLionProjects/Indice_Remisivo/source/hash/openHash.cpp -o CMakeFiles/Indice_Remisivo.dir/source/hash/openHash.cpp.s
 
 # Object files for target Indice_Remisivo
 Indice_Remisivo_OBJECTS = \
@@ -197,8 +197,8 @@ Indice_Remisivo_OBJECTS = \
 "CMakeFiles/Indice_Remisivo.dir/source/avl/avlTree.cpp.o" \
 "CMakeFiles/Indice_Remisivo.dir/source/external/fort.c.o" \
 "CMakeFiles/Indice_Remisivo.dir/source/benchmarks/benchmarks.cpp.o" \
-"CMakeFiles/Indice_Remisivo.dir/source/hash/hashZiviani.cpp.o" \
-"CMakeFiles/Indice_Remisivo.dir/source/hash/hash_linkedList.cpp.o"
+"CMakeFiles/Indice_Remisivo.dir/source/hash/closedHash.cpp.o" \
+"CMakeFiles/Indice_Remisivo.dir/source/hash/openHash.cpp.o"
 
 # External object files for target Indice_Remisivo
 Indice_Remisivo_EXTERNAL_OBJECTS =
@@ -211,8 +211,8 @@ Indice_Remisivo: CMakeFiles/Indice_Remisivo.dir/source/bst/tree.cpp.o
 Indice_Remisivo: CMakeFiles/Indice_Remisivo.dir/source/avl/avlTree.cpp.o
 Indice_Remisivo: CMakeFiles/Indice_Remisivo.dir/source/external/fort.c.o
 Indice_Remisivo: CMakeFiles/Indice_Remisivo.dir/source/benchmarks/benchmarks.cpp.o
-Indice_Remisivo: CMakeFiles/Indice_Remisivo.dir/source/hash/hashZiviani.cpp.o
-Indice_Remisivo: CMakeFiles/Indice_Remisivo.dir/source/hash/hash_linkedList.cpp.o
+Indice_Remisivo: CMakeFiles/Indice_Remisivo.dir/source/hash/closedHash.cpp.o
+Indice_Remisivo: CMakeFiles/Indice_Remisivo.dir/source/hash/openHash.cpp.o
 Indice_Remisivo: CMakeFiles/Indice_Remisivo.dir/build.make
 Indice_Remisivo: CMakeFiles/Indice_Remisivo.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/thiago/CLionProjects/Indice_Remisivo/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable Indice_Remisivo"

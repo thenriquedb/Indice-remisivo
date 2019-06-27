@@ -27,6 +27,7 @@ int *allocateIntVector(int numLine, int *p, int n);
 
 string s_toLower(string s);
 
+string s_toUpper(string s);
 chrono::duration<double> runtime(chrono::time_point<std::chrono::system_clock> startTime,
                                  chrono::time_point<std::chrono::system_clock> endTime);
 

@@ -31,68 +31,55 @@ public:
     };
 
     string getValue() { return word; };
-
     void setNewLine(unsigned int n) {
         existingLines = allocateIntVector(n, existingLines, totalLines);
         totalLines++;
     }
-
     int getExistingLines(int i) { return existingLines[i]; };
-
     int getTotalLines() { return totalLines; };
-
     int getKey() { return key; };
 
 };
 
-class hashZiviani {
+class closedHash {
 private:
     hashNode *table;
-    int capacity;
+    int capacity, hashUsed;     // Capacidade maxima e  Capacidade maxima
+
+    int generateIndex_1(string key);
+
+    // Hash Ziviani
+    int generateIndex_2(string key);
+    int generateWeights();
     vector<int> weights;
 
-    // Gera os valores dos pesos aleatoriamente
-    int generateWeights() {
-        std::srand(time(nullptr));
-        for (int i = 0; i < this->capacity; i++)
-            this->weights.push_back(rand() % this->capacity);
-    }
-
-    int h(string key) {
-        int sum = 0;
-        for (int i = 0; i < key.length(); i++) {
-            sum = sum + (int) key[i] * weights[i];
-        }
-
-        return sum % this->capacity;
-    }
-
+    int generateIndex_3(string key);
     int searchIndex(string key);
 
-    hashNode getTable(int index) { return table[index]; };
+    void insert(string key);
+    void printIndice();
 
 public:
-    explicit hashZiviani(unsigned int capacity) {
+    // Constructor
+    explicit closedHash(unsigned int capacity, int hash) {
         this->capacity = capacity; // Tamanho maximo da tabela
         this->table = new hashNode[this->capacity];
+        this->hashUsed = hash;
 
         // Inicia as celulas
         for (int i = 0; i < this->capacity; ++i)
             table[i].insertItem("\0", -1);
 
-        generateWeights();
+        if (this->hashUsed == 2)
+            generateWeights();
     }
 
-    void insert(string key);
-
     void searchKeywords(ifstream &file);
-
     void insertKeyWords(vector<string> keywords);
 
+    void run(vector<string> keyWords,ifstream &file);
+
     double benchmark(vector<string> keyWords, ifstream &file);
-
-    void printIndice();
-
 };
 
 

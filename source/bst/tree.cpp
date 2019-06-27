@@ -14,6 +14,13 @@
 
 using namespace std;
 
+void Tree::run(vector<string> keyWords,  ifstream &file){
+    this->insertKeyWords(keyWords);
+    this->searchWords(file);
+    this->displayInOrden(this->root);
+}
+
+
 double Tree::benchmark(vector<string> keyWords, ifstream &file) {
     chrono::time_point<std::chrono::system_clock> start, end;
     start = chrono::system_clock::now();

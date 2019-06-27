@@ -15,36 +15,26 @@
 class avlTree {
 private:
     Leaf *root;
-    int height, totalNodes;
-
-
-public:
-
-    avlTree() {
-        root = nullptr;
-        height = totalNodes = 0;
-    }
-
-    double benchmarkAVL(vector<string> keyWords, ifstream &file);
-
-    Leaf *search(Leaf *l, string s);
+    int height;
 
     int heightDifference(Leaf *n);
-
-    void insertKeyWords_avl(vector<string> keyWords);
-
+    Leaf *search(Leaf *l, string s);
     Leaf *rightRotate(Leaf *y);
-
     Leaf *leftRotate(Leaf *y);
-
     Leaf *getRoot() { return root; };
-
+    Leaf *insert_avl(Leaf *n, const string &new_key);
+    void insertKeyWords_avl(vector<string> keyWords);
     void displayInOrden(Leaf *n);
-
     void searchWords(ifstream &file);
 
+public:
+    explicit avlTree() {
+        root = nullptr;
+        height = 0;
+    }
+    void run(vector<string> keyWords,ifstream &file);
+    double benchmarkAVL(vector<string> keyWords, ifstream &file);
 
-    Leaf *insert_avl(Leaf *n, const string &new_key);
 };
 
 

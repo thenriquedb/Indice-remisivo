@@ -83,6 +83,15 @@ string s_toLower(string s) {
 }
 
 /*
+ * Recebe uma string e a retorna maiscula
+ * @apram string s
+ */
+string s_toUpper(string s) {
+    std::transform(s.begin(), s.end(), s.begin(), ::toupper); // Converte string para minuscula
+    return s;
+}
+
+/*
  * Realiza o armazenamento das linhas
  */
 int *allocateIntVector(int numLine, int *p, int n) {
@@ -103,10 +112,3 @@ int *allocateIntVector(int numLine, int *p, int n) {
  * Recebe dois números e retorna o maior
  */
 int maxNumber(int a, int b) { return (a > b) ? a : b; }
-
-
-//void exportBenchmark_txt(ofstream file, string line){
-//
-//
-//}
-//

@@ -5,6 +5,13 @@
 #include "avlTree.h"
 #include "../helps.h"
 
+void avlTree::run(vector<string> keyWords,ifstream &file){
+    this->insertKeyWords_avl(keyWords);
+    this->searchWords(file);
+    printf("ÍNDICE REMISSIVO \n");
+    this->displayInOrden(this->getRoot());
+}
+
 /*
  * Insere as palavras chaves nos nós da arvore e realiza a busca no arquivo de texto
  * @param

@@ -231,59 +231,59 @@ source/external/fort.c.s:
 	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/external/fort.c.s
 .PHONY : source/external/fort.c.s
 
-source/hash/hashZiviani.o: source/hash/hashZiviani.cpp.o
+source/hash/closedHash.o: source/hash/closedHash.cpp.o
 
-.PHONY : source/hash/hashZiviani.o
-
-# target to build an object file
-source/hash/hashZiviani.cpp.o:
-	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/hash/hashZiviani.cpp.o
-.PHONY : source/hash/hashZiviani.cpp.o
-
-source/hash/hashZiviani.i: source/hash/hashZiviani.cpp.i
-
-.PHONY : source/hash/hashZiviani.i
-
-# target to preprocess a source file
-source/hash/hashZiviani.cpp.i:
-	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/hash/hashZiviani.cpp.i
-.PHONY : source/hash/hashZiviani.cpp.i
-
-source/hash/hashZiviani.s: source/hash/hashZiviani.cpp.s
-
-.PHONY : source/hash/hashZiviani.s
-
-# target to generate assembly for a file
-source/hash/hashZiviani.cpp.s:
-	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/hash/hashZiviani.cpp.s
-.PHONY : source/hash/hashZiviani.cpp.s
-
-source/hash/hash_linkedList.o: source/hash/hash_linkedList.cpp.o
-
-.PHONY : source/hash/hash_linkedList.o
+.PHONY : source/hash/closedHash.o
 
 # target to build an object file
-source/hash/hash_linkedList.cpp.o:
-	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/hash/hash_linkedList.cpp.o
-.PHONY : source/hash/hash_linkedList.cpp.o
+source/hash/closedHash.cpp.o:
+	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/hash/closedHash.cpp.o
+.PHONY : source/hash/closedHash.cpp.o
 
-source/hash/hash_linkedList.i: source/hash/hash_linkedList.cpp.i
+source/hash/closedHash.i: source/hash/closedHash.cpp.i
 
-.PHONY : source/hash/hash_linkedList.i
+.PHONY : source/hash/closedHash.i
 
 # target to preprocess a source file
-source/hash/hash_linkedList.cpp.i:
-	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/hash/hash_linkedList.cpp.i
-.PHONY : source/hash/hash_linkedList.cpp.i
+source/hash/closedHash.cpp.i:
+	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/hash/closedHash.cpp.i
+.PHONY : source/hash/closedHash.cpp.i
 
-source/hash/hash_linkedList.s: source/hash/hash_linkedList.cpp.s
+source/hash/closedHash.s: source/hash/closedHash.cpp.s
 
-.PHONY : source/hash/hash_linkedList.s
+.PHONY : source/hash/closedHash.s
 
 # target to generate assembly for a file
-source/hash/hash_linkedList.cpp.s:
-	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/hash/hash_linkedList.cpp.s
-.PHONY : source/hash/hash_linkedList.cpp.s
+source/hash/closedHash.cpp.s:
+	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/hash/closedHash.cpp.s
+.PHONY : source/hash/closedHash.cpp.s
+
+source/hash/openHash.o: source/hash/openHash.cpp.o
+
+.PHONY : source/hash/openHash.o
+
+# target to build an object file
+source/hash/openHash.cpp.o:
+	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/hash/openHash.cpp.o
+.PHONY : source/hash/openHash.cpp.o
+
+source/hash/openHash.i: source/hash/openHash.cpp.i
+
+.PHONY : source/hash/openHash.i
+
+# target to preprocess a source file
+source/hash/openHash.cpp.i:
+	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/hash/openHash.cpp.i
+.PHONY : source/hash/openHash.cpp.i
+
+source/hash/openHash.s: source/hash/openHash.cpp.s
+
+.PHONY : source/hash/openHash.s
+
+# target to generate assembly for a file
+source/hash/openHash.cpp.s:
+	$(MAKE) -f CMakeFiles/Indice_Remisivo.dir/build.make CMakeFiles/Indice_Remisivo.dir/source/hash/openHash.cpp.s
+.PHONY : source/hash/openHash.cpp.s
 
 source/helps.o: source/helps.cpp.o
 
@@ -414,12 +414,12 @@ help:
 	@echo "... source/external/fort.o"
 	@echo "... source/external/fort.i"
 	@echo "... source/external/fort.s"
-	@echo "... source/hash/hashZiviani.o"
-	@echo "... source/hash/hashZiviani.i"
-	@echo "... source/hash/hashZiviani.s"
-	@echo "... source/hash/hash_linkedList.o"
-	@echo "... source/hash/hash_linkedList.i"
-	@echo "... source/hash/hash_linkedList.s"
+	@echo "... source/hash/closedHash.o"
+	@echo "... source/hash/closedHash.i"
+	@echo "... source/hash/closedHash.s"
+	@echo "... source/hash/openHash.o"
+	@echo "... source/hash/openHash.i"
+	@echo "... source/hash/openHash.s"
 	@echo "... source/helps.o"
 	@echo "... source/helps.i"
 	@echo "... source/helps.s"

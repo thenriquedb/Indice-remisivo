@@ -18,7 +18,8 @@ CMakeFiles/Indice_Remisivo.dir/source/benchmarks/benchmarks.cpp.o
  /home/thiago/CLionProjects/Indice_Remisivo/source/bst/tree.h
  /home/thiago/CLionProjects/Indice_Remisivo/source/external/fort.h
  /home/thiago/CLionProjects/Indice_Remisivo/source/external/fort.hpp
- /home/thiago/CLionProjects/Indice_Remisivo/source/hash/hashZiviani.h
+ /home/thiago/CLionProjects/Indice_Remisivo/source/hash/closedHash.h
+ /home/thiago/CLionProjects/Indice_Remisivo/source/hash/openHash.h
  /home/thiago/CLionProjects/Indice_Remisivo/source/helps.h
  /home/thiago/CLionProjects/Indice_Remisivo/source/linked_list/List.h
  /home/thiago/CLionProjects/Indice_Remisivo/source/linked_list/indice_list.h
@@ -28,17 +29,17 @@ CMakeFiles/Indice_Remisivo.dir/source/bst/tree.cpp.o
  /home/thiago/CLionProjects/Indice_Remisivo/source/external/fort.h
  /home/thiago/CLionProjects/Indice_Remisivo/source/external/fort.hpp
  /home/thiago/CLionProjects/Indice_Remisivo/source/helps.h
-CMakeFiles/Indice_Remisivo.dir/source/hash/hashZiviani.cpp.o
+CMakeFiles/Indice_Remisivo.dir/source/hash/closedHash.cpp.o
  /home/thiago/CLionProjects/Indice_Remisivo/source/external/fort.h
  /home/thiago/CLionProjects/Indice_Remisivo/source/external/fort.hpp
- /home/thiago/CLionProjects/Indice_Remisivo/source/hash/hashZiviani.cpp
- /home/thiago/CLionProjects/Indice_Remisivo/source/hash/hashZiviani.h
+ /home/thiago/CLionProjects/Indice_Remisivo/source/hash/closedHash.cpp
+ /home/thiago/CLionProjects/Indice_Remisivo/source/hash/closedHash.h
  /home/thiago/CLionProjects/Indice_Remisivo/source/helps.h
-CMakeFiles/Indice_Remisivo.dir/source/hash/hash_linkedList.cpp.o
+CMakeFiles/Indice_Remisivo.dir/source/hash/openHash.cpp.o
  /home/thiago/CLionProjects/Indice_Remisivo/source/external/fort.h
  /home/thiago/CLionProjects/Indice_Remisivo/source/external/fort.hpp
- /home/thiago/CLionProjects/Indice_Remisivo/source/hash/hash_linkedList.cpp
- /home/thiago/CLionProjects/Indice_Remisivo/source/hash/hash_linkedList.h
+ /home/thiago/CLionProjects/Indice_Remisivo/source/hash/openHash.cpp
+ /home/thiago/CLionProjects/Indice_Remisivo/source/hash/openHash.h
  /home/thiago/CLionProjects/Indice_Remisivo/source/helps.h
  /home/thiago/CLionProjects/Indice_Remisivo/source/linked_list/List.h
 CMakeFiles/Indice_Remisivo.dir/source/helps.cpp.o
@@ -49,6 +50,7 @@ CMakeFiles/Indice_Remisivo.dir/source/helps.cpp.o
 CMakeFiles/Indice_Remisivo.dir/source/linked_list/List.cpp.o
  /home/thiago/CLionProjects/Indice_Remisivo/source/external/fort.h
  /home/thiago/CLionProjects/Indice_Remisivo/source/external/fort.hpp
+ /home/thiago/CLionProjects/Indice_Remisivo/source/helps.h
  /home/thiago/CLionProjects/Indice_Remisivo/source/linked_list/List.cpp
  /home/thiago/CLionProjects/Indice_Remisivo/source/linked_list/List.h
 CMakeFiles/Indice_Remisivo.dir/source/linked_list/indice_list.cpp.o
@@ -64,8 +66,8 @@ CMakeFiles/Indice_Remisivo.dir/source/main.cpp.o
  /home/thiago/CLionProjects/Indice_Remisivo/source/bst/tree.h
  /home/thiago/CLionProjects/Indice_Remisivo/source/external/fort.h
  /home/thiago/CLionProjects/Indice_Remisivo/source/external/fort.hpp
- /home/thiago/CLionProjects/Indice_Remisivo/source/hash/hashZiviani.h
- /home/thiago/CLionProjects/Indice_Remisivo/source/hash/hash_linkedList.h
+ /home/thiago/CLionProjects/Indice_Remisivo/source/hash/closedHash.h
+ /home/thiago/CLionProjects/Indice_Remisivo/source/hash/openHash.h
  /home/thiago/CLionProjects/Indice_Remisivo/source/helps.h
  /home/thiago/CLionProjects/Indice_Remisivo/source/linked_list/List.h
  /home/thiago/CLionProjects/Indice_Remisivo/source/linked_list/indice_list.h

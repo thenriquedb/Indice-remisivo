@@ -11,10 +11,8 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="25d36b82-ff69-4100-b4bd-1830cbe7531c" name="Default Changelist" comment="Finalização da estrutura da BST">
-      <change afterPath="$PROJECT_DIR$/source/hash/hashZiviani.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/hash/hash_linkedList.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/hash/hash_linkedList.h" afterDir="false" />
+    <list default="true" id="25d36b82-ff69-4100-b4bd-1830cbe7531c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/source/hash/openHash.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Indice_Remisivo.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Indice_Remisivo.dir/CXX.includecache" afterDir="false" />
@@ -24,24 +22,36 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Indice_Remisivo.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Indice_Remisivo.dir/depend.internal" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Indice_Remisivo.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Indice_Remisivo.dir/depend.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Indice_Remisivo.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Indice_Remisivo.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Indice_Remisivo.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Indice_Remisivo.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Indice_Remisivo.dir/source/benchmarks/benchmarks.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Indice_Remisivo.dir/source/benchmarks/benchmarks.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Indice_Remisivo.dir/source/hash/hashTable.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Indice_Remisivo.dir/source/linked_list/indice_list.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Indice_Remisivo.dir/source/linked_list/indice_list.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Indice_Remisivo.dir/source/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Indice_Remisivo.dir/source/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Indice_Remisivo.dir/source/avl/avlTree.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Indice_Remisivo.dir/source/avl/avlTree.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Indice_Remisivo.dir/source/bst/tree.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Indice_Remisivo.dir/source/bst/tree.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Indice_Remisivo.dir/source/hash/hashZiviani.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Indice_Remisivo.dir/source/hash/hash_linkedList.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Indice_Remisivo.dir/source/linked_list/List.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Indice_Remisivo.dir/source/linked_list/List.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Indice_Remisivo" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Indice_Remisivo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Indice_Remisivo.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Indice_Remisivo.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/benchmarks/benchmark_AVL.txt" beforeDir="false" afterPath="$PROJECT_DIR$/outputs/benchmarks/benchmark_AVL.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/benchmarks/benchmark_BST.txt" beforeDir="false" afterPath="$PROJECT_DIR$/outputs/benchmarks/benchmark_BST.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/benchmarks/benchmark_Hash (Ziviani).txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/outputs/benchmarks/benchmark_Lista_encadeada.txt" beforeDir="false" afterPath="$PROJECT_DIR$/outputs/benchmarks/benchmark_Lista_encadeada.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/outputs/benchmarks/benchmarks_ALL.txt" beforeDir="false" afterPath="$PROJECT_DIR$/outputs/benchmarks/benchmarks_ALL.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/indices_remisivo/indice_Lista_encadeada.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/avl/avlTree.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/avl/avlTree.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/avl/avlTree.h" beforeDir="false" afterPath="$PROJECT_DIR$/source/avl/avlTree.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/benchmarks/benchmarks.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/benchmarks/benchmarks.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/benchmarks/benchmarks.h" beforeDir="false" afterPath="$PROJECT_DIR$/source/benchmarks/benchmarks.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/benchmarks/tesst.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/hash/hashTable.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/hash/hashTable.h" beforeDir="false" afterPath="$PROJECT_DIR$/source/hash/hashZiviani.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/bst/tree.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/bst/tree.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/bst/tree.h" beforeDir="false" afterPath="$PROJECT_DIR$/source/bst/tree.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/hash/hashZiviani.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/hash/closedHash.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/hash/hashZiviani.h" beforeDir="false" afterPath="$PROJECT_DIR$/source/hash/closedHash.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/hash/hash_linkedList.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/hash/hash_linkedList.h" beforeDir="false" afterPath="$PROJECT_DIR$/source/hash/openHash.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/helps.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/helps.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/helps.h" beforeDir="false" afterPath="$PROJECT_DIR$/source/helps.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/linked_list/List.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/linked_list/List.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/linked_list/List.h" beforeDir="false" afterPath="$PROJECT_DIR$/source/linked_list/List.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/linked_list/indice_list.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/linked_list/indice_list.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/linked_list/indice_list.h" beforeDir="false" afterPath="$PROJECT_DIR$/source/linked_list/indice_list.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/main.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -56,74 +66,105 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.41506717">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/source/main.cpp">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="180">
-                  <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/source/hash/hashZiviani.h">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-264">
-                  <caret line="47" column="17" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
-                  <folding>
-                    <element signature="e#144#161#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/source/hash/hash_linkedList.cpp">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="80">
-                  <caret line="4" selection-start-line="4" selection-end-line="4" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/source/hash/hash_linkedList.h">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="470">
-                  <caret line="54" column="2" lean-forward="true" selection-start-line="54" selection-start-column="2" selection-end-line="54" selection-end-column="2" />
-                  <folding>
-                    <element signature="e#112#129#0" expanded="true" />
-                    <element signature="e#427#546#0" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/source/hash/hashZiviani.h">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="260">
-                  <caret line="52" selection-start-line="52" selection-end-line="52" />
-                  <folding>
-                    <element signature="e#144#161#0" expanded="true" />
-                    <element signature="e#582#805#0" />
-                    <element signature="e#811#1005#0" />
-                    <element signature="e#1049#1306#0" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/main.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="296">
+              <caret line="71" column="15" selection-start-line="71" selection-start-column="15" selection-end-line="71" selection-end-column="15" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/hash/openHash.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="140">
+              <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+              <folding>
+                <element signature="e#73#383#0" />
+                <element signature="e#385#1378#0" />
+                <element signature="e#1380#2254#0" />
+                <element signature="e#2256#2406#0" />
+                <element signature="e#2408#2736#0" />
+                <element signature="e#2738#3063#0" />
+                <element signature="e#3065#3275#0" />
+                <element signature="e#3277#3829#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/source/hash/openHash.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="536">
+              <caret line="81" selection-start-line="81" selection-end-line="81" />
+              <folding>
+                <element signature="e#1231#1618#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/benchmarks/benchmarks.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="211">
+              <caret line="151" selection-start-line="151" selection-end-line="151" />
+              <folding>
+                <element signature="e#9#28#0" expanded="true" />
+                <element signature="e#142#171#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/avl/avlTree.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+              <folding>
+                <element signature="e#41#61#0" expanded="true" />
+                <element signature="e#85#706#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/hash/closedHash.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="316">
+              <caret line="118" lean-forward="true" selection-start-line="118" selection-end-line="118" />
+              <folding>
+                <element signature="e#259#968#0" />
+                <element signature="e#970#1236#0" />
+                <element signature="e#1238#2029#0" />
+                <element signature="e#4603#4922#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/hash/closedHash.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="440">
+              <caret line="77" column="49" selection-start-line="77" selection-start-column="49" selection-end-line="77" selection-end-column="49" />
+              <folding>
+                <element signature="e#144#161#0" expanded="true" />
+                <element signature="e#368#519#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -134,6 +175,8 @@
       <find>getHe</find>
       <find>get</find>
       <find>search</find>
+      <find>hashZiviani</find>
+      <find>ope</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -152,38 +195,43 @@
         <option value="$PROJECT_DIR$/source/linked_list/list.h" />
         <option value="$PROJECT_DIR$/source/teste.cpp" />
         <option value="$PROJECT_DIR$/source/tree/tree.h" />
-        <option value="$PROJECT_DIR$/texto.txt" />
         <option value="$PROJECT_DIR$/source/tree/tree.cpp" />
         <option value="$PROJECT_DIR$/keywords.txt" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/source/benchmarks.cpp" />
-        <option value="$PROJECT_DIR$/source/helps.h" />
-        <option value="$PROJECT_DIR$/source/avl/avlTree.h" />
-        <option value="$PROJECT_DIR$/source/bst/tree.h" />
         <option value="$PROJECT_DIR$/keywords2.txt" />
         <option value="$PROJECT_DIR$/datasets/file3.txt" />
         <option value="$PROJECT_DIR$/datasets/file2.txt" />
         <option value="$PROJECT_DIR$/datasets/file4.txt" />
         <option value="$PROJECT_DIR$/datasets/file1.txt" />
-        <option value="$PROJECT_DIR$/source/linked_list/List.cpp" />
-        <option value="$PROJECT_DIR$/source/helps.cpp" />
         <option value="$PROJECT_DIR$/benchmarkBST.txt" />
         <option value="$PROJECT_DIR$/benchmark1.txt" />
         <option value="$PROJECT_DIR$/outputs/benchmark_BST.txt" />
-        <option value="$PROJECT_DIR$/source/bst/tree.cpp" />
-        <option value="$PROJECT_DIR$/source/linked_list/indice_list.h" />
-        <option value="$PROJECT_DIR$/source/avl/avlTree.cpp" />
-        <option value="$PROJECT_DIR$/source/linked_list/List.h" />
         <option value="$PROJECT_DIR$/source/hash/hash.h" />
-        <option value="$PROJECT_DIR$/source/linked_list/indice_list.cpp" />
-        <option value="$PROJECT_DIR$/source/benchmarks/benchmarks.h" />
         <option value="$PROJECT_DIR$/source/hash/hashTable.cpp" />
-        <option value="$PROJECT_DIR$/source/benchmarks/benchmarks.cpp" />
         <option value="$PROJECT_DIR$/source/hash/hashTable.h" />
-        <option value="$PROJECT_DIR$/source/hash/openHash.h" />
+        <option value="$PROJECT_DIR$/texto.txt" />
+        <option value="$PROJECT_DIR$/source/hash/hashZiviani.cpp" />
         <option value="$PROJECT_DIR$/source/hash/hashZiviani.h" />
+        <option value="$PROJECT_DIR$/source/hash/hash_linkedList.cpp" />
         <option value="$PROJECT_DIR$/source/hash/hash_linkedList.h" />
+        <option value="$PROJECT_DIR$/source/helps.cpp" />
+        <option value="$PROJECT_DIR$/source/helps.h" />
+        <option value="$PROJECT_DIR$/source/benchmarks/benchmarks.h" />
+        <option value="$PROJECT_DIR$/source/linked_list/List.h" />
+        <option value="$PROJECT_DIR$/source/linked_list/List.cpp" />
+        <option value="$PROJECT_DIR$/source/benchmarks/benchmarks.cpp" />
+        <option value="$PROJECT_DIR$/source/linked_list/indice_list.cpp" />
+        <option value="$PROJECT_DIR$/source/linked_list/indice_list.h" />
+        <option value="$PROJECT_DIR$/source/bst/tree.cpp" />
+        <option value="$PROJECT_DIR$/source/bst/tree.h" />
+        <option value="$PROJECT_DIR$/source/avl/avlTree.h" />
+        <option value="$PROJECT_DIR$/source/hash/closedHash.h" />
+        <option value="$PROJECT_DIR$/source/hash/closedHash.cpp" />
+        <option value="$PROJECT_DIR$/source/avl/avlTree.cpp" />
+        <option value="$PROJECT_DIR$/source/hash/openHash.cpp" />
         <option value="$PROJECT_DIR$/source/main.cpp" />
+        <option value="$PROJECT_DIR$/source/hash/openHash.h" />
       </list>
     </option>
   </component>
@@ -198,6 +246,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -210,11 +259,22 @@
               <item name="Indice_Remisivo" type="462c0819:PsiDirectoryNode" />
               <item name="source" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Indice_Remisivo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Indice_Remisivo" type="462c0819:PsiDirectoryNode" />
+              <item name="source" type="462c0819:PsiDirectoryNode" />
+              <item name="avl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Indice_Remisivo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Indice_Remisivo" type="462c0819:PsiDirectoryNode" />
+              <item name="source" type="462c0819:PsiDirectoryNode" />
+              <item name="hash" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -285,7 +345,8 @@
       <workItem from="1561235870245" duration="159000" />
       <workItem from="1561314488869" duration="5175000" />
       <workItem from="1561372671247" duration="2997000" />
-      <workItem from="1561382342220" duration="29196000" />
+      <workItem from="1561382342220" duration="40224000" />
+      <workItem from="1561576466020" duration="13897000" />
     </task>
     <task id="LOCAL-00001" summary="Finalização da estrutura da BST">
       <created>1560902542320</created>
@@ -294,11 +355,18 @@
       <option name="project" value="LOCAL" />
       <updated>1560902542320</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Hash com lista encadeada finalizado">
+      <created>1561468560811</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1561468560811</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="178394000" />
+    <option name="totallyTimeSpent" value="203319000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-1" width="2560" height="1050" extended-state="6" />
@@ -306,20 +374,20 @@
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.17104216" />
+      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.13206047" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32736155" />
-      <window_info active="true" anchor="bottom" x="20" y="733" width="1233" height="135" id="Run" order="2" sideWeight="0.4878788" visible="true" weight="0.2224622" />
+      <window_info anchor="bottom" x="20" y="733" width="1233" height="135" id="Run" order="2" sideWeight="0.4878788" weight="0.3088553" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4924423" weight="0.30669546" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.48528242" weight="0.26349893" />
+      <window_info active="true" anchor="bottom" id="Messages" order="8" sideWeight="0.48528242" visible="true" weight="0.26241902" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.6673866" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5121212" side_tool="true" weight="0.742671" />
       <window_info anchor="bottom" id="Version Control" order="11" />
-      <window_info anchor="bottom" id="CMake" order="12" weight="0.32899022" />
+      <window_info anchor="bottom" id="CMake" order="12" weight="0.32829374" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -355,21 +423,37 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Finalização da estrutura da BST" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finalização da estrutura da BST" />
+    <MESSAGE value="Hash com lista encadeada finalizado" />
+    <option name="LAST_COMMIT_MESSAGE" value="Hash com lista encadeada finalizado" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/source/benchmarks/benchmarks.cpp</url>
-          <line>124</line>
-          <option name="timeStamp" value="113" />
+          <url>file://$PROJECT_DIR$/source/hash/closedHash.cpp</url>
+          <line>160</line>
+          <option name="timeStamp" value="122" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/source/hash/closedHash.cpp</url>
+          <line>53</line>
+          <option name="timeStamp" value="130" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="breakpointCondition">
+      <expression>
+        <expression-string>hashFunction == 2</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>i == 2</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>item == 'good'</expression-string>
         <language-id>ObjectiveC</language-id>
@@ -417,25 +501,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/include/c++/7/bits/basic_string.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="6134" selection-start-line="6134" selection-end-line="6134" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/teste.cpp" />
     <entry file="file:///usr/include/c++/7/bits/locale_facets.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
           <caret line="2606" column="4" selection-start-line="2606" selection-start-column="4" selection-end-line="2606" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/texto.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="19" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -467,16 +537,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/helps.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="34" column="28" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
-          <folding>
-            <element signature="e#106#124#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/datasets/file3.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
@@ -505,48 +565,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/linked_list/List.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="2" lean-forward="true" selection-start-column="2" selection-end-column="2" />
-          <folding>
-            <element signature="e#41#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/benchmark1.txt" />
     <entry file="file://$PROJECT_DIR$/benchmarkBST.txt" />
-    <entry file="file://$PROJECT_DIR$/source/helps.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="107" column="3" lean-forward="true" selection-start-line="107" selection-start-column="3" selection-end-line="107" selection-end-column="3" />
-          <folding>
-            <element signature="e#42#61#0" expanded="true" />
-            <element signature="e#178#402#0" />
-            <element signature="e#405#618#0" />
-            <element signature="e#864#1655#0" />
-            <element signature="e#1657#1961#0" />
-            <element signature="e#1963#2172#0" />
-            <element signature="e#2174#2521#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/outputs/benchmarks_ALL.txt" />
     <entry file="file://$PROJECT_DIR$/outputs/benchmark_BST.txt" />
     <entry file="file://$PROJECT_DIR$/outputs/benchmark_AVL.txt" />
     <entry file="file://$PROJECT_DIR$/outputs/benchmark_Lista_encadeada.txt" />
-    <entry file="file://$PROJECT_DIR$/source/bst/tree.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="84" selection-start-line="84" selection-end-line="93" selection-end-column="1" />
-          <folding>
-            <element signature="e#60#79#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/include/c++/7/bits/stl_iterator.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="104">
@@ -561,81 +585,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/linked_list/indice_list.h">
+    <entry file="file:///usr/include/c++/7/bits/basic_string.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" selection-start-line="7" selection-end-line="9" selection-end-column="18" />
-          <folding>
-            <element signature="e#118#134#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="205">
+          <caret line="6018" selection-start-line="6018" selection-end-line="6018" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/texto.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file:///usr/include/c++/7/bits/stl_vector.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="835">
-          <caret line="673" column="6" selection-start-line="673" selection-start-column="6" selection-end-line="673" selection-end-column="6" />
+        <state relative-caret-position="205">
+          <caret line="325" selection-start-line="325" selection-end-line="325" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/bst/tree.h">
+    <entry file="file://$PROJECT_DIR$/source/linked_list/List.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="569">
-          <caret line="104" column="1" selection-start-line="104" selection-start-column="1" selection-end-line="104" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/avl/avlTree.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        <state relative-caret-position="280">
+          <caret line="14" column="46" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
           <folding>
-            <element signature="e#110#134#0" expanded="true" />
+            <element signature="e#41#58#0" expanded="true" />
+            <element signature="e#150#446#0" />
+            <element signature="e#448#1092#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/avl/avlTree.cpp">
+    <entry file="file://$PROJECT_DIR$/source/helps.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="835">
-          <caret line="154" selection-start-line="154" selection-end-line="154" />
+        <state relative-caret-position="211">
+          <caret line="88" column="16" selection-start-line="88" selection-start-column="7" selection-end-line="88" selection-end-column="16" />
           <folding>
-            <element signature="e#41#61#0" expanded="true" />
+            <element signature="e#42#61#0" expanded="true" />
+            <element signature="e#178#402#0" />
+            <element signature="e#405#618#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/linked_list/List.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="605">
+          <caret line="48" column="21" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
           <folding>
             <element signature="e#104#120#0" expanded="true" />
+            <element signature="e#472#606#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/linked_list/indice_list.cpp">
+    <entry file="file://$PROJECT_DIR$/source/helps.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="618">
-          <caret line="81" column="3" selection-start-line="81" selection-start-column="3" selection-end-line="82" selection-end-column="49" />
+        <state relative-caret-position="525">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
           <folding>
-            <element signature="e#41#57#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/benchmarks/benchmarks.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="114" selection-start-line="114" selection-end-line="114" />
-          <folding>
-            <element signature="e#9#28#0" expanded="true" />
-            <element signature="e#338#1437#0" />
-            <element signature="e#1439#2543#0" />
-            <element signature="e#2545#3680#0" />
-            <element signature="e#3682#4480#0" />
-            <element signature="e#4482#5428#0" />
+            <element signature="e#106#124#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -643,61 +654,147 @@
     <entry file="file://$PROJECT_DIR$/source/benchmarks/benchmarks.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
-          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+          <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
           <folding>
             <element signature="e#116#134#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/hash/hashZiviani.cpp">
+    <entry file="file://$PROJECT_DIR$/source/linked_list/indice_list.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="536">
-          <caret line="50" column="41" selection-start-line="50" selection-start-column="41" selection-end-line="50" selection-end-column="41" />
+        <state relative-caret-position="420">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
           <folding>
-            <element signature="e#88#110#0" expanded="true" />
-            <element signature="e#258#743#0" />
-            <element signature="e#745#1010#0" />
-            <element signature="e#1311#2042#0" />
-            <element signature="e#1745#2359#0" />
-            <element signature="e#2604#3346#0" />
-            <element signature="e#3115#3538#1" />
+            <element signature="e#118#134#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/hash/hash_linkedList.cpp">
+    <entry file="file://$PROJECT_DIR$/source/linked_list/indice_list.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/hash/hash_linkedList.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="54" column="2" lean-forward="true" selection-start-line="54" selection-start-column="2" selection-end-line="54" selection-end-column="2" />
+        <state relative-caret-position="160">
+          <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
           <folding>
-            <element signature="e#112#129#0" expanded="true" />
-            <element signature="e#427#546#0" />
+            <element signature="e#41#57#0" expanded="true" />
+            <element signature="e#241#1322#0" />
+            <element signature="e#1325#2328#0" />
+            <element signature="e#2330#2801#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/hash/hashZiviani.h">
+    <entry file="file://$PROJECT_DIR$/source/bst/tree.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-264">
-          <caret line="47" column="17" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
+        <state relative-caret-position="196">
+          <caret line="16" column="13" lean-forward="true" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding>
+            <element signature="e#60#79#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/bst/tree.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="75" column="62" selection-start-line="75" selection-start-column="62" selection-end-line="75" selection-end-column="62" />
+          <folding>
+            <element signature="e#1281#1366#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/avl/avlTree.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="34" column="26" lean-forward="true" selection-start-line="34" selection-end-line="35" />
+          <folding>
+            <element signature="e#110#134#0" expanded="true" />
+            <element signature="e#306#376#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/hash/closedHash.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="77" column="49" selection-start-line="77" selection-start-column="49" selection-end-line="77" selection-end-column="49" />
           <folding>
             <element signature="e#144#161#0" expanded="true" />
+            <element signature="e#368#519#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/hash/closedHash.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="118" lean-forward="true" selection-start-line="118" selection-end-line="118" />
+          <folding>
+            <element signature="e#259#968#0" />
+            <element signature="e#970#1236#0" />
+            <element signature="e#1238#2029#0" />
+            <element signature="e#4603#4922#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/avl/avlTree.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+          <folding>
+            <element signature="e#41#61#0" expanded="true" />
+            <element signature="e#85#706#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/hash/openHash.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+          <folding>
+            <element signature="e#73#383#0" />
+            <element signature="e#385#1378#0" />
+            <element signature="e#1380#2254#0" />
+            <element signature="e#2256#2406#0" />
+            <element signature="e#2408#2736#0" />
+            <element signature="e#2738#3063#0" />
+            <element signature="e#3065#3275#0" />
+            <element signature="e#3277#3829#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+        <state relative-caret-position="296">
+          <caret line="71" column="15" selection-start-line="71" selection-start-column="15" selection-end-line="71" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/benchmarks/benchmarks.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="151" selection-start-line="151" selection-end-line="151" />
+          <folding>
+            <element signature="e#9#28#0" expanded="true" />
+            <element signature="e#142#171#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/hash/openHash.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="536">
+          <caret line="81" selection-start-line="81" selection-end-line="81" />
+          <folding>
+            <element signature="e#1231#1618#0" />
+          </folding>
         </state>
       </provider>
     </entry>

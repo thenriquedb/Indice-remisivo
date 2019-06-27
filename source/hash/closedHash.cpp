@@ -2,7 +2,7 @@
 // Implementação da tabela hash utilizando a refêrencia sugerida (Ziviani, 2011)
 //
 
-#include "hashZiviani.h"
+#include "closedHash.h"
 #include <iostream>
 #include <fstream>
 
@@ -12,15 +12,27 @@
 
 using namespace std;
 
+
+void closedHash::run(vector<string> keyWords,ifstream &file){
+    this->insertKeyWords(keyWords);
+    this->searchKeywords(file);
+    this->printIndice();
+}
 /*
  * Insere um novo item na tabela hash
  */
-void hashZiviani::insert(string key) {
+void closedHash::insert(string key) {
     if (this->searchIndex(key) == -1) {
+        int initial;
 
-        int initial = this->h(key);
-        int index = initial;
-        int i = 0;
+        if (this->hashUsed == 1)
+            initial = this->generateIndex_1(key);
+        if (this->hashUsed == 2)
+            initial = this->generateIndex_2(key);
+        if (this->hashUsed == 3)
+            initial = this->generateIndex_3(key);
+
+        int index = initial, i = 0;
 
         while (table[index].getKey() != -1 && table[index].getValue() != "\0" && i < this->capacity) {
             index = (initial + (++i)) % this->capacity;
@@ -37,7 +49,7 @@ void hashZiviani::insert(string key) {
  * Insere as palavras chave na tabela
  * @param vector<string> keywords: vetor de palavras chaves
  */
-void hashZiviani::insertKeyWords(vector<string> keywords) {
+void closedHash::insertKeyWords(vector<string> keywords) {
     for (auto const &item: keywords) {
         if (item.size() >= 4)
             insert(item);
@@ -48,34 +60,34 @@ void hashZiviani::insertKeyWords(vector<string> keywords) {
  * Recebe uma palavra e verifica se a palavra existe na hash.
  * Caso existir retorna sua chave, e em caso contrario retorna -1
  */
-int hashZiviani::searchIndex(string key) {
-    unsigned int i = 0, initial = h(key);
-    unsigned index = initial;
+int closedHash::searchIndex(string key) {
+    unsigned int i = 0, index, initial;
 
-    // Verifica se o elemento está presente na tabela
+    if (this->hashUsed == 1)
+        initial = this->generateIndex_1(key);
+    if (this->hashUsed == 2)
+        initial = this->generateIndex_2(key);
+    if (this->hashUsed == 3)
+        initial = this->generateIndex_3(key);
 
-    string a = table[i].getValue();
-    int b = table[i].getKey();
+    index = initial;
 
     while (table[i].getValue() != "\0" && table[i].getKey() != -1 && i < this->capacity) {
         index = initial + (i++) % this->capacity;
     }
 
-    string c = table[index].getValue();
-    int d = table[index].getKey();
-
-    if (table[index].getValue() != "\0" && table[index].getKey() != -1) {
+    // Verifica se o elemento está presente na tabela
+    if (table[index].getValue() != "\0" && table[index].getKey() != -1)
         return index;
-    } else {
+    else
         return -1;
-    }
 }
 
 /*
  * Realiza a busca das palavras chaves em um arquivo texto
  * @param ifstream &file arquivo que contém o texto a ser lido
  */
-void hashZiviani::searchKeywords(ifstream &file) {
+void closedHash::searchKeywords(ifstream &file) {
     int numLine = 1;
     string line;
     file.seekg(0);
@@ -99,8 +111,10 @@ void hashZiviani::searchKeywords(ifstream &file) {
 /*
  * Imprime o indice remissivo
  */
-void hashZiviani::printIndice() {
+void closedHash::printIndice() {
     fort::table printTable;
+
+    printf("ÍNDICE REMISSIVO \n");
     printTable << fort::header << "Palavra chave" << "Linhas" << fort::endr;
 
     for (int i = 0; i < capacity; ++i) {
@@ -123,7 +137,7 @@ void hashZiviani::printIndice() {
 /*
  * Retorna o tempo de execução
  */
-double hashZiviani::benchmark(vector<string> keyWords, ifstream &file){
+double closedHash::benchmark(vector<string> keyWords, ifstream &file) {
     chrono::time_point<std::chrono::system_clock> start, end;
     start = chrono::system_clock::now();
 
@@ -136,4 +150,45 @@ double hashZiviani::benchmark(vector<string> keyWords, ifstream &file){
 
     chrono::duration<double> elapsed_seconds = runtime(start, end);
     return elapsed_seconds.count();
+}
+
+int closedHash::generateIndex_1(string key) {
+    return abs((122 - (int) key[0]) - 25);
+}
+
+// Hash Ziviani
+int closedHash::generateIndex_2(string key) {
+    int sum = 0;
+    for (int i = 0; i < key.length(); i++) {
+        sum = sum + (int) key[i] * weights[i];
+    }
+
+    return sum % this->capacity;
+}
+
+
+/*
+ * Vetor de pesos utilizado para o calculo do hash utilizando o método de Ziviani.
+ * Os pesos são armazenados no vetor Weightsdentro da propria classe
+ */
+int closedHash::generateWeights() {
+    std::srand(time(nullptr));
+    for (int i = 0; i < this->capacity; i++)
+        this->weights.push_back(rand() % this->capacity);
+}
+
+/*
+ * Método da Multiplicação ou Congruencia Linear Multiplicativo
+ *
+ * -Usa um valor sendo este "0 < A < 1" entre 0 e 1 para multiplicar o valor da chave
+ *  que representa o elemento.
+ *
+ *  -Em seguida, a parte fracionária resultante é multiplicada pelo tamanho da tabela
+ *  para calcular a posição do elemento;
+*/
+int closedHash::generateIndex_3(string key) {
+    std::srand(time(nullptr));
+    float val = (int) key[0] * (float) ((rand() % this->capacity) / RAND_MAX);
+    val = val - (int) val;
+    return (int) (this->capacity * val);
 }

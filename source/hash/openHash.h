@@ -2,8 +2,8 @@
 // Created by thiago on 24/06/19.
 //
 
-#ifndef INDICE_REMISIVO_HASH_LINKEDLIST_H
-#define INDICE_REMISIVO_HASH_LINKEDLIST_H
+#ifndef INDICE_REMISIVO_OPENHASH_H
+#define INDICE_REMISIVO_OPENHASH_H
 
 #include <string>
 #include <ctime>
@@ -32,7 +32,6 @@ public:
         key = k;
     };
 
-
     Node *findElement(string value) {
         Node *current = collisions.getHead();
 
@@ -46,33 +45,41 @@ public:
     }
 };
 
-class hash_linkedList {
+class openHash {
 private:
     hashNode_ll *table;
-    int capacity;
+    int capacity, hashUsed;  // Capacidade maxima e capacidade maxima
+
+    int generateIndex_1(string key);
+
+    // Hash Ziviani
+    int generateIndex_2(string key);
+    int generateWeights();
+    vector<int> weights;  // Vetor de pesos utilizado para o calculo do hash utilizando o método de Ziviani
+
+    int generateIndex_3(string key);
+    void insert(string key);
 
 public:
-    hash_linkedList(int capacity) {
+    explicit openHash(int capacity, int hash) {
         this->capacity = capacity; // Tamanho maximo da tabela
         this->table = new hashNode_ll[this->capacity];
+        this->hashUsed = hash;
 
+        // Inicia as celulas
         for (int i = 0; i < capacity; ++i) {
             table[i].insert("\0", -1);
         }
+
+        if (this->hashUsed == 2)
+            generateWeights();
     }
 
-    void insert(string value);
-
-    void printIndice();
-
-    void searchKeywords(ifstream &file);
-
+    void run(vector<string> keyWords,ifstream &file);
     void insertKeyWords(vector<string> keywords);
-
-    // Retorna um valor entre 0 e 25.
-    // Caracter ASCII (97 - 122)
-    int getHash(string value);
+    void searchKeywords(ifstream &file);
+    void printIndice();
+    double benchmark(vector<string> keyWords, ifstream &file);
 };
 
-
-#endif //INDICE_REMISIVO_HASH_LINKEDLIST_H
+#endif //INDICE_REMISIVO_OPENHASH_H

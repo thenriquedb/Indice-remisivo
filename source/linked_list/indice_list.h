@@ -20,21 +20,14 @@ class list_index {
 private:
     List keyWords; // Lista das palavras chaves
     int lenght;
+    void insertKeyWords(vector<string> keyWordsArray);
+    void searchWords(ifstream &file);
+    void printIndice();
 
 public:
-    void insertKeyWords(vector<string> keyWordsArray) {
-        for (int i = keyWordsArray.size() - 1; i > 0; i--) {
-            if (keyWordsArray[i].size() >= 4)
-                keyWords.push(keyWordsArray[i]);
-        }
-        lenght = keyWordsArray.size();
-    }
-
-    void searchWords(ifstream &file);
-
+    void run(vector<string>keyWordsArray, ifstream&file);
     double benchmark(vector<string> keyWords, ifstream &file);
 
-    void printIndice();
 };
 
 #endif //INDICE_REMISIVO_INDICE_LIST_H

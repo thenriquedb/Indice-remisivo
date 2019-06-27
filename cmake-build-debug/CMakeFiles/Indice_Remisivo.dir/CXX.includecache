@@ -14,6 +14,34 @@
 ../helps.h
 /home/thiago/CLionProjects/Indice_Remisivo/source/helps.h
 
+/home/thiago/CLionProjects/Indice_Remisivo/source/benchmarks/benchmarks.cpp
+iostream
+-
+fstream
+-
+string
+-
+vector
+-
+benchmarks.h
+/home/thiago/CLionProjects/Indice_Remisivo/source/benchmarks/benchmarks.h
+../helps.h
+/home/thiago/CLionProjects/Indice_Remisivo/source/helps.h
+../external/fort.h
+/home/thiago/CLionProjects/Indice_Remisivo/source/external/fort.h
+../external/fort.hpp
+/home/thiago/CLionProjects/Indice_Remisivo/source/external/fort.hpp
+../bst/tree.h
+/home/thiago/CLionProjects/Indice_Remisivo/source/bst/tree.h
+../avl/avlTree.h
+/home/thiago/CLionProjects/Indice_Remisivo/source/avl/avlTree.h
+../linked_list/indice_list.h
+/home/thiago/CLionProjects/Indice_Remisivo/source/linked_list/indice_list.h
+../hash/closedHash.h
+/home/thiago/CLionProjects/Indice_Remisivo/source/hash/closedHash.h
+../hash/openHash.h
+/home/thiago/CLionProjects/Indice_Remisivo/source/hash/openHash.h
+
 /home/thiago/CLionProjects/Indice_Remisivo/source/benchmarks/benchmarks.h
 fstream
 -
@@ -60,7 +88,7 @@ sstream
 fort.h
 /home/thiago/CLionProjects/Indice_Remisivo/source/external/fort.h
 
-/home/thiago/CLionProjects/Indice_Remisivo/source/hash/hashZiviani.h
+/home/thiago/CLionProjects/Indice_Remisivo/source/hash/closedHash.h
 utility
 -
 string
@@ -74,16 +102,18 @@ vector
 ../helps.h
 /home/thiago/CLionProjects/Indice_Remisivo/source/helps.h
 
-/home/thiago/CLionProjects/Indice_Remisivo/source/hash/hash_linkedList.cpp
-hash_linkedList.h
-/home/thiago/CLionProjects/Indice_Remisivo/source/hash/hash_linkedList.h
+/home/thiago/CLionProjects/Indice_Remisivo/source/hash/openHash.cpp
+openHash.h
+/home/thiago/CLionProjects/Indice_Remisivo/source/hash/openHash.h
 
-/home/thiago/CLionProjects/Indice_Remisivo/source/hash/hash_linkedList.h
+/home/thiago/CLionProjects/Indice_Remisivo/source/hash/openHash.h
 string
 -
 ctime
 -
 iostream
+-
+fstream
 -
 vector
 -
@@ -109,6 +139,10 @@ string
 -
 vector
 -
+iostream
+-
+../helps.h
+/home/thiago/CLionProjects/Indice_Remisivo/source/helps.h
 
 /home/thiago/CLionProjects/Indice_Remisivo/source/linked_list/indice_list.h
 string
@@ -133,10 +167,10 @@ bst/tree.h
 /home/thiago/CLionProjects/Indice_Remisivo/source/bst/tree.h
 avl/avlTree.h
 /home/thiago/CLionProjects/Indice_Remisivo/source/avl/avlTree.h
-hash/hashZiviani.h
-/home/thiago/CLionProjects/Indice_Remisivo/source/hash/hashZiviani.h
-hash/hash_linkedList.h
-/home/thiago/CLionProjects/Indice_Remisivo/source/hash/hash_linkedList.h
+hash/closedHash.h
+/home/thiago/CLionProjects/Indice_Remisivo/source/hash/closedHash.h
+hash/openHash.h
+/home/thiago/CLionProjects/Indice_Remisivo/source/hash/openHash.h
 benchmarks/benchmarks.h
 /home/thiago/CLionProjects/Indice_Remisivo/source/benchmarks/benchmarks.h
 

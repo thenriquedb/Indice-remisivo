@@ -7,8 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Indice_Remisivo.dir/source/avl/avlTree.cpp.o"
   "CMakeFiles/Indice_Remisivo.dir/source/external/fort.c.o"
   "CMakeFiles/Indice_Remisivo.dir/source/benchmarks/benchmarks.cpp.o"
-  "CMakeFiles/Indice_Remisivo.dir/source/hash/hashZiviani.cpp.o"
-  "CMakeFiles/Indice_Remisivo.dir/source/hash/hash_linkedList.cpp.o"
+  "CMakeFiles/Indice_Remisivo.dir/source/hash/closedHash.cpp.o"
+  "CMakeFiles/Indice_Remisivo.dir/source/hash/openHash.cpp.o"
   "Indice_Remisivo.pdb"
   "Indice_Remisivo"
 )
