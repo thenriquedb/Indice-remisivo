@@ -1,8 +1,8 @@
-#include <utility>
-
-//
-// Implementação do método de Nivio Ziviani
-//
+/*
+ * Feito por:
+ *          Thiago Henrique Domingues Botelho - 0041149
+ *          Marcus Vinícius Braga Terçariol da Silva - 0040889
+ */
 
 #ifndef INDICE_REMISIVO_HASHTABLE_H
 #define INDICE_REMISIVO_HASHTABLE_H
@@ -38,7 +38,6 @@ public:
     int getExistingLines(int i) { return existingLines[i]; };
     int getTotalLines() { return totalLines; };
     int getKey() { return key; };
-
 };
 
 class closedHash {
@@ -56,6 +55,7 @@ private:
     int generateIndex_3(string key);
     int searchIndex(string key);
 
+    void exportIndexTxt(string table);
     void insert(string key);
     void printIndice();
 

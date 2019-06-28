@@ -1,6 +1,8 @@
-//
-// Created by thiago on 11/06/19.
-//
+/*
+ * Feito por:
+ *          Thiago Henrique Domingues Botelho - 0041149
+ *          Marcus Vinícius Braga Terçariol da Silva - 0040889
+ */
 
 #include<string>
 #include<iostream>
@@ -15,6 +17,12 @@
 
 using namespace std;
 
+/*
+ * Insere as palavras chaves na estrutura, realiza a busca no arquivo TXT e imprime o indice
+ * @param
+ *       vector<string>keyWordsArray
+ *       ifstream &file
+ */
 void list_index::run(vector<string>keyWordsArray, ifstream&file){
     this->insertKeyWords(keyWordsArray);
     this->searchWords(file);
@@ -81,6 +89,8 @@ void list_index::printIndice() {
         table.row(0).set_cell_text_align(fort::text_align::center);
         table.column(1).set_cell_text_align(fort::text_align::center);
         std::cout << table.to_string() << std::endl;
+        this->exportIndexTxt(table.to_string());
+
     }
 }
 
@@ -114,4 +124,17 @@ void list_index::insertKeyWords(vector<string> keyWordsArray) {
             keyWords.push(keyWordsArray[i]);
     }
     lenght = keyWordsArray.size();
+}
+
+/*
+ * Exporta o indice remissivo em um arquivo txt
+ * @param
+ *      string table Indice remissivo
+ */
+void list_index::exportIndexTxt(string table){
+    ofstream file;
+    string path = "../outputs/indices_remisivo/index_linkedList.txt";
+    file.open(path, ios::in);
+    file << "Indice remissivo - Lista encadeada" <<endl;
+    file << table <<endl;
 }

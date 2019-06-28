@@ -1,6 +1,8 @@
-//
-// Created by thiago on 18/06/19.
-//
+/*
+ * Feito por:
+ *          Thiago Henrique Domingues Botelho - 0041149
+ *          Marcus Vinícius Braga Terçariol da Silva - 0040889
+ */
 
 #ifndef INDICE_REMISIVO_AVLTREE_H
 #define INDICE_REMISIVO_AVLTREE_H
@@ -26,7 +28,7 @@ private:
     void insertKeyWords_avl(vector<string> keyWords);
     void displayInOrden(Leaf *n);
     void searchWords(ifstream &file);
-
+    void exportIndexTxt(vector<string> sort_keywords);
 public:
     explicit avlTree() {
         root = nullptr;

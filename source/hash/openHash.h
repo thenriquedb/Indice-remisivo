@@ -1,6 +1,8 @@
-//
-// Created by thiago on 24/06/19.
-//
+/*
+ * Feito por:
+ *          Thiago Henrique Domingues Botelho - 0041149
+ *          Marcus Vinícius Braga Terçariol da Silva - 0040889
+ */
 
 #ifndef INDICE_REMISIVO_OPENHASH_H
 #define INDICE_REMISIVO_OPENHASH_H
@@ -59,7 +61,7 @@ private:
 
     int generateIndex_3(string key);
     void insert(string key);
-
+    void exportIndexTxt(string table);
 public:
     explicit openHash(int capacity, int hash) {
         this->capacity = capacity; // Tamanho maximo da tabela

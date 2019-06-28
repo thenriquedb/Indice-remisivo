@@ -1,6 +1,8 @@
-//
-// Created by thiago on 13/06/19.
-//
+/*
+ * Feito por:
+ *          Thiago Henrique Domingues Botelho - 0041149
+ *          Marcus Vinícius Braga Terçariol da Silva - 0040889
+ */
 
 #include <iostream>
 #include <fstream>
@@ -40,6 +42,7 @@ public:
     Leaf *getLeft() { return left; };
     Leaf *getRight() { return right; };
     int getHeight() {return height; };
+    int getTotalLines() {return totalLines; };
     void setLeft(Leaf *n) { left = n; };
     void setRight(Leaf *n) { right = n; };
     void setHeight(int h) { height = h; }
@@ -66,7 +69,7 @@ protected:
     void insertKeyWords(vector<string> keyWords);
     void searchWords(ifstream &file);
     Leaf *search(Leaf *l, string s);
-
+    void exportIndexTxt(vector<string> sort_keywords);
 public:
     Tree() { // Construtor
         totalNodes = height = 0;

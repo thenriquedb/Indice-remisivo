@@ -1,6 +1,9 @@
-//
-//
-//
+/*
+ * Feito por:
+ *          Thiago Henrique Domingues Botelho - 0041149
+ *          Marcus Vinícius Braga Terçariol da Silva - 0040889
+ */
+
 #include <iostream>
 #include <fstream>
 #include<string>

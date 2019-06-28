@@ -1,7 +1,8 @@
-//
-// Created by thiago on 11/06/19.
-//
-
+/*
+ * Feito por:
+ *          Thiago Henrique Domingues Botelho - 0041149
+ *          Marcus Vinícius Braga Terçariol da Silva - 0040889
+ */
 
 #include <iostream>
 #include <fstream>
@@ -14,7 +15,31 @@
 using namespace std;
 
 /*
+ * Realiza o recebimento dos parametros via terminal
+ *
+ * @param
+ *  int argc
+ *  char **argv
+ */
+string *input_parse(int argc, char **argv) {
+
+    auto tmp = new std::string[2];
+    if (argc > 3 || argc < 2) {
+        std::cout << "Argumentos invalidos" << std::endl;
+        std::cout << "Exemplo de execucao: user@machine:~$ remissive-index <arquivo com o texto> <arquivo com as palavras chaves>" << std::endl;
+        exit(EXIT_FAILURE);
+    }
+
+    tmp[0] = argv[1];
+    tmp[1] = argv[2];
+
+    return tmp;
+}
+
+/*
  * Retorna o total de linhas do arquivo de texto
+ * @param
+ *      ifstream &file arquivo txt que contém o texto
  */
 int totalLinesFile(ifstream &file) {
     int cont = 0;
@@ -63,12 +88,18 @@ const vector<string> split(const string &string, const char &token) {
 
 /*
  * Armazena todos as palavras chaves em um vetor
- *      ifstream &file: arquivo que contem as palavrass chaves
+ * @param
+ *     ifstream &file: arquivo que contem as palavrass chaves
  * */
 const vector<string> getKeyWords(ifstream &file) {
     string line, current;
     getline(file, line);
-    std::vector<std::string> keyWords = split(line, ' ');
+    vector<string> temp = split(line, ' ');
+    vector<string> keyWords;
+
+    for (const auto &item: temp)
+        if (item.size() >= 4)
+            keyWords.push_back(item);
 
     return keyWords;
 }
@@ -92,16 +123,15 @@ string s_toUpper(string s) {
 }
 
 /*
- * Remove alguns caracter especial da uma string
+ * Remove caracteres da string
+ *
  */
 string clear_string(string word) {
     std::string output;
 
-    for(auto n:word) {
-        if (n != '.' && n != ',' && n != ':' && n != ';') {
+    for (auto n:word)
+        if (n != '.' && n != ',' && n != ':' && n != ';')
             output += n;
-        }
-    }
 
     return output;
 }
@@ -115,6 +145,9 @@ int *allocateIntVector(int numLine, int *p, int n) {
         p[0] = numLine;
         return p;
     } else {
+        if (p[n] == numLine)
+            return p;
+
         p = static_cast<int *> (realloc(p, (n + 1) * sizeof(int)));
         p[n] = numLine;
         return p;
@@ -122,8 +155,23 @@ int *allocateIntVector(int numLine, int *p, int n) {
 }
 
 
-
 /*
  * Recebe dois números e retorna o maior
  */
 int maxNumber(int a, int b) { return (a > b) ? a : b; }
+
+vector<string> sortKeywordsAlphabetical(vector<string> keyWords) {
+    int lenght = keyWords.size();
+    for (int i = 0; i < lenght; i++) {
+        string current = keyWords[i];
+        current = s_toLower(clear_string(current));
+
+        int j = i - 1;
+        while (j >= 0 && keyWords[j] > current) {
+            keyWords[j + 1] = keyWords[j];
+            j = j - 1;
+        }
+        keyWords[j + 1] = current;
+    }
+    return keyWords;
+}

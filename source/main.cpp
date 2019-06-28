@@ -1,3 +1,9 @@
+/*
+ * Feito por:
+ *          Thiago Henrique Domingues Botelho - 0041149
+ *          Marcus Vinícius Braga Terçariol da Silva - 0040889
+ */
+
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -9,16 +15,17 @@
 #include "hash/openHash.h"
 #include "benchmarks/benchmarks.h"
 
-#define HASH_SIZE 10000
+#define HASH_SIZE 1029
 #define EXECUTIONS 10
 
 using namespace std;
 
 int main(int argc, char *argv[]) {
-    ifstream fileTxt("../texto.txt");
+    string *arguments = input_parse(argc, argv);
 
-//    ifstream fileTxt("../datasets/words_alpha.txt");
-    ifstream keywordsTXT("../keywords.txt");
+    ifstream fileTxt(arguments[0]);
+    ifstream keywordsTXT(arguments[1]);
+
     if (!fileTxt.is_open() || !keywordsTXT.is_open()) {
         printf("Erro na leitura dos arquivos. \n");
         exit(EXIT_FAILURE);

@@ -1,6 +1,8 @@
-//
-// Implementação da tabela hash utilizando a refêrencia sugerida (Ziviani, 2011)
-//
+/*
+ * Feito por:
+ *          Thiago Henrique Domingues Botelho - 0041149
+ *          Marcus Vinícius Braga Terçariol da Silva - 0040889
+ */
 
 #include "closedHash.h"
 #include <iostream>
@@ -132,6 +134,7 @@ void closedHash::printIndice() {
     printTable.row(0).set_cell_text_align(fort::text_align::center);
     printTable.column(1).set_cell_text_align(fort::text_align::center);
     std::cout << printTable.to_string() << std::endl;
+    this->exportIndexTxt(printTable.to_string());
 }
 
 /*
@@ -192,3 +195,17 @@ int closedHash::generateIndex_3(string key) {
     val = val - (int) val;
     return (int) (this->capacity * val);
 }
+
+/*
+ * Exporta o indice remissivo em um arquivo txt
+ * @param
+ *      string table Indice remissivo
+ */
+void closedHash::exportIndexTxt(string table) {
+    ofstream file;
+    string path = "../outputs/indices_remisivo/index_closeHash.txt";
+    file.open(path, ios::app);
+    file << "Indice remissivo - Close hash" <<endl;
+    file << table <<endl;
+}
+

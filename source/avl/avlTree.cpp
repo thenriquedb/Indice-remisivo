@@ -1,6 +1,8 @@
-//
-// Created by thiago on 18/06/19.
-//
+/*
+ * Feito por:
+ *          Thiago Henrique Domingues Botelho - 0041149
+ *          Marcus Vinícius Braga Terçariol da Silva - 0040889
+ */
 
 #include "avlTree.h"
 #include "../helps.h"
@@ -10,6 +12,7 @@ void avlTree::run(vector<string> keyWords,ifstream &file){
     this->searchWords(file);
     printf("ÍNDICE REMISSIVO \n");
     this->displayInOrden(this->getRoot());
+    exportIndexTxt(sortKeywordsAlphabetical(keyWords));
 }
 
 /*
@@ -30,6 +33,11 @@ double avlTree::benchmarkAVL(vector<string> keyWords, ifstream &file) {
     return elapsed_seconds.count();
 }
 
+/*
+ * Insere as palavras chaves na arvore
+ * @param
+ *      vector<string> keyWords vetor de palavras chaves
+ */
 void avlTree::insertKeyWords_avl(vector<string> keyWords) {
     for (const auto &item : keyWords) {
         if (item.size() >= 4)
@@ -40,7 +48,8 @@ void avlTree::insertKeyWords_avl(vector<string> keyWords) {
 /*
  * Imprime a arvóre na seguinte ordem: ESQUERDA - RAIZ - DIREITA.
  * Recebe como parámetro inicial a raiz da arvóre
- * @param Leaf *n
+ * @param
+ *      Leaf *n rAIZ
  */
 void avlTree::displayInOrden(Leaf *n) {
     if (n != nullptr) {
@@ -57,6 +66,8 @@ void avlTree::displayInOrden(Leaf *n) {
 /*
  * Realiza a busca das palavras chaves em um arquivo texto
  * @param ifstream &file arquivo que contém o texto a ser lido
+ * @param
+ *         ifstream &file Arquivo txt que contém o texto
  */
 void avlTree::searchWords(ifstream &file) {
     if (this->root != nullptr) {
@@ -80,6 +91,12 @@ void avlTree::searchWords(ifstream &file) {
     }
 }
 
+/*
+ * Verifica se determinada palavra está na arvore. Caso esteja retorna o seu nó, se não retorna nullptr
+ * @param
+ *      Leaf *l Raiz
+ *      string s String a ser buscada
+ */
 Leaf *avlTree::search(Leaf *l, string s) {
     if (l == nullptr || l->getKey() == s)
         return l;
@@ -91,6 +108,12 @@ Leaf *avlTree::search(Leaf *l, string s) {
         return search(l->getLeft(), s);
 };
 
+/*
+ * Insere um novo elemento na arvore AVL
+ * @param
+ *      Leaf *n
+ *      const string &new_key
+ */
 Leaf *avlTree::insert_avl(Leaf *n, const string &new_key) {
     if (n == nullptr)
         return new Leaf(new_key);
@@ -131,8 +154,9 @@ Leaf *avlTree::insert_avl(Leaf *n, const string &new_key) {
 }
 
 /*
- * Retorna o fator de balanceamento que é a diferença da altura entre
- * dois nós
+ * Retorna o fator de balanceamento que é a diferença da altura entre dois nós.
+ * @param
+ *      Leaf *n
  */
 int avlTree::heightDifference(Leaf *n) {
     if (n == nullptr)
@@ -144,6 +168,11 @@ int avlTree::heightDifference(Leaf *n) {
     return n->getLeft()->getHeight() - n->getRight()->getHeight();
 }
 
+/*
+ * Realiza a rotação do nó para a direita
+ * @param
+ *      Leaf *y
+ */
 Leaf *avlTree::rightRotate(Leaf *y) {
     Leaf *x = y->getLeft();
     Leaf *T2 = x->getRight();
@@ -160,6 +189,11 @@ Leaf *avlTree::rightRotate(Leaf *y) {
     return x;
 }
 
+/*
+ * Realiza a rotação do nó para a esquerda
+ * @param
+ *      Leaf *y
+ */
 Leaf *avlTree::leftRotate(Leaf *y) {
     Leaf *x = y->getRight();
     Leaf *T2 = x->getLeft();
@@ -174,4 +208,41 @@ Leaf *avlTree::leftRotate(Leaf *y) {
 
     // Return new root
     return y;
+}
+
+/*
+ * Exporta o indice remissivo em um arquivo txt
+ * @param
+ *      vector<string> sort_keywords Palavras chaves em ordem alfabetica
+ */
+void avlTree::exportIndexTxt(vector<string> sort_keywords) {
+    // Definição da tabela
+    fort::table table;
+    table.set_border_style(FT_PLAIN_STYLE);
+    table.row(0).set_cell_text_align(fort::text_align::center);
+    table.column(1).set_cell_text_align(fort::text_align::center);
+    std::cout << table.to_string() << std::endl;
+
+    printf("ÍNDICE REMISSIVO \n");
+    table << fort::header << "Palavra chave" << "Linhas" << fort::endr;
+
+    std::string content;
+
+    for (const auto &keyword : sort_keywords) {
+        Leaf *node = this->search(this->root, keyword);
+        if (node != nullptr) {
+            int *existingLines = node->getExistingLines();
+            table << node->getKey();
+
+            for (int i = 0; i < node->getTotalLines(); ++i)
+                table << existingLines[i];
+
+            table << fort::endr;
+        }
+    }
+    ofstream file;
+    string path = "../outputs/indices_remisivo/index_avl.txt";
+    file.open(path, ios::app);
+    file << "Indice remissivo - AVL" <<endl;
+    file << table.to_string() <<endl;
 }

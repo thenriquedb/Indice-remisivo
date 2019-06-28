@@ -1,6 +1,8 @@
-//
-// Created by thiago on 11/06/19.
-//
+/*
+ * Feito por:
+ *          Thiago Henrique Domingues Botelho - 0041149
+ *          Marcus Vinícius Braga Terçariol da Silva - 0040889
+ */
 
 #ifndef INDICE_REMISIVO_HELPS_H
 #define INDICE_REMISIVO_HELPS_H
@@ -30,20 +32,14 @@ public:
         maxTime = max_t;
     }
 
-    void display() {
-        cout << "\tEstrutura: " << dataStruct << endl;
-        cout << "\tTempo total: " << totalTime << endl;
-        cout << "\tMenor tempo: " << minTime << endl;
-        cout << "\tMaior tempo: " << maxTime << endl;
-        cout << "\tTempo médio: " << averageTime << endl << endl;
-    }
-
     string getDataStruct(){return dataStruct; };
     double getAverageTime() { return averageTime; };
     double getTotalTime() { return totalTime; };
     double getMinTime() { return minTime; };
     double getMaxTime() { return maxTime; };
 };
+
+string *input_parse(int argc, char **argv);
 
 int totalLinesFile(ifstream &file);
 
@@ -63,5 +59,7 @@ chrono::duration<double> runtime(chrono::time_point<std::chrono::system_clock> s
                                  chrono::time_point<std::chrono::system_clock> endTime);
 
 int maxNumber(int a, int b);
+
+vector<string> sortKeywordsAlphabetical(vector<string> keyWords);
 
 #endif //INDICE_REMISIVO_HELPS_H

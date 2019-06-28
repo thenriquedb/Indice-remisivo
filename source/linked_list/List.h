@@ -1,6 +1,8 @@
-//
-// Created by thiago on 11/06/19.
-//
+/*
+ * Feito por:
+ *          Thiago Henrique Domingues Botelho - 0041149
+ *          Marcus Vinícius Braga Terçariol da Silva - 0040889
+ */
 
 #ifndef INDICE_REMISIVO_LIST_H
 #define INDICE_REMISIVO_LIST_H

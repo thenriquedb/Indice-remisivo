@@ -1,8 +1,9 @@
-#include <utility>
+/*
+ * Feito por:
+ *          Thiago Henrique Domingues Botelho - 0041149
+ *          Marcus Vinícius Braga Terçariol da Silva - 0040889
+ */
 
-//
-// Created by thiago on 13/06/19.
-//
 #include <iostream>
 #include <vector>
 #include <chrono>
@@ -14,10 +15,11 @@
 
 using namespace std;
 
-void Tree::run(vector<string> keyWords,  ifstream &file){
+void Tree::run(vector<string> keyWords, ifstream &file) {
     this->insertKeyWords(keyWords);
     this->searchWords(file);
     this->displayInOrden(this->root);
+    this->exportIndexTxt(sortKeywordsAlphabetical(keyWords));
 }
 
 
@@ -143,3 +145,42 @@ Leaf *Tree::search(Leaf *l, string s) {
     if (s < this->root->getKey())
         return search(l->getLeft(), s);
 };
+
+
+/*
+ * Exporta o indice remissivo em um arquivo txt
+ * @param
+ *      vector<string> sort_keywords Palavras chaves em ordem alfabetica
+ */
+void Tree::exportIndexTxt(vector<string> sort_keywords) {
+    // Definição da tabela
+    fort::table table;
+    table.set_border_style(FT_PLAIN_STYLE);
+    table.row(0).set_cell_text_align(fort::text_align::center);
+    table.column(1).set_cell_text_align(fort::text_align::center);
+    std::cout << table.to_string() << std::endl;
+
+    printf("ÍNDICE REMISSIVO \n");
+    table << fort::header << "Palavra chave" << "Linhas" << fort::endr;
+
+    std::string content;
+
+    for (const auto &keyword : sort_keywords) {
+        Leaf *node = this->search(this->root, keyword);
+        if (node != nullptr) {
+            int *existingLines = node->getExistingLines();
+            table << node->getKey();
+
+            for (int i = 0; i < node->getTotalLines(); ++i)
+                table << existingLines[i];
+
+            table << fort::endr;
+        }
+    }
+    ofstream file;
+    string path = "../outputs/indices_remisivo/index_bst.txt";
+    file.open(path, ios::app);
+    file << "Indice remissivo - BST" <<endl;
+    file << table.to_string() <<endl;
+}
+

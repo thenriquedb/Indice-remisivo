@@ -1,7 +1,9 @@
-////
-//// Created by thiago on 24/06/19.
-////
-//
+/*
+ * Feito por:
+ *          Thiago Henrique Domingues Botelho - 0041149
+ *          Marcus Vinícius Braga Terçariol da Silva - 0040889
+ */
+
 #include "openHash.h"
 
 void openHash::run(vector<string> keyWords,ifstream &file){
@@ -37,9 +39,9 @@ void openHash::printIndice() {
                 if (current->existingLines != nullptr) {
                     printTable << current->word;
 
-                    for (int j = 0; j < current->totalLines; ++j) {
+                    for (int j = 0; j < current->totalLines; ++j)
                         printTable << current->getExistingLines(j);
-                    }
+
                     printTable << fort::endr;
                 }
                 current = current->next;
@@ -53,6 +55,7 @@ void openHash::printIndice() {
     printTable.row(0).set_cell_text_align(fort::text_align::center);
     printTable.column(1).set_cell_text_align(fort::text_align::center);
     std::cout << printTable.to_string() << std::endl;
+    this->exportIndexTxt(printTable.to_string());
 }
 
 void openHash::searchKeywords(ifstream &file) {
@@ -151,4 +154,17 @@ double openHash::benchmark(vector<string> keyWords, ifstream &file) {
 
     chrono::duration<double> elapsed_seconds = runtime(start, end);
     return elapsed_seconds.count();
+}
+
+/*
+ * Exporta o indice remissivo em um arquivo txt
+ * @param
+ *      string table Indice remissivo
+ */
+void openHash::exportIndexTxt(string table) {
+    ofstream file;
+    string path = "../outputs/indices_remisivo/index_openHash.txt";
+    file.open(path, ios::app);
+    file << "Indice remissivo - Close hash" <<endl;
+    file << table <<endl;
 }
